@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
@@ -15,6 +16,7 @@ namespace StandManagementProject
         public Facturefournisseur()
         {
             InitializeComponent();
+            SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         }
     }
 }
