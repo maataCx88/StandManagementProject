@@ -383,9 +383,14 @@ end
 alter proc show_achat_by_prod
 @id int
 as begin
-select a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' 
+select a.id,a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' 
 from achat as a , produit as p
 where a.id_p=@id
 and   p.id=a.id_p
 and   a.qte <> 0
+end
+create proc sale__from_achat
+@id int,@id_p int,@qte int
+as begin
+update achat set qte=-@qte where achat.id=@id
 end
