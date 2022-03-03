@@ -346,7 +346,7 @@ where  rf.id_f=f.id
 and    f.id=@id
 end
 -------------------------Fin pour Réglement fournisseur-------------
---------------------03/03/20222--------------
+--------------------03/03/20222 time : --------------
 create index IndexOfProduct_Des 
 on produit(designation)
 create index IndexOfProduct_Code 
