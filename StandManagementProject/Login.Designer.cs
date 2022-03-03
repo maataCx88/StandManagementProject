@@ -29,19 +29,31 @@ namespace StandManagementProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(445, 89);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 457);
+            this.Controls.Add(this.textBox1);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
