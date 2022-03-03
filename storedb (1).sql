@@ -17,7 +17,7 @@ create proc search_user
 @username nvarchar(50),@passwd nvarchar(50)
 as select e.id,e.username,e.passwd,e.role_u  from employee as e where e.username=@username and e.passwd=@passwd
 create proc show_empl
-as select e.id,e.nom+''+e.prenom as 'Nom et prénom',e.username as 'Utilisateur', e.passwd as 'mot de passe',e.role_u as 'Role',e.salaire,'salaire'  from employee as e
+as select e.id,e.nom+''+e.prenom as 'Nom et prÃ©nom',e.username as 'Utilisateur', e.passwd as 'mot de passe',e.role_u as 'Role',e.salaire,'salaire'  from employee as e
 create proc update_user 
 @nom nvarchar(50),@prenom nvarchar(50),@passwd nvarchar(50),@username nvarchar(50),@role_u nvarchar(50),@salaire decimal,@id int
 as
@@ -34,9 +34,9 @@ as
 insert into client(nom,prenom) values(@nom,@prenom)
 create proc search_clt 
 @nom nvarchar(50)
-as select c.id,nom+''+prenom as 'Nom et prénom' from client as c where nom+''+prenom like @nom
+as select c.id,nom+''+prenom as 'Nom et prÃ©nom' from client as c where nom+''+prenom like @nom
 create proc show_clt
-as select c.id,nom+''+prenom as 'Nom et prénom' from client as c
+as select c.id,nom+''+prenom as 'Nom et prÃ©nom' from client as c
 insert into client(nom,prenom) values('client','comptoir')
 create table fournisseur (
 id int primary key identity(1,1),
@@ -49,9 +49,9 @@ as
 insert into fournisseur(nom,prenom) values(@nom,@prenom)
 create proc search_four 
 @nom nvarchar(50)
-as select f.id,f.nom+''+f.prenom as 'Nom et prénom', f.telephone as 'telephone' from fournisseur as f where f.nom+''+f.prenom like @nom
+as select f.id,f.nom+''+f.prenom as 'Nom et prÃ©nom', f.telephone as 'telephone' from fournisseur as f where f.nom+''+f.prenom like @nom
 create proc show_four
-as select f.id,f.nom+''+f.prenom as 'Nom et prénom' from fournisseur as f
+as select f.id,f.nom+''+f.prenom as 'Nom et prÃ©nom' from fournisseur as f
 insert into fournisseur(nom,prenom) values('moi','meme')
 -----------------------------FIN POUR FOURNISSEUR--------------------
 create table facture_clt (
@@ -59,25 +59,25 @@ id int primary key identity(1,1),
 id_c int foreign key references client(id),
 id_u int foreign key references employee(id),
 montant decimal,
-versé decimal,
+versÃ© decimal,
 reste decimal,
 date_fact date)
 create proc add_facture_clt
-@id_c int ,@id_u int,@montant decimal,@versé decimal,@reste decimal,@date_fact date
+@id_c int ,@id_u int,@montant decimal,@versÃ© decimal,@reste decimal,@date_fact date
 as begin
-insert into facture_clt(id_c,id_u,montant,versé,reste,date_fact) 
-values (@id_c  ,@id_u ,@montant ,@versé ,@reste ,@date_fact)
+insert into facture_clt(id_c,id_u,montant,versÃ©,reste,date_fact) 
+values (@id_c  ,@id_u ,@montant ,@versÃ© ,@reste ,@date_fact)
 end
 create proc show_facture_clt
 as begin
-select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',fc.date_fact as 'Date',
+select fc.id as 'NÂ° bon',fc.montant as 'Total',fc.versÃ© as 'VersÃ©',fc.reste as 'Reste',fc.date_fact as 'Date',
 c.nom+''+c.prenom as 'Client',e.nom as 'Vendeur' from facture_clt as fc,client as c , employee as e
 where c.id=fc.id_c and e.id=fc.id_u
 end
 create proc show_facture_clt_byId
 @id int 
 as begin
-select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',
+select fc.id as 'NÂ° bon',fc.montant as 'Total',fc.versÃ© as 'VersÃ©',fc.reste as 'Reste',
 fc.date_fact as 'Date',c.nom+''+c.prenom as 'Client',e.nom as 'Vendeur' 
 from facture_clt as fc,client as c , employee as e 
 where fc.id=@id and c.id=fc.id_c and e.id=fc.id_u
@@ -85,62 +85,62 @@ end
 create proc show_facture_clt_byDate
 @date1 date,@date2 date 
 as begin
-select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',
+select fc.id as 'NÂ° bon',fc.montant as 'Total',fc.versÃ© as 'VersÃ©',fc.reste as 'Reste',
 fc.date_fact as 'Date',c.nom+''+c.prenom as 'Client',e.nom as 'Vendeur' 
 from facture_clt as fc,client as c , employee as e where fc.date_fact between @date1 and @date2 and (c.id=fc.id_c and e.id=fc.id_u)
 end
 create proc show_facture_clt_byNameC
 @nom nvarchar(50)
 as begin
-select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',
+select fc.id as 'NÂ° bon',fc.montant as 'Total',fc.versÃ© as 'VersÃ©',fc.reste as 'Reste',
 fc.date_fact as 'Date',c.nom+''+c.prenom as 'Client',fc.id_u as 'Vendeur' 
 from facture_clt as fc,client as c , employee as e where c.nom+''+c.prenom like @nom and (c.id=fc.id_c and e.id=fc.id_u)
 end
 create proc update_facture_clt
-@id int ,@montant decimal,@versé decimal,@reste decimal
+@id int ,@montant decimal,@versÃ© decimal,@reste decimal
 as begin
-update facture_clt  set montant=@montant,versé=@versé,reste=@reste
+update facture_clt  set montant=@montant,versÃ©=@versÃ©,reste=@reste
 where  id=@id
 end
 --------------------------FIN POUR FACTURE CLIENT---------------------
-@id int ,@id_u int,@montant decimal,@versé decimal,@reste decimal,@date_fact date
+@id int ,@id_u int,@montant decimal,@versÃ© decimal,@reste decimal,@date_fact date
 create table facture_four (
 id int primary key identity(1,1),
 id_f int foreign key references fournisseur(id),
 montant decimal,
-versé decimal,
+versÃ© decimal,
 reste decimal,
 date_fact date)
 create proc add_facture_four
-@id_c int ,@montant decimal,@versé decimal,@reste decimal,@date_fact date
+@id_c int ,@montant decimal,@versÃ© decimal,@reste decimal,@date_fact date
 as begin
-insert into facture_four(id_f,montant,versé,reste,date_fact) 
-values (@id_c ,@montant ,@versé ,@reste ,@date_fact)
+insert into facture_four(id_f,montant,versÃ©,reste,date_fact) 
+values (@id_c ,@montant ,@versÃ© ,@reste ,@date_fact)
 end
 create proc show_facture_four
 as begin
-select ff.id as 'N° bon',ff.montant as 'Total',ff.versé as 'Versé',ff.reste as 'Reste',ff.date_fact as 'Date',
+select ff.id as 'NÂ° bon',ff.montant as 'Total',ff.versÃ© as 'VersÃ©',ff.reste as 'Reste',ff.date_fact as 'Date',
 f.nom+''+f.prenom as 'Fournisseur' from facture_four as ff,fournisseur as f 
 where f.id=ff.id_f 
 end
 create proc show_facture_four_byId
 @id int 
 as begin
-select ff.id as 'N° bon',ff.montant as 'Total',ff.versé as 'Versé',ff.reste as 'Reste',
+select ff.id as 'NÂ° bon',ff.montant as 'Total',ff.versÃ© as 'VersÃ©',ff.reste as 'Reste',
 ff.date_fact as 'Date',f.nom+''+f.prenom as 'Fournisseur'
 from facture_four as ff,fournisseur as f 
 where ff.id=@id and f.id=ff.id_f
 end
 create proc update_facture_four
-@id int ,@montant decimal,@versé decimal,@reste decimal
+@id int ,@montant decimal,@versÃ© decimal,@reste decimal
 as begin
-update facture_four  set montant=@montant,versé=@versé,reste=@reste
+update facture_four  set montant=@montant,versÃ©=@versÃ©,reste=@reste
 where  id=@id
 end
 create proc show_facture_four_byDate
 @date1 date,@date2 date 
 as begin
-select ff.id as 'N° bon',ff.montant as 'Total',ff.versé as 'Versé',ff.reste as 'Reste',
+select ff.id as 'NÂ° bon',ff.montant as 'Total',ff.versÃ© as 'VersÃ©',ff.reste as 'Reste',
 ff.date_fact as 'Date',f.nom+''+f.prenom as 'Fournisseur'
 from facture_four as ff,fournisseur as f 
 where (f.id=ff.id_f) and ff.date_fact between @date1 and @date2  
@@ -148,7 +148,7 @@ end
 create proc show_facture_four_byNameC
 @nom nvarchar(50)
 as begin
-select ff.id as 'N° bon',ff.montant as 'Total',ff.versé as 'Versé',ff.reste as 'Reste',
+select ff.id as 'NÂ° bon',ff.montant as 'Total',ff.versÃ© as 'VersÃ©',ff.reste as 'Reste',
 ff.date_fact as 'Date',f.nom+''+f.prenom as 'Fournisseur'
 from facture_four as ff,fournisseur as f 
 where (f.id=ff.id_f) and  f.nom+''+f.prenom like @nom 
@@ -174,12 +174,12 @@ where produit.id=@id
 
 create proc show_prod 
 as 
-select p.id,p.code as 'Code bare',p.designation as 'Désignation',p.prix_v as 'Prix d"achat',
+select p.id,p.code as 'Code bare',p.designation as 'DÃ©signation',p.prix_v as 'Prix d"achat',
 prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' from produit as p
 create proc get_prod 
 @code varchar(100)
 as begin
-select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+select p.id,p.code as 'Code bare',p.designation as 'DÃ©signation',
 prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
 from produit as p
 where p.code=@code
@@ -187,7 +187,7 @@ end
 create proc search_prod 
 @code varchar(100),@des nvarchar(200)
 as begin
-select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+select p.id,p.code as 'Code bare',p.designation as 'DÃ©signation',
 prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
 from produit as p
 where p.code=@code or p.designation=@des
@@ -195,7 +195,7 @@ end
 create proc search_full_prod 
 @code varchar(100),@des nvarchar(200)
 as begin
-select p.id,p.code as 'Code bare',p.designation as 'Désignation',p.prix_v as 'Prix d"achat',
+select p.id,p.code as 'Code bare',p.designation as 'DÃ©signation',p.prix_v as 'Prix d"achat',
 prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
 from produit as p
 where p.code=@code or p.designation=@des
@@ -220,7 +220,7 @@ end
 create proc show_achat_by_date 
 @date_d date,@date_f date
 as begin
-select p.code as 'Code Barre',p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' ,a.date_a as 'date'
+select p.code as 'Code Barre',p.designation as 'DÃ©signation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' ,a.date_a as 'date'
 from achat as a , produit as p
 where a.date_a between @date_d and @date_f
 and   p.id=a.id_p
@@ -228,7 +228,7 @@ end
 create proc show_achat_by_facture
 @id int
 as begin
-select p.code as 'Code Barre',p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' ,a.date_a as 'date'
+select p.code as 'Code Barre',p.designation as 'DÃ©signation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' ,a.date_a as 'date'
 from achat as a , produit as p
 where a.id_f=@id
 and   p.id=a.id_p
@@ -257,14 +257,14 @@ end
 
 create proc show_vente_full
 as begin
-select p.code as 'Code Barre',p.designation as 'Désignation',v.prix_u as 'Prix ',v.qte as 'Qte' 
+select p.code as 'Code Barre',p.designation as 'DÃ©signation',v.prix_u as 'Prix ',v.qte as 'Qte' 
 from vente as v , produit as p
 where  p.id=v.id_p
 end
 create proc show_vente_by_facture
 @id int
 as begin
-select p.code as 'Code Barre',p.designation as 'Désignation',v.prix_u as 'Prix ',v.qte as 'Qte' 
+select p.code as 'Code Barre',p.designation as 'DÃ©signation',v.prix_u as 'Prix ',v.qte as 'Qte' 
 from vente as v , produit as p
 where  p.id=v.id_p
 and    v.id_f=@id
@@ -309,19 +309,19 @@ update produit set qte+=@qte where produit.id=@id
 create table reglement_facture_clt (
 id int primary key identity(1,1),
 id_c int foreign key references facture_clt(id),
-versé decimal,
+versÃ© decimal,
 date_reg_clt date)
 
 create proc add_reg_clt
-@id int,@versé decimal,@date_reg_clt date
+@id int,@versÃ© decimal,@date_reg_clt date
 as begin 
-insert into reglement_facture_clt (id_c ,versé ,date_reg_clt ) values(@id ,@versé ,@date_reg_clt)
+insert into reglement_facture_clt (id_c ,versÃ© ,date_reg_clt ) values(@id ,@versÃ© ,@date_reg_clt)
 end
 
 create  proc show_reglement_by_id_clt
 @id int 
 as begin
-select r.versé as 'Versé' ,r.date_reg_clt 'Date' from reglement_facture_clt as r,facture_clt as f 
+select r.versÃ© as 'VersÃ©' ,r.date_reg_clt 'Date' from reglement_facture_clt as r,facture_clt as f 
 where  r.id_c=f.id
 and    f.id=@id
 end
@@ -329,19 +329,54 @@ end
 create table reglement_facture_four (
 id int primary key identity(1,1),
 id_f int foreign key references facture_four(id),
-versé decimal,
+versÃ© decimal,
 date_reg_four date)
 
 create proc add_reg_four
-@id int,@versé decimal,@date_reg_four date
+@id int,@versÃ© decimal,@date_reg_four date
 as begin 
-insert into reglement_facture_four(id_f ,versé ,date_reg_four ) values(@id ,@versé ,@date_reg_four)
+insert into reglement_facture_four(id_f ,versÃ© ,date_reg_four ) values(@id ,@versÃ© ,@date_reg_four)
 end
 
 create  proc show_reglement_by_id_four
 @id int 
 as begin
-select rf.versé as 'Versé' ,rf.date_reg_four 'Date' from reglement_facture_four as rf,facture_four as f 
+select rf.versÃ© as 'VersÃ©' ,rf.date_reg_four 'Date' from reglement_facture_four as rf,facture_four as f 
 where  rf.id_f=f.id
 and    f.id=@id
+end
+-------------------------Fin pour RÃ©glement fournisseur-------------
+--------------------03/03/20222--------------
+create index IndexOfProduct_Des 
+on produit(designation)
+create index IndexOfProduct_Code 
+on produit(code)
+create index IndexOfFacture_Client 
+on facture_clt(date_fact)
+create index IndexOfFacture_four 
+on facture_four(date_fact)
+create index IndexOfachat 
+on achat(id_p)
+create index IndexOfvente
+on vente(id_p)
+create proc show_prod_without_code_barre 
+as begin
+select p.id,p.designation as 'DÃ©signation',prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
+from produit as p
+where p.code is null
+end
+create proc show_prod_withouut_code_barre_by_name
+@des nvarchar(200)
+as begin
+select p.id,p.designation as 'DÃ©signation',prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
+from produit as p
+where p.code is null and p.designation like '%'+@des+'%'
+end
+create proc get_prod_by_code 
+@code varchar(100)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'DÃ©signation',
+prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code 
 end
