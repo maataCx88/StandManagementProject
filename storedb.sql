@@ -401,3 +401,13 @@ as Select Ident_Current('fournisseur') as 'Id'
 alter table achat
 add qte_vendue int
 ----- qte vendu nes7a9ha bach na3raf wach mn sel3a tba3t mn stock gdim en cas win kayn produit gdim w 3awed jbnah-----
+---------04/03/2022 time: 11:30----------
+alter proc show_achat_by_prod
+@id int
+as begin
+select a.id,p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte',a.qte_vendue as 'reste' 
+from achat as a , produit as p
+where a.id_p=@id
+and   p.id=a.id_p
+and   (a.qte-a.qte_vendue) <> 0
+end
