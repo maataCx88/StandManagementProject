@@ -411,3 +411,30 @@ where a.id_p=@id
 and   p.id=a.id_p
 and   (a.qte-a.qte_vendue) <> 0
 end
+----------------04/03/2022 time: 11:39---------------
+alter proc get_prod_by_code 
+@code varchar(100)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code 
+end
+
+
+alter proc search_full_prod 
+@code varchar(100),@des nvarchar(200)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',p.prix_v as 'Prix d"achat',
+prix_u as 'Prix Unitaire',p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code or p.designation=@des
+end
+alter proc show_prod_withouut_code_barre_by_name
+@des nvarchar(200)
+as begin
+select p.id,p.designation as 'Désignation',prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
+from produit as p
+where p.code is null and p.designation like '%'+@des+'%'
+end
+
