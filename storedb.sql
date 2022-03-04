@@ -496,3 +496,18 @@ end
 begin
 update produit set qte=-@qte where produit.id=@id_p
 end
+-----------22:55 04/03/2022--------
+alter proc show_prod_without_code_barre 
+as begin
+select p.id,p.designation as 'Désignation',prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
+from produit as p
+where p.code is null or p.code =''
+end
+alter proc show_prod_withouut_code_barre_by_name
+@des nvarchar(200)
+as begin
+select p.id,p.designation as 'Désignation',prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
+from produit as p
+where (p.code is null or p.code='') and p.designation like '%'+@des+'%'
+end
+
