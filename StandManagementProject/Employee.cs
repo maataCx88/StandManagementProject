@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
-    public partial class Employee : Form
+    public partial class Employee : MetroFramework.Forms.MetroForm
     {
         public Employee()
         {

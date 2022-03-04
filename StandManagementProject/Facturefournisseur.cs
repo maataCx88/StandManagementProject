@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
-    public partial class Facturefournisseur : Form
+    public partial class Facturefournisseur : MetroFramework.Forms.MetroForm
     {
         public Facturefournisseur()
         {

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
-    public partial class Achat : Form
+    public partial class Achat : MetroFramework.Forms.MetroForm
     {
         public Achat()
         {

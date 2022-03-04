@@ -29,12 +29,31 @@ namespace StandManagementProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.metroUserControl1 = new MetroFramework.Controls.MetroUserControl();
+            this.SuspendLayout();
+            // 
+            // metroUserControl1
+            // 
+            this.metroUserControl1.Location = new System.Drawing.Point(294, 164);
+            this.metroUserControl1.Name = "metroUserControl1";
+            this.metroUserControl1.Size = new System.Drawing.Size(150, 150);
+            this.metroUserControl1.TabIndex = 0;
+            this.metroUserControl1.UseSelectable = true;
+            // 
+            // Achat
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.metroUserControl1);
+            this.Name = "Achat";
             this.Text = "Achat";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private MetroFramework.Controls.MetroUserControl metroUserControl1;
     }
 }

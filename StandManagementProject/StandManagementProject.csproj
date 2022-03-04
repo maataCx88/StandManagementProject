@@ -105,6 +105,9 @@
     <Compile Include="Vente.Designer.cs">
       <DependentUpon>Vente.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Achat.resx">
+      <DependentUpon>Achat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factureclient.resx">
       <DependentUpon>Factureclient.cs</DependentUpon>
     </EmbeddedResource>
