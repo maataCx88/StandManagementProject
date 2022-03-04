@@ -395,3 +395,9 @@ alter proc search_four
 as select f.id,f.nom+' '+f.prenom as 'Nom et prénom', f.telephone as 'telephone' from fournisseur as f where f.nom+' '+f.prenom like '%'+@nom+'%'
 alter proc show_four
 as select f.id,f.nom+' '+f.prenom as 'Nom et prénom', f.telephone as 'telephone' from fournisseur as f
+--------------------04/03/2022 time: 02:18---------------
+create proc get_last_id_four
+as Select Ident_Current('fournisseur') as 'Id'
+alter table achat
+add qte_vendue int
+----- qte vendu nes7a9ha bach na3raf wach mn sel3a tba3t mn stock gdim en cas win kayn produit gdim w 3awed jbnah-----
