@@ -49,14 +49,18 @@ namespace StandManagementProject
             this.montantProduitTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.countproduitsTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.QuantitetotalTextBox = new MetroFramework.Controls.MetroTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.MontanttotalTextBox = new MetroFramework.Controls.MetroTextBox();
             this.montantverseTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.montantRestTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.MontanttotalTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.countproduitsTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.SearchTextBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -65,10 +69,6 @@ namespace StandManagementProject
             this.removefrombasket = new System.Windows.Forms.PictureBox();
             this.supplierinfos = new System.Windows.Forms.PictureBox();
             this.addtobasket = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.montantRestTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +77,7 @@ namespace StandManagementProject
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -85,7 +86,6 @@ namespace StandManagementProject
             ((System.ComponentModel.ISupportInitialize)(this.removefrombasket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierinfos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addtobasket)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Codelabel
@@ -381,53 +381,13 @@ namespace StandManagementProject
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(553, 486);
+            this.metroPanel1.Location = new System.Drawing.Point(553, 500);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(718, 197);
             this.metroPanel1.TabIndex = 15;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // countproduitsTextBox
-            // 
-            // 
-            // 
-            // 
-            this.countproduitsTextBox.CustomButton.Image = null;
-            this.countproduitsTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
-            this.countproduitsTextBox.CustomButton.Name = "";
-            this.countproduitsTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.countproduitsTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.countproduitsTextBox.CustomButton.TabIndex = 1;
-            this.countproduitsTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.countproduitsTextBox.CustomButton.UseSelectable = true;
-            this.countproduitsTextBox.CustomButton.Visible = false;
-            this.countproduitsTextBox.Enabled = false;
-            this.countproduitsTextBox.Lines = new string[0];
-            this.countproduitsTextBox.Location = new System.Drawing.Point(8, 43);
-            this.countproduitsTextBox.MaxLength = 32767;
-            this.countproduitsTextBox.Name = "countproduitsTextBox";
-            this.countproduitsTextBox.PasswordChar = '\0';
-            this.countproduitsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.countproduitsTextBox.SelectedText = "";
-            this.countproduitsTextBox.SelectionLength = 0;
-            this.countproduitsTextBox.SelectionStart = 0;
-            this.countproduitsTextBox.ShortcutsEnabled = true;
-            this.countproduitsTextBox.Size = new System.Drawing.Size(334, 23);
-            this.countproduitsTextBox.TabIndex = 17;
-            this.countproduitsTextBox.UseSelectable = true;
-            this.countproduitsTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.countproduitsTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(129, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Total des Produits";
             // 
             // QuantitetotalTextBox
             // 
@@ -469,14 +429,76 @@ namespace StandManagementProject
             this.label8.TabIndex = 18;
             this.label8.Text = "Montant Total (T.T.C)";
             // 
-            // label9
+            // montantverseTextBox
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(502, 74);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Montant Versé";
+            // 
+            // 
+            // 
+            this.montantverseTextBox.CustomButton.Image = null;
+            this.montantverseTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.montantverseTextBox.CustomButton.Name = "";
+            this.montantverseTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.montantverseTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.montantverseTextBox.CustomButton.TabIndex = 1;
+            this.montantverseTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.montantverseTextBox.CustomButton.UseSelectable = true;
+            this.montantverseTextBox.CustomButton.Visible = false;
+            this.montantverseTextBox.Enabled = false;
+            this.montantverseTextBox.Lines = new string[0];
+            this.montantverseTextBox.Location = new System.Drawing.Point(373, 93);
+            this.montantverseTextBox.MaxLength = 32767;
+            this.montantverseTextBox.Name = "montantverseTextBox";
+            this.montantverseTextBox.PasswordChar = '\0';
+            this.montantverseTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.montantverseTextBox.SelectedText = "";
+            this.montantverseTextBox.SelectionLength = 0;
+            this.montantverseTextBox.SelectionStart = 0;
+            this.montantverseTextBox.ShortcutsEnabled = true;
+            this.montantverseTextBox.Size = new System.Drawing.Size(334, 23);
+            this.montantverseTextBox.TabIndex = 17;
+            this.montantverseTextBox.UseSelectable = true;
+            this.montantverseTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.montantverseTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // montantRestTextBox
+            // 
+            // 
+            // 
+            // 
+            this.montantRestTextBox.CustomButton.Image = null;
+            this.montantRestTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.montantRestTextBox.CustomButton.Name = "";
+            this.montantRestTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.montantRestTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.montantRestTextBox.CustomButton.TabIndex = 1;
+            this.montantRestTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.montantRestTextBox.CustomButton.UseSelectable = true;
+            this.montantRestTextBox.CustomButton.Visible = false;
+            this.montantRestTextBox.Enabled = false;
+            this.montantRestTextBox.Lines = new string[0];
+            this.montantRestTextBox.Location = new System.Drawing.Point(8, 143);
+            this.montantRestTextBox.MaxLength = 32767;
+            this.montantRestTextBox.Name = "montantRestTextBox";
+            this.montantRestTextBox.PasswordChar = '\0';
+            this.montantRestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.montantRestTextBox.SelectedText = "";
+            this.montantRestTextBox.SelectionLength = 0;
+            this.montantRestTextBox.SelectionStart = 0;
+            this.montantRestTextBox.ShortcutsEnabled = true;
+            this.montantRestTextBox.Size = new System.Drawing.Size(334, 23);
+            this.montantRestTextBox.TabIndex = 17;
+            this.montantRestTextBox.UseSelectable = true;
+            this.montantRestTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.montantRestTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(132, 123);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Montant Restant";
             // 
             // MontanttotalTextBox
             // 
@@ -509,63 +531,153 @@ namespace StandManagementProject
             this.MontanttotalTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.MontanttotalTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // montantverseTextBox
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(502, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Montant Versé";
+            // 
+            // countproduitsTextBox
             // 
             // 
             // 
             // 
-            this.montantverseTextBox.CustomButton.Image = null;
-            this.montantverseTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
-            this.montantverseTextBox.CustomButton.Name = "";
-            this.montantverseTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.montantverseTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.montantverseTextBox.CustomButton.TabIndex = 1;
-            this.montantverseTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.montantverseTextBox.CustomButton.UseSelectable = true;
-            this.montantverseTextBox.CustomButton.Visible = false;
-            this.montantverseTextBox.Enabled = false;
-            this.montantverseTextBox.Lines = new string[0];
-            this.montantverseTextBox.Location = new System.Drawing.Point(373, 93);
-            this.montantverseTextBox.MaxLength = 32767;
-            this.montantverseTextBox.Name = "montantverseTextBox";
-            this.montantverseTextBox.PasswordChar = '\0';
-            this.montantverseTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.montantverseTextBox.SelectedText = "";
-            this.montantverseTextBox.SelectionLength = 0;
-            this.montantverseTextBox.SelectionStart = 0;
-            this.montantverseTextBox.ShortcutsEnabled = true;
-            this.montantverseTextBox.Size = new System.Drawing.Size(334, 23);
-            this.montantverseTextBox.TabIndex = 17;
-            this.montantverseTextBox.UseSelectable = true;
-            this.montantverseTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.montantverseTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.countproduitsTextBox.CustomButton.Image = null;
+            this.countproduitsTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.countproduitsTextBox.CustomButton.Name = "";
+            this.countproduitsTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.countproduitsTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.countproduitsTextBox.CustomButton.TabIndex = 1;
+            this.countproduitsTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.countproduitsTextBox.CustomButton.UseSelectable = true;
+            this.countproduitsTextBox.CustomButton.Visible = false;
+            this.countproduitsTextBox.Enabled = false;
+            this.countproduitsTextBox.Lines = new string[0];
+            this.countproduitsTextBox.Location = new System.Drawing.Point(8, 43);
+            this.countproduitsTextBox.MaxLength = 32767;
+            this.countproduitsTextBox.Name = "countproduitsTextBox";
+            this.countproduitsTextBox.PasswordChar = '\0';
+            this.countproduitsTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.countproduitsTextBox.SelectedText = "";
+            this.countproduitsTextBox.SelectionLength = 0;
+            this.countproduitsTextBox.SelectionStart = 0;
+            this.countproduitsTextBox.ShortcutsEnabled = true;
+            this.countproduitsTextBox.Size = new System.Drawing.Size(334, 23);
+            this.countproduitsTextBox.TabIndex = 17;
+            this.countproduitsTextBox.UseSelectable = true;
+            this.countproduitsTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.countproduitsTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // bunifuMaterialTextbox1
+            // label10
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Gray;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(384, 32);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(887, 40);
-            this.bunifuMaterialTextbox1.TabIndex = 16;
-            this.bunifuMaterialTextbox1.Text = "Recherchez produits existants";
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(473, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(134, 13);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Quantité Total des produits";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(129, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Total des Produits";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SearchTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.SearchTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SearchTextBox.HintForeColor = System.Drawing.Color.Empty;
+            this.SearchTextBox.HintText = "";
+            this.SearchTextBox.isPassword = false;
+            this.SearchTextBox.LineFocusedColor = System.Drawing.Color.Blue;
+            this.SearchTextBox.LineIdleColor = System.Drawing.Color.Gray;
+            this.SearchTextBox.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.SearchTextBox.LineThickness = 3;
+            this.SearchTextBox.Location = new System.Drawing.Point(384, 46);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(887, 40);
+            this.SearchTextBox.TabIndex = 16;
+            this.SearchTextBox.Text = "Recherchez produits existants";
+            this.SearchTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.SearchTextBox.Click += new System.EventHandler(this.bunifuMaterialTextbox1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(18)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 40;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(384, 96);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.RowTemplate.Height = 40;
+            this.dataGridView1.Size = new System.Drawing.Size(887, 398);
+            this.dataGridView1.TabIndex = 18;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::StandManagementProject.Properties.Resources.google_web_search_208px;
-            this.pictureBox8.Location = new System.Drawing.Point(1223, 24);
+            this.pictureBox8.Location = new System.Drawing.Point(1230, 45);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(48, 42);
+            this.pictureBox8.Size = new System.Drawing.Size(41, 27);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 17;
             this.pictureBox8.TabStop = false;
@@ -643,117 +755,9 @@ namespace StandManagementProject
             this.addtobasket.TabIndex = 13;
             this.addtobasket.TabStop = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(132, 123);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Montant Restant";
-            // 
-            // montantRestTextBox
-            // 
-            // 
-            // 
-            // 
-            this.montantRestTextBox.CustomButton.Image = null;
-            this.montantRestTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
-            this.montantRestTextBox.CustomButton.Name = "";
-            this.montantRestTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.montantRestTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.montantRestTextBox.CustomButton.TabIndex = 1;
-            this.montantRestTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.montantRestTextBox.CustomButton.UseSelectable = true;
-            this.montantRestTextBox.CustomButton.Visible = false;
-            this.montantRestTextBox.Enabled = false;
-            this.montantRestTextBox.Lines = new string[0];
-            this.montantRestTextBox.Location = new System.Drawing.Point(8, 143);
-            this.montantRestTextBox.MaxLength = 32767;
-            this.montantRestTextBox.Name = "montantRestTextBox";
-            this.montantRestTextBox.PasswordChar = '\0';
-            this.montantRestTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.montantRestTextBox.SelectedText = "";
-            this.montantRestTextBox.SelectionLength = 0;
-            this.montantRestTextBox.SelectionStart = 0;
-            this.montantRestTextBox.ShortcutsEnabled = true;
-            this.montantRestTextBox.Size = new System.Drawing.Size(334, 23);
-            this.montantRestTextBox.TabIndex = 17;
-            this.montantRestTextBox.UseSelectable = true;
-            this.montantRestTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.montantRestTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(473, 23);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 13);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Quantité Total des produits";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Lavender;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(18)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 28;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(384, 82);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.Size = new System.Drawing.Size(887, 398);
-            this.dataGridView1.TabIndex = 18;
-            // 
             // Column1
             // 
-            this.Column1.HeaderText = "ID";
+            this.Column1.HeaderText = "N°";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 30;
@@ -802,7 +806,7 @@ namespace StandManagementProject
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.resetfields);
             this.Controls.Add(this.removefrombasket);
@@ -825,6 +829,7 @@ namespace StandManagementProject
             this.Name = "Achat";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -833,7 +838,6 @@ namespace StandManagementProject
             ((System.ComponentModel.ISupportInitialize)(this.removefrombasket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierinfos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addtobasket)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -869,7 +873,7 @@ namespace StandManagementProject
         private System.Windows.Forms.Label label9;
         private MetroFramework.Controls.MetroTextBox countproduitsTextBox;
         private System.Windows.Forms.Label label7;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox SearchTextBox;
         private System.Windows.Forms.PictureBox pictureBox8;
         private MetroFramework.Controls.MetroTextBox montantRestTextBox;
         private System.Windows.Forms.Label label11;

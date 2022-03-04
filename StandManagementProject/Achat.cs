@@ -17,6 +17,7 @@ namespace StandManagementProject
         {
             InitializeComponent();
             SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+            dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void Codelabel_Click(object sender, EventArgs e)
@@ -32,6 +33,14 @@ namespace StandManagementProject
         private void pictureBox8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuMaterialTextbox1_Click(object sender, EventArgs e)
+        {
+            if(SearchTextBox.Text == "Recherchez produits existants")
+            {
+                SearchTextBox.Text = string.Empty;
+            }
         }
     }
 }
