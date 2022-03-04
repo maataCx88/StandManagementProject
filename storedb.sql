@@ -480,10 +480,10 @@ prix_u as 'Prix Achat',p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p
 from produit as p
 where p.code=@code or p.designation=@des
 end
-alter proc show_prod_withouut_code_barre_by_name
+ALTER proc [dbo].[show_prod_withouut_code_barre_by_name]
 @des nvarchar(200)
 as begin
-select p.id,p.designation as 'Désignation',prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
+select p.id,p.designation as 'Désignation',p.prix_u as 'prix d"achat',p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
 from produit as p
 where p.code is null and p.designation like '%'+@des+'%'
 end
