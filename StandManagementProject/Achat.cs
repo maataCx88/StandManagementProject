@@ -18,5 +18,20 @@ namespace StandManagementProject
             InitializeComponent();
             SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         }
+
+        private void Codelabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
