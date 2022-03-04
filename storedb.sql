@@ -405,7 +405,7 @@ add qte_vendue int
 alter proc show_achat_by_prod
 @id int
 as begin
-select a.id,p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte',a.qte_vendue as 'reste' 
+select a.id,p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte',a.qte-a.qte_vendue as 'reste' 
 from achat as a , produit as p
 where a.id_p=@id
 and   p.id=a.id_p
