@@ -487,3 +487,12 @@ select p.id,p.designation as 'Désignation',p.prix_u as 'prix d"achat',p.prix_v 
 from produit as p
 where p.code is null and p.designation like '%'+@des+'%'
 end
+---------------04/03/2022 time:17:36--------------
+create proc sale__from_achat
+@id int,@id_p int,@qte int
+as begin
+update achat set qte_vendue=-@qte where achat.id=@id
+end
+begin
+update produit set qte=-@qte where produit.id=@id_p
+end
