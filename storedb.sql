@@ -420,7 +420,13 @@ prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
 from produit as p
 where p.code=@code 
 end
-
+---------- 18:37 05/03/2022----
+alter proc show_prod_without_code_barre 
+as begin
+select p.id,p.designation as 'Désignation',prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
+from produit as p
+where p.code is null or p.code =''
+end
 
 alter proc search_full_prod 
 @code varchar(100),@des nvarchar(200)
