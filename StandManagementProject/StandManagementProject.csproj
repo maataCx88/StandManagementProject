@@ -212,5 +212,11 @@
   <ItemGroup>
     <None Include="Resources\google_web_search_208px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark_512px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
