@@ -79,6 +79,24 @@
     <Compile Include="Facturefournisseur.Designer.cs">
       <DependentUpon>Facturefournisseur.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fournisseur.Designer.cs">
+      <DependentUpon>Fournisseur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plusieurs_Prix_par_Produits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plusieurs_Prix_par_Produits.Designer.cs">
+      <DependentUpon>Plusieurs_Prix_par_Produits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProduitsSansCodeBarre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProduitsSansCodeBarre.Designer.cs">
+      <DependentUpon>ProduitsSansCodeBarre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,8 +126,17 @@
     <EmbeddedResource Include="Factureclient.resx">
       <DependentUpon>Factureclient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fournisseur.resx">
+      <DependentUpon>Fournisseur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plusieurs_Prix_par_Produits.resx">
+      <DependentUpon>Plusieurs_Prix_par_Produits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProduitsSansCodeBarre.resx">
+      <DependentUpon>ProduitsSansCodeBarre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +146,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vente.resx">
       <DependentUpon>Vente.cs</DependentUpon>
@@ -136,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
