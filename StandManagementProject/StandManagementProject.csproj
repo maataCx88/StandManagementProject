@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -42,8 +45,10 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -123,11 +128,14 @@
     <Compile Include="Vente.Designer.cs">
       <DependentUpon>Vente.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Achat.resx">
+      <DependentUpon>Achat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factureclient.resx">
       <DependentUpon>Factureclient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Fournisseur.resx">
-      <DependentUpon>Fournisseur.cs</DependentUpon>
+    <EmbeddedResource Include="Facturefournisseur.resx">
+      <DependentUpon>Facturefournisseur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -166,10 +174,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\update_32px.png" />
+    <None Include="Resources\plus_512px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\delete_32px.png" />
+    <None Include="Resources\minus_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available_updates_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\good_quality_512px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier_480px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sauvegarder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supprimer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fermer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google_web_search_208px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

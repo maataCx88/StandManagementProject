@@ -11,12 +11,17 @@ using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
-    public partial class Facturefournisseur : Form
+    public partial class Facturefournisseur : MetroFramework.Forms.MetroForm
     {
         public Facturefournisseur()
         {
             InitializeComponent();
             SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        }
+
+        private void Facturefournisseur_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
