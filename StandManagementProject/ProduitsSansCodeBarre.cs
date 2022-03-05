@@ -28,6 +28,7 @@ namespace StandManagementProject
         decimal prix_v = -1;
         decimal prix_r = -1;
         int qte = -1;
+        bool plusieur = false;
         void Get_Achat_lastId(int id)
         {
             if (sqlcon.State == ConnectionState.Closed)
@@ -42,7 +43,7 @@ namespace StandManagementProject
                     if (dt.Rows.Count == 1)
                     {
                         id_achat = Convert.ToInt32(dt.Rows[0][0]);
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id : " + id_achat);
+                        MessageBox.Show("Produit Existe une seule fois njibou mn la table produit so id achat : " + id_achat);
 
                     }
                     else if (dt.Rows.Count == 0)
@@ -66,12 +67,12 @@ namespace StandManagementProject
                     sqlcmd.Fill(dt);
                     if (dt.Rows.Count == 1)
                     {
-                        
-                        id_achat = Convert.ToInt32(dt.Rows[0][0]);
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit id achat"+id_achat);
+                        plusieur = false;
+                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit ");
                     }
                     else if (dt.Rows.Count > 1)
                     {
+                        plusieur = true;
                         MessageBox.Show("Produit Existe avec plusieurs fois njibou mn la table achat");
                     }
                 }
@@ -93,13 +94,70 @@ namespace StandManagementProject
                 sqlcon.Close();
             }
         }
+        void Search_produit(string desc)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("show_prod_withouut_code_barre_by_name", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@des", desc);
+                using (DataTable dt = new DataTable())
+                {
+                    sqlcmd.Fill(dt);
+                    ProduitSansCodeGrid.DataSource = dt;
+                }
+                sqlcon.Close();
+            }
+        }
         private void metroGrid1_DoubleClick(object sender, EventArgs e)
         {
             if (ProduitSansCodeGrid.Rows.Count - 1 != 0 && ProduitSansCodeGrid.CurrentRow.Index != ProduitSansCodeGrid.RowCount - 1)
             {
+                
                 id = Convert.ToInt32(ProduitSansCodeGrid.CurrentRow.Cells[0].Value);
+                des = ProduitSansCodeGrid.CurrentRow.Cells[1].Value.ToString();
+                prix_v = Convert.ToDecimal(ProduitSansCodeGrid.CurrentRow.Cells[2].Value);
+                prix_r = Convert.ToDecimal(ProduitSansCodeGrid.CurrentRow.Cells[3].Value);
+                qte = Convert.ToInt32(ProduitSansCodeGrid.CurrentRow.Cells[4].Value);
                 MessageBox.Show("id_p is" + id);
+                Get_Achat_lastId(id);
                 affichage_achat_by_produit(id);
+                if (plusieur)
+                {
+                    DialogResult result = MessageBox.Show("ce produit existe avec plusieurs prix \n vous voulez vendre avec ce prix : " + prix_v, "Alert !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        vnt.ajouter_article_sans_code(id, id_achat, des, prix_v, prix_r, qte);
+                        /*vnt. metroGrid1.Rows.Add(id, id_achat, (vnt.metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
+                    ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());*/
+                    }
+                    else
+                    {
+                        
+                        new Plusieurs_Prix_par_Produits(this.vnt,this, id).Show();
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    vnt.ajouter_article_sans_code(id, id_achat, des, prix_v, prix_r, qte);
+                    this.Close();
+
+                }
+                
+            }
+        }
+
+        private void RechercheSansCode_TextChanged(object sender, EventArgs e)
+        {
+            if(RechercheSansCode.Text != string.Empty)
+            {
+                Search_produit(RechercheSansCode.Text);
+            }
+            else
+            {
+                SansCode_produit();
             }
         }
     }

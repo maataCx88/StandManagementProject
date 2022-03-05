@@ -13,15 +13,17 @@ namespace StandManagementProject
 {
     public partial class Plusieurs_Prix_par_Produits : Form
     {
-        public Plusieurs_Prix_par_Produits(Vente vente,int id)
+        public Plusieurs_Prix_par_Produits(Vente vente,ProduitsSansCodeBarre psb,int id)
         {
             InitializeComponent();
             this.id_p = id;
             this.vnt = vente;
+            this.psb2 = psb;
             affichage_achat_by_produit(id);
 
         }
         Vente vnt ;
+        ProduitsSansCodeBarre psb2;
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         int id_achat = 0;
         int id_p = 0;
@@ -52,8 +54,10 @@ namespace StandManagementProject
                 decimal prix_r = Convert.ToInt32(this.DataGridMultiPrice.CurrentRow.Cells[4].Value);
                 int qte = Convert.ToInt32(this.DataGridMultiPrice.CurrentRow.Cells[6].Value);
                 
-
-                vnt.pass_to_datagrid( this.id_p,id_achat,  des,  prix_v,  prix_r   , qte);                
+               
+                    vnt.pass_to_datagrid(this.id_p, id_achat, des, prix_v, prix_r, qte);
+                
+                           
                 this.Close();
 
 
