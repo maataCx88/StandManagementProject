@@ -114,7 +114,7 @@ namespace StandManagementProject
                 int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
                 string PhoneFourTxt = this.DataFournisseur.CurrentRow.Cells[2].Value.ToString();                
-                pass_to_four();
+                //pass_to_four();
                 MessageBox.Show("Name"+ vnt.four + " ID "+ vnt.id);               
                 this.Close();        
             }

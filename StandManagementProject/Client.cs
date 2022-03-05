@@ -30,7 +30,7 @@ namespace StandManagementProject
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlcmd = new SqlDataAdapter("search_four", sqlcon);
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("search_clt", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@nom", name);
                 using (DataTable dt = new DataTable())
@@ -46,7 +46,7 @@ namespace StandManagementProject
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlcmd = new SqlDataAdapter("show_four", sqlcon);
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("show_clt", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dt = new DataTable();
                 sqlcmd.Fill(dt);
@@ -61,7 +61,7 @@ namespace StandManagementProject
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlcmd = new SqlDataAdapter("get_last_id_four", sqlcon);
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("get_last_id_clt", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dt = new DataTable();
                 sqlcmd.Fill(dt);
@@ -75,11 +75,10 @@ namespace StandManagementProject
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlCommand sqlcmd = new SqlCommand("add_four", sqlcon);
+                SqlCommand sqlcmd = new SqlCommand("add_client ", sqlcon);
                 sqlcmd.CommandType = CommandType.StoredProcedure;
                 sqlcmd.Parameters.AddWithValue("@nom", nom);
                 sqlcmd.Parameters.AddWithValue("@prenom", prénom);
-                sqlcmd.Parameters.AddWithValue("@phone", phone);
                 sqlcmd.ExecuteNonQuery();
                 sqlcon.Close();
             }
@@ -89,7 +88,6 @@ namespace StandManagementProject
 
             vnt.id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
             vnt.NameTxt.Text = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
-            vnt.PhoneFourTxt.Text = this.DataFournisseur.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void Recherchetxt_TextChanged(object sender, EventArgs e)
@@ -111,7 +109,6 @@ namespace StandManagementProject
             {
                 int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
-                string PhoneFourTxt = this.DataFournisseur.CurrentRow.Cells[2].Value.ToString();
                 pass_to_four();
                 MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);
                 this.Close();
@@ -128,13 +125,25 @@ namespace StandManagementProject
             {
                 Ajouter_Four(Nom.Text, Prénom.Text, PhoneFour.Text);
                 last_ID_Four();
-                vnt.id = id;
+                vnt.id = this.id;
                 vnt.NameTxt.Text = Nom.Text + ' ' + Prénom.Text;
-                vnt.PhoneFourTxt.Text = PhoneFour.Text.ToString();
+                MessageBox.Show("Name" + vnt.NameTxt.Text + " ID " + vnt.id);
                 this.Close();
 
             }
 
+        }
+
+        private void DataFournisseur_DoubleClick(object sender, EventArgs e)
+        {
+            if (DataFournisseur.CurrentRow.Index != -1 && DataFournisseur.CurrentRow.Index != DataFournisseur.RowCount - 1)
+            {
+                int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
+                string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
+                pass_to_four();
+                MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);
+                this.Close();
+            }
         }
     }
 }

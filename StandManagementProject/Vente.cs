@@ -118,7 +118,7 @@ namespace StandManagementProject
         }
         private void RecherchOrAddFour_Click(object sender, EventArgs e)
         {
-            Fournisseur frn = new Fournisseur(this);
+           Client frn = new Client(this);
             frn.Show();
             
         }
