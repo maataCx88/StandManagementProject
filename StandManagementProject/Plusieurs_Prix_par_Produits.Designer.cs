@@ -101,6 +101,7 @@ namespace StandManagementProject
             this.Controls.Add(this.DataGridMultiPrice);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Plusieurs_Prix_par_Produits";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plusieurs_Prix_par_Produits";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridMultiPrice)).EndInit();
             this.ResumeLayout(false);

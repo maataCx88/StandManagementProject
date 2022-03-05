@@ -111,6 +111,31 @@ namespace StandManagementProject
                 sqlcon.Close();
             }
         }
+        void Get_Achat_lastId(int id)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("get_id_achat_by_prod", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", id);
+                using (DataTable dt = new DataTable())
+                {
+                    sqlcmd.Fill(dt);
+                    if (dt.Rows.Count == 1)
+                    {
+                        id_achat = Convert.ToInt32(dt.Rows[0][0]);                       
+                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id : " + id_achat);
+
+                    }
+                    else if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Produit n'existe pas !");
+                    }
+                }
+                sqlcon.Close();
+            }
+        }
         void ajouter_article_sans_code(int id,int id_a,string des,decimal prix_v,decimal prix_r,int qte)
         {
             this.metroGrid1.Rows.Add(id, id_a, (metroGrid1.Rows.Count).ToString(), " ", des,

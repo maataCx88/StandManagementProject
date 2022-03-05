@@ -28,6 +28,31 @@ namespace StandManagementProject
         decimal prix_v = -1;
         decimal prix_r = -1;
         int qte = -1;
+        void Get_Achat_lastId(int id)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("get_id_achat_by_prod", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", id);
+                using (DataTable dt = new DataTable())
+                {
+                    sqlcmd.Fill(dt);
+                    if (dt.Rows.Count == 1)
+                    {
+                        id_achat = Convert.ToInt32(dt.Rows[0][0]);
+                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id : " + id_achat);
+
+                    }
+                    else if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Produit n'existe pas !");
+                    }
+                }
+                sqlcon.Close();
+            }
+        }
         void affichage_achat_by_produit(int id)
         {
             if (sqlcon.State == ConnectionState.Closed)
