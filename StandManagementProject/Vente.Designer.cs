@@ -509,7 +509,7 @@ namespace StandManagementProject
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewImageColumn1.HeaderText = "Supprimer";
-            this.dataGridViewImageColumn1.Image = global::StandManagementProject.Properties.Resources.delete_32px;
+           // this.dataGridViewImageColumn1.Image = global::StandManagementProject.Properties.Resources.delete_32px;
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
@@ -518,7 +518,7 @@ namespace StandManagementProject
             // 
             this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewImageColumn2.HeaderText = "Modifier";
-            this.dataGridViewImageColumn2.Image = global::StandManagementProject.Properties.Resources.update_32px;
+        //    this.dataGridViewImageColumn2.Image = global::StandManagementProject.Properties.Resources.update_32px;
             this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 125;
@@ -598,7 +598,7 @@ namespace StandManagementProject
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column7.HeaderText = "";
-            this.Column7.Image = global::StandManagementProject.Properties.Resources.delete_32px;
+           // this.Column7.Image = global::StandManagementProject.Properties.Resources.delete_32px;
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.Width = 23;
@@ -607,7 +607,7 @@ namespace StandManagementProject
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column8.HeaderText = "";
-            this.Column8.Image = global::StandManagementProject.Properties.Resources.update_32px;
+         //   this.Column8.Image = global::StandManagementProject.Properties.Resources.update_32px;
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.Width = 23;
