@@ -145,5 +145,14 @@ namespace StandManagementProject
                 this.Close();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Vous voulez Quitter ce Formulaire ! ", "Alert", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
