@@ -583,3 +583,32 @@ select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste a
 fc.date_fact as 'Date',c.nom+''+c.prenom as 'Client',fc.id_u as 'Vendeur' 
 from facture_clt as fc,client as c , employee as e where c.nom+''+c.prenom like @nom and (c.id=fc.id_c and e.id=fc.id_u)
 end
+--------------- 06:43 06/03/2022-----------
+alter proc show_prod 
+as 
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',p.prix_u as 'Prix d"achat',
+prix_v as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' from produit as p
+alter proc get_prod 
+@code varchar(100)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+prix_v as 'Prix vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code
+end
+alter proc search_prod 
+@code varchar(100),@des nvarchar(200)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+prix_v as 'Prix vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code or p.designation=@des
+end
+alter proc search_full_prod 
+@code varchar(100),@des nvarchar(200)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',p.prix_u as 'Prix d"achat',
+p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code or p.designation=@des
+end
