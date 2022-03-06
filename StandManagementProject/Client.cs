@@ -110,7 +110,7 @@ namespace StandManagementProject
                 int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
                 pass_to_four();
-                MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);
+                /*MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);*/
                 this.Close();
             }
         }
@@ -119,7 +119,7 @@ namespace StandManagementProject
         {
             if (Nom.Text == string.Empty || Prénom.Text == string.Empty)
             {
-                MessageBox.Show("au moins Remplissez le nom et le prénom S.V.P !");
+                MessageBox.Show("Veuillez Remplir le nom et le prénom S.V.P !");
             }
             else
             {
@@ -141,7 +141,7 @@ namespace StandManagementProject
                 int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
                 pass_to_four();
-                MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);
+                /*MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);*/
                 this.Close();
             }
         }

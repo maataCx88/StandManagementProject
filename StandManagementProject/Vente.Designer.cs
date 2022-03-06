@@ -66,10 +66,17 @@ namespace StandManagementProject
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.PrixNoRéfTxt = new MetroFramework.Controls.MetroTextBox();
+            this.QteNoRéftxt = new MetroFramework.Controls.MetroTextBox();
+            this.NoRéf = new System.Windows.Forms.Button();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.TotalLbl = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.metroPanel3.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroGrid1
@@ -235,9 +242,9 @@ namespace StandManagementProject
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(2, 1);
+            this.metroPanel1.Location = new System.Drawing.Point(2, 7);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(309, 225);
+            this.metroPanel1.Size = new System.Drawing.Size(309, 230);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -263,6 +270,7 @@ namespace StandManagementProject
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.PasswordChar = '\0';
             this.NameTxt.PromptText = "Nom et Prénom .....";
+            this.NameTxt.ReadOnly = true;
             this.NameTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.NameTxt.SelectedText = "";
             this.NameTxt.SelectionLength = 0;
@@ -296,6 +304,7 @@ namespace StandManagementProject
             this.PhoneFourTxt.Name = "PhoneFourTxt";
             this.PhoneFourTxt.PasswordChar = '\0';
             this.PhoneFourTxt.PromptText = "Téléphone .......";
+            this.PhoneFourTxt.ReadOnly = true;
             this.PhoneFourTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.PhoneFourTxt.SelectedText = "";
             this.PhoneFourTxt.SelectionLength = 0;
@@ -313,7 +322,7 @@ namespace StandManagementProject
             // 
             this.RecherchOrAddFour.Location = new System.Drawing.Point(33, 178);
             this.RecherchOrAddFour.Name = "RecherchOrAddFour";
-            this.RecherchOrAddFour.Size = new System.Drawing.Size(230, 42);
+            this.RecherchOrAddFour.Size = new System.Drawing.Size(230, 44);
             this.RecherchOrAddFour.TabIndex = 5;
             this.RecherchOrAddFour.Text = "Rechercher ou Ajouter Nouveau";
             this.RecherchOrAddFour.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -337,7 +346,7 @@ namespace StandManagementProject
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(317, 1);
+            this.metroPanel2.Location = new System.Drawing.Point(317, 7);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(719, 79);
             this.metroPanel2.TabIndex = 2;
@@ -401,6 +410,7 @@ namespace StandManagementProject
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.TotalLbl);
             this.metroPanel3.Controls.Add(this.Confirm2);
             this.metroPanel3.Controls.Add(this.NumdeBon);
             this.metroPanel3.Controls.Add(this.metroTextBox4);
@@ -412,7 +422,7 @@ namespace StandManagementProject
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(317, 86);
+            this.metroPanel3.Location = new System.Drawing.Point(317, 97);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(719, 140);
             this.metroPanel3.TabIndex = 3;
@@ -433,7 +443,7 @@ namespace StandManagementProject
             // NumdeBon
             // 
             this.NumdeBon.AutoSize = true;
-            this.NumdeBon.Location = new System.Drawing.Point(40, 67);
+            this.NumdeBon.Location = new System.Drawing.Point(40, 39);
             this.NumdeBon.Name = "NumdeBon";
             this.NumdeBon.Size = new System.Drawing.Size(26, 20);
             this.NumdeBon.TabIndex = 9;
@@ -472,6 +482,7 @@ namespace StandManagementProject
             this.metroTextBox4.WaterMark = "Rendu";
             this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // ResteTxt
             // 
@@ -505,6 +516,7 @@ namespace StandManagementProject
             this.ResteTxt.WaterMark = "Reste";
             this.ResteTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ResteTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.ResteTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // VesréTxt
             // 
@@ -521,7 +533,7 @@ namespace StandManagementProject
             this.VesréTxt.CustomButton.UseSelectable = true;
             this.VesréTxt.CustomButton.Visible = false;
             this.VesréTxt.Lines = new string[0];
-            this.VesréTxt.Location = new System.Drawing.Point(110, 54);
+            this.VesréTxt.Location = new System.Drawing.Point(110, 25);
             this.VesréTxt.MaxLength = 32767;
             this.VesréTxt.Name = "VesréTxt";
             this.VesréTxt.PasswordChar = '\0';
@@ -538,6 +550,7 @@ namespace StandManagementProject
             this.VesréTxt.WaterMark = "Reçu";
             this.VesréTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.VesréTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.VesréTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // ConfirmBillBtn
             // 
@@ -564,12 +577,11 @@ namespace StandManagementProject
             this.TotalTxt.CustomButton.UseSelectable = true;
             this.TotalTxt.CustomButton.Visible = false;
             this.TotalTxt.Lines = new string[0];
-            this.TotalTxt.Location = new System.Drawing.Point(110, 25);
+            this.TotalTxt.Location = new System.Drawing.Point(110, 54);
             this.TotalTxt.MaxLength = 32767;
             this.TotalTxt.Name = "TotalTxt";
             this.TotalTxt.PasswordChar = '\0';
-            this.TotalTxt.PromptText = "Total";
-            this.TotalTxt.ReadOnly = true;
+            this.TotalTxt.PromptText = "Remise";
             this.TotalTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.TotalTxt.SelectedText = "";
             this.TotalTxt.SelectionLength = 0;
@@ -579,14 +591,15 @@ namespace StandManagementProject
             this.TotalTxt.TabIndex = 3;
             this.TotalTxt.UseSelectable = true;
             this.TotalTxt.UseStyleColors = true;
-            this.TotalTxt.WaterMark = "Total";
+            this.TotalTxt.WaterMark = "Remise";
             this.TotalTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TotalTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.TotalTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(17, 25);
+            this.metroLabel3.Location = new System.Drawing.Point(17, 9);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(67, 20);
             this.metroLabel3.TabIndex = 2;
@@ -608,11 +621,126 @@ namespace StandManagementProject
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 125;
             // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Controls.Add(this.PrixNoRéfTxt);
+            this.metroPanel4.Controls.Add(this.QteNoRéftxt);
+            this.metroPanel4.Controls.Add(this.NoRéf);
+            this.metroPanel4.Controls.Add(this.metroLabel4);
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(1038, 7);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(138, 230);
+            this.metroPanel4.TabIndex = 4;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // PrixNoRéfTxt
+            // 
+            // 
+            // 
+            // 
+            this.PrixNoRéfTxt.CustomButton.Image = null;
+            this.PrixNoRéfTxt.CustomButton.Location = new System.Drawing.Point(97, 1);
+            this.PrixNoRéfTxt.CustomButton.Name = "";
+            this.PrixNoRéfTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PrixNoRéfTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.PrixNoRéfTxt.CustomButton.TabIndex = 1;
+            this.PrixNoRéfTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.PrixNoRéfTxt.CustomButton.UseSelectable = true;
+            this.PrixNoRéfTxt.CustomButton.Visible = false;
+            this.PrixNoRéfTxt.Lines = new string[0];
+            this.PrixNoRéfTxt.Location = new System.Drawing.Point(6, 86);
+            this.PrixNoRéfTxt.MaxLength = 32767;
+            this.PrixNoRéfTxt.Name = "PrixNoRéfTxt";
+            this.PrixNoRéfTxt.PasswordChar = '\0';
+            this.PrixNoRéfTxt.PromptText = "Prix .....";
+            this.PrixNoRéfTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.PrixNoRéfTxt.SelectedText = "";
+            this.PrixNoRéfTxt.SelectionLength = 0;
+            this.PrixNoRéfTxt.SelectionStart = 0;
+            this.PrixNoRéfTxt.ShortcutsEnabled = true;
+            this.PrixNoRéfTxt.Size = new System.Drawing.Size(119, 23);
+            this.PrixNoRéfTxt.TabIndex = 7;
+            this.PrixNoRéfTxt.UseSelectable = true;
+            this.PrixNoRéfTxt.UseStyleColors = true;
+            this.PrixNoRéfTxt.WaterMark = "Prix .....";
+            this.PrixNoRéfTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.PrixNoRéfTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.PrixNoRéfTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
+            // 
+            // QteNoRéftxt
+            // 
+            // 
+            // 
+            // 
+            this.QteNoRéftxt.CustomButton.Image = null;
+            this.QteNoRéftxt.CustomButton.Location = new System.Drawing.Point(71, 1);
+            this.QteNoRéftxt.CustomButton.Name = "";
+            this.QteNoRéftxt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.QteNoRéftxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.QteNoRéftxt.CustomButton.TabIndex = 1;
+            this.QteNoRéftxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.QteNoRéftxt.CustomButton.UseSelectable = true;
+            this.QteNoRéftxt.CustomButton.Visible = false;
+            this.QteNoRéftxt.Lines = new string[0];
+            this.QteNoRéftxt.Location = new System.Drawing.Point(26, 129);
+            this.QteNoRéftxt.MaxLength = 32767;
+            this.QteNoRéftxt.Name = "QteNoRéftxt";
+            this.QteNoRéftxt.PasswordChar = '\0';
+            this.QteNoRéftxt.PromptText = "Qte.......";
+            this.QteNoRéftxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.QteNoRéftxt.SelectedText = "";
+            this.QteNoRéftxt.SelectionLength = 0;
+            this.QteNoRéftxt.SelectionStart = 0;
+            this.QteNoRéftxt.ShortcutsEnabled = true;
+            this.QteNoRéftxt.Size = new System.Drawing.Size(93, 23);
+            this.QteNoRéftxt.TabIndex = 6;
+            this.QteNoRéftxt.UseSelectable = true;
+            this.QteNoRéftxt.UseStyleColors = true;
+            this.QteNoRéftxt.WaterMark = "Qte.......";
+            this.QteNoRéftxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.QteNoRéftxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.QteNoRéftxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
+            // 
+            // NoRéf
+            // 
+            this.NoRéf.Location = new System.Drawing.Point(6, 183);
+            this.NoRéf.Name = "NoRéf";
+            this.NoRéf.Size = new System.Drawing.Size(119, 44);
+            this.NoRéf.TabIndex = 5;
+            this.NoRéf.Text = "Ajouter";
+            this.NoRéf.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.NoRéf.UseVisualStyleBackColor = false;
+            this.NoRéf.Click += new System.EventHandler(this.NoRéf_Click);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(15, 24);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(91, 20);
+            this.metroLabel4.TabIndex = 2;
+            this.metroLabel4.Text = "Autre Article ";
+            // 
+            // TotalLbl
+            // 
+            this.TotalLbl.AutoSize = true;
+            this.TotalLbl.Location = new System.Drawing.Point(29, 83);
+            this.TotalLbl.Name = "TotalLbl";
+            this.TotalLbl.Size = new System.Drawing.Size(17, 20);
+            this.TotalLbl.TabIndex = 11;
+            this.TotalLbl.Text = "0";
+            // 
             // Vente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 600);
+            this.Controls.Add(this.metroPanel4);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
@@ -626,6 +754,8 @@ namespace StandManagementProject
             this.metroPanel2.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
+            this.metroPanel4.ResumeLayout(false);
+            this.metroPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -666,5 +796,11 @@ namespace StandManagementProject
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewImageColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn Column8;
+        public MetroFramework.Controls.MetroPanel metroPanel4;
+        public MetroFramework.Controls.MetroTextBox PrixNoRéfTxt;
+        public MetroFramework.Controls.MetroTextBox QteNoRéftxt;
+        public System.Windows.Forms.Button NoRéf;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel TotalLbl;
     }
 }

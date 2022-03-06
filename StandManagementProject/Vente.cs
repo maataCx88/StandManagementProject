@@ -34,8 +34,6 @@ namespace StandManagementProject
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         public int id = 0;
         public int id_p = 0;
-        public string four = "";
-        public string Phone = "";
         int index_cell = 0;
         decimal prix = -1;
         decimal prix_u = -1;
@@ -45,10 +43,6 @@ namespace StandManagementProject
         /// <summary>
         /// variable nes7a9houm ki ykoun produit yexisty mara wa7da fi achat
         /// </summary>
-        string design = "";
-        decimal vente = -1;
-        decimal remise = -1;
-        int stock = -1;
         string designp = "";
         decimal ventep = -1;
         decimal remisep = -1;
@@ -141,6 +135,10 @@ namespace StandManagementProject
             this.metroGrid1.Rows.Add(id, id_a, (metroGrid1.Rows.Count).ToString(), " ", des,
                 prix_v.ToString(), Convert.ToDecimal(prix_v).ToString(), qte.ToString(), 1, (1 * prix_v).ToString(), prix_r.ToString());
         }
+        void vider_tous_cas()
+        {
+            
+        }
         private void RecherchOrAddFour_Click(object sender, EventArgs e)
         {
            Client frn = new Client(this);
@@ -150,8 +148,6 @@ namespace StandManagementProject
         public void pass_to_four(int id_f,string name,string phone)
         {           
             id = id_f;
-            four = name;
-            Phone = phone;
             
         }
 
@@ -190,10 +186,9 @@ namespace StandManagementProject
                         this.metroGrid1.Rows.Add(id_p, id_achat, (metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
                         ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());
                     }
-                }
-               
-                 
+                }                             
             }
+            CodeBarre.Text = string.Empty;
         }
 
         private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -215,7 +210,7 @@ namespace StandManagementProject
                         MessageBox.Show("Opération annulé");
                     }
                 }
-                else if (metroGrid1.Columns[e.ColumnIndex].Index == 12)
+                else if (metroGrid1.Columns[e.ColumnIndex].Index == 12 && metroGrid1.CurrentRow.Cells[4].Value.ToString() != "Autre Article")
                 {
                     prix = -1;
                     prix_u = -1;
@@ -229,7 +224,7 @@ namespace StandManagementProject
                     qteC = Convert.ToInt32(metroGrid1.CurrentRow.Cells[8].Value);
                     prix = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[6].Value);
                     prix_r = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[10].Value);
-                    MessageBox.Show(" Price " + prix_u + " qte " + qte + "new Price " + prix+"Remise " + prix_r);
+                    MessageBox.Show(" Price " + prix_u + " qte " + qte + " new Price " + prix+ " Remise " + prix_r);
                     
                        
                 }
@@ -290,7 +285,7 @@ namespace StandManagementProject
                         if(Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) > prix_u 
                             || Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) < prix_r)
                         {
-                            MessageBox.Show("à ne pas dépasser " + prix_u + "et " + prix_r);
+                            MessageBox.Show("à ne pas dépasser " + prix_u + " \n et pas moins de " + prix_r);
                             metroGrid1.Rows[index_cell].Cells[6].Value = prix_u.ToString();
                         }
                         else
@@ -325,6 +320,30 @@ namespace StandManagementProject
         private void NoCode_Click(object sender, EventArgs e)
         {
             new ProduitsSansCodeBarre(this).Show();
+        }
+
+        private void NoRéf_Click(object sender, EventArgs e)
+        {
+            if(PrixNoRéfTxt.Text == string.Empty ||QteNoRéftxt.Text == string.Empty)
+            {
+                MessageBox.Show("Veuillez saisir le prix et la qte S.V.P!");
+            }
+            else
+            {
+                this.metroGrid1.Rows.Add("","", "", "", "Autre Article", "",PrixNoRéfTxt.Text,"", QteNoRéftxt.Text, 
+                    (Convert.ToDecimal(PrixNoRéfTxt.Text) *Convert.ToInt32(QteNoRéftxt.Text)), "");
+                PrixNoRéfTxt.Text = QteNoRéftxt.Text = string.Empty;
+                
+            }
+        }
+
+        private void PrixNoRéfTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+               && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
