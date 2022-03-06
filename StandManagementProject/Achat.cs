@@ -13,10 +13,12 @@ namespace StandManagementProject
 {
     public partial class Achat : MetroFramework.Forms.MetroForm
     {
+        int idfacture = 0;
+        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         public Achat()
         {
             InitializeComponent();
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+            
             dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             setdefaultzero(PrixAchatTextBox);
             setdefaultzero(PrixRemiseTextBox);
@@ -27,6 +29,7 @@ namespace StandManagementProject
             setdefaultzero(countproduitsTextBox);
             setdefaultzero(MontanttotalTextBox);
             setdefaultzero(montantRestTextBox);
+            getlastfactid();
         }
 
         private void Codelabel_Click(object sender, EventArgs e)
@@ -73,6 +76,19 @@ namespace StandManagementProject
                 QuantitetotalTextBox.Text = qte.ToString();
                 MontanttotalTextBox.Text = montant.ToString();
 
+            }
+        }
+        void getlastfactid()
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+                sqlcon.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("get_last_id_fact_four", sqlcon);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                idfacture = Convert.ToInt32(dt.Rows[0][0]);
             }
         }
         private void addtobasket_Click(object sender, EventArgs e)
@@ -197,6 +213,36 @@ namespace StandManagementProject
             if (Convert.ToDecimal(montantRestTextBox.Text) < 0)
             {
                 montantRestTextBox.Text = "0";
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Voulez vous vraiment vider tous ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                CodeTextBox.Text = DescTextbox.Text = string.Empty;
+                PrixAchatTextBox.Text = PrixRemiseTextBox.Text = PrixVenteTextBox.Text = montantProduitTextBox.Text = QteTextBox1.Text = "0";
+                dataGridView1.Rows.Clear();
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if(montantverseTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Verifier le montant versé s.v.p", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                int i = 0;string code = "";decimal prxachat = 0, prxvente = 0, prxrems = 0, qte = 0; DateTime now = DateTime.Now;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    code = row.Cells[1].Value.ToString();
+                    prxachat = Convert.ToDecimal(row.Cells[3].Value.ToString());
+
+                }
+                    getlastfactid();
             }
         }
     }
