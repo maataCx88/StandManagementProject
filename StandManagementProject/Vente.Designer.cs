@@ -29,9 +29,9 @@ namespace StandManagementProject
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +56,15 @@ namespace StandManagementProject
             this.CodeBarre = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.TotalLbl = new MetroFramework.Controls.MetroLabel();
             this.Confirm2 = new System.Windows.Forms.Button();
             this.NumdeBon = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.RenduTxt = new MetroFramework.Controls.MetroTextBox();
             this.ResteTxt = new MetroFramework.Controls.MetroTextBox();
             this.VesréTxt = new MetroFramework.Controls.MetroTextBox();
             this.ConfirmBillBtn = new System.Windows.Forms.Button();
-            this.TotalTxt = new MetroFramework.Controls.MetroTextBox();
+            this.RemiseTxt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -71,7 +73,6 @@ namespace StandManagementProject
             this.QteNoRéftxt = new MetroFramework.Controls.MetroTextBox();
             this.NoRéf = new System.Windows.Forms.Button();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.TotalLbl = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -88,14 +89,14 @@ namespace StandManagementProject
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -111,28 +112,28 @@ namespace StandManagementProject
             this.Column13,
             this.Column7,
             this.Column8});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(2, 243);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid1.RowHeadersWidth = 51;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.RowTemplate.Height = 24;
@@ -144,6 +145,7 @@ namespace StandManagementProject
             this.metroGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
             this.metroGrid1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellValueChanged);
             this.metroGrid1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.metroGrid1_EditingControlShowing);
+            this.metroGrid1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.metroGrid1_RowsAdded);
             this.metroGrid1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroGrid1_KeyPress);
             // 
             // Column1
@@ -410,14 +412,15 @@ namespace StandManagementProject
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.metroLabel5);
             this.metroPanel3.Controls.Add(this.TotalLbl);
             this.metroPanel3.Controls.Add(this.Confirm2);
             this.metroPanel3.Controls.Add(this.NumdeBon);
-            this.metroPanel3.Controls.Add(this.metroTextBox4);
+            this.metroPanel3.Controls.Add(this.RenduTxt);
             this.metroPanel3.Controls.Add(this.ResteTxt);
             this.metroPanel3.Controls.Add(this.VesréTxt);
             this.metroPanel3.Controls.Add(this.ConfirmBillBtn);
-            this.metroPanel3.Controls.Add(this.TotalTxt);
+            this.metroPanel3.Controls.Add(this.RemiseTxt);
             this.metroPanel3.Controls.Add(this.metroLabel3);
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
@@ -429,6 +432,24 @@ namespace StandManagementProject
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(40, 67);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(37, 20);
+            this.metroLabel5.TabIndex = 12;
+            this.metroLabel5.Text = "Total";
+            // 
+            // TotalLbl
+            // 
+            this.TotalLbl.AutoSize = true;
+            this.TotalLbl.Location = new System.Drawing.Point(49, 103);
+            this.TotalLbl.Name = "TotalLbl";
+            this.TotalLbl.Size = new System.Drawing.Size(17, 20);
+            this.TotalLbl.TabIndex = 11;
+            this.TotalLbl.Text = "0";
             // 
             // Confirm2
             // 
@@ -449,40 +470,40 @@ namespace StandManagementProject
             this.NumdeBon.TabIndex = 9;
             this.NumdeBon.Text = "N°";
             // 
-            // metroTextBox4
+            // RenduTxt
             // 
             // 
             // 
             // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(421, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(110, 112);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.PromptText = "Rendu";
-            this.metroTextBox4.ReadOnly = true;
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(443, 23);
-            this.metroTextBox4.TabIndex = 8;
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.UseStyleColors = true;
-            this.metroTextBox4.WaterMark = "Rendu";
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
+            this.RenduTxt.CustomButton.Image = null;
+            this.RenduTxt.CustomButton.Location = new System.Drawing.Point(351, 1);
+            this.RenduTxt.CustomButton.Name = "";
+            this.RenduTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.RenduTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.RenduTxt.CustomButton.TabIndex = 1;
+            this.RenduTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.RenduTxt.CustomButton.UseSelectable = true;
+            this.RenduTxt.CustomButton.Visible = false;
+            this.RenduTxt.Lines = new string[0];
+            this.RenduTxt.Location = new System.Drawing.Point(180, 112);
+            this.RenduTxt.MaxLength = 32767;
+            this.RenduTxt.Name = "RenduTxt";
+            this.RenduTxt.PasswordChar = '\0';
+            this.RenduTxt.PromptText = "Rendu";
+            this.RenduTxt.ReadOnly = true;
+            this.RenduTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.RenduTxt.SelectedText = "";
+            this.RenduTxt.SelectionLength = 0;
+            this.RenduTxt.SelectionStart = 0;
+            this.RenduTxt.ShortcutsEnabled = true;
+            this.RenduTxt.Size = new System.Drawing.Size(373, 23);
+            this.RenduTxt.TabIndex = 8;
+            this.RenduTxt.UseSelectable = true;
+            this.RenduTxt.UseStyleColors = true;
+            this.RenduTxt.WaterMark = "Rendu";
+            this.RenduTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.RenduTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.RenduTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // ResteTxt
             // 
@@ -490,7 +511,7 @@ namespace StandManagementProject
             // 
             // 
             this.ResteTxt.CustomButton.Image = null;
-            this.ResteTxt.CustomButton.Location = new System.Drawing.Point(421, 1);
+            this.ResteTxt.CustomButton.Location = new System.Drawing.Point(351, 1);
             this.ResteTxt.CustomButton.Name = "";
             this.ResteTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.ResteTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -499,7 +520,7 @@ namespace StandManagementProject
             this.ResteTxt.CustomButton.UseSelectable = true;
             this.ResteTxt.CustomButton.Visible = false;
             this.ResteTxt.Lines = new string[0];
-            this.ResteTxt.Location = new System.Drawing.Point(110, 83);
+            this.ResteTxt.Location = new System.Drawing.Point(180, 83);
             this.ResteTxt.MaxLength = 32767;
             this.ResteTxt.Name = "ResteTxt";
             this.ResteTxt.PasswordChar = '\0';
@@ -509,7 +530,7 @@ namespace StandManagementProject
             this.ResteTxt.SelectionLength = 0;
             this.ResteTxt.SelectionStart = 0;
             this.ResteTxt.ShortcutsEnabled = true;
-            this.ResteTxt.Size = new System.Drawing.Size(443, 23);
+            this.ResteTxt.Size = new System.Drawing.Size(373, 23);
             this.ResteTxt.TabIndex = 7;
             this.ResteTxt.UseSelectable = true;
             this.ResteTxt.UseStyleColors = true;
@@ -524,7 +545,7 @@ namespace StandManagementProject
             // 
             // 
             this.VesréTxt.CustomButton.Image = null;
-            this.VesréTxt.CustomButton.Location = new System.Drawing.Point(421, 1);
+            this.VesréTxt.CustomButton.Location = new System.Drawing.Point(351, 1);
             this.VesréTxt.CustomButton.Name = "";
             this.VesréTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.VesréTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -533,7 +554,7 @@ namespace StandManagementProject
             this.VesréTxt.CustomButton.UseSelectable = true;
             this.VesréTxt.CustomButton.Visible = false;
             this.VesréTxt.Lines = new string[0];
-            this.VesréTxt.Location = new System.Drawing.Point(110, 25);
+            this.VesréTxt.Location = new System.Drawing.Point(180, 25);
             this.VesréTxt.MaxLength = 32767;
             this.VesréTxt.Name = "VesréTxt";
             this.VesréTxt.PasswordChar = '\0';
@@ -543,7 +564,7 @@ namespace StandManagementProject
             this.VesréTxt.SelectionLength = 0;
             this.VesréTxt.SelectionStart = 0;
             this.VesréTxt.ShortcutsEnabled = true;
-            this.VesréTxt.Size = new System.Drawing.Size(443, 23);
+            this.VesréTxt.Size = new System.Drawing.Size(373, 23);
             this.VesréTxt.TabIndex = 6;
             this.VesréTxt.UseSelectable = true;
             this.VesréTxt.UseStyleColors = true;
@@ -561,40 +582,41 @@ namespace StandManagementProject
             this.ConfirmBillBtn.Text = "Confirmer";
             this.ConfirmBillBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.ConfirmBillBtn.UseVisualStyleBackColor = false;
+            this.ConfirmBillBtn.Click += new System.EventHandler(this.ConfirmBillBtn_Click);
             // 
-            // TotalTxt
+            // RemiseTxt
             // 
             // 
             // 
             // 
-            this.TotalTxt.CustomButton.Image = null;
-            this.TotalTxt.CustomButton.Location = new System.Drawing.Point(421, 1);
-            this.TotalTxt.CustomButton.Name = "";
-            this.TotalTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TotalTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TotalTxt.CustomButton.TabIndex = 1;
-            this.TotalTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TotalTxt.CustomButton.UseSelectable = true;
-            this.TotalTxt.CustomButton.Visible = false;
-            this.TotalTxt.Lines = new string[0];
-            this.TotalTxt.Location = new System.Drawing.Point(110, 54);
-            this.TotalTxt.MaxLength = 32767;
-            this.TotalTxt.Name = "TotalTxt";
-            this.TotalTxt.PasswordChar = '\0';
-            this.TotalTxt.PromptText = "Remise";
-            this.TotalTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TotalTxt.SelectedText = "";
-            this.TotalTxt.SelectionLength = 0;
-            this.TotalTxt.SelectionStart = 0;
-            this.TotalTxt.ShortcutsEnabled = true;
-            this.TotalTxt.Size = new System.Drawing.Size(443, 23);
-            this.TotalTxt.TabIndex = 3;
-            this.TotalTxt.UseSelectable = true;
-            this.TotalTxt.UseStyleColors = true;
-            this.TotalTxt.WaterMark = "Remise";
-            this.TotalTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TotalTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.TotalTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
+            this.RemiseTxt.CustomButton.Image = null;
+            this.RemiseTxt.CustomButton.Location = new System.Drawing.Point(351, 1);
+            this.RemiseTxt.CustomButton.Name = "";
+            this.RemiseTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.RemiseTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.RemiseTxt.CustomButton.TabIndex = 1;
+            this.RemiseTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.RemiseTxt.CustomButton.UseSelectable = true;
+            this.RemiseTxt.CustomButton.Visible = false;
+            this.RemiseTxt.Lines = new string[0];
+            this.RemiseTxt.Location = new System.Drawing.Point(180, 54);
+            this.RemiseTxt.MaxLength = 32767;
+            this.RemiseTxt.Name = "RemiseTxt";
+            this.RemiseTxt.PasswordChar = '\0';
+            this.RemiseTxt.PromptText = "Remise";
+            this.RemiseTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.RemiseTxt.SelectedText = "";
+            this.RemiseTxt.SelectionLength = 0;
+            this.RemiseTxt.SelectionStart = 0;
+            this.RemiseTxt.ShortcutsEnabled = true;
+            this.RemiseTxt.Size = new System.Drawing.Size(373, 23);
+            this.RemiseTxt.TabIndex = 3;
+            this.RemiseTxt.UseSelectable = true;
+            this.RemiseTxt.UseStyleColors = true;
+            this.RemiseTxt.WaterMark = "Remise";
+            this.RemiseTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.RemiseTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.RemiseTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // metroLabel3
             // 
@@ -726,15 +748,6 @@ namespace StandManagementProject
             this.metroLabel4.TabIndex = 2;
             this.metroLabel4.Text = "Autre Article ";
             // 
-            // TotalLbl
-            // 
-            this.TotalLbl.AutoSize = true;
-            this.TotalLbl.Location = new System.Drawing.Point(29, 83);
-            this.TotalLbl.Name = "TotalLbl";
-            this.TotalLbl.Size = new System.Drawing.Size(17, 20);
-            this.TotalLbl.TabIndex = 11;
-            this.TotalLbl.Text = "0";
-            // 
             // Vente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -774,11 +787,11 @@ namespace StandManagementProject
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         public System.Windows.Forms.Button ConfirmBillBtn;
-        public MetroFramework.Controls.MetroTextBox TotalTxt;
+        public MetroFramework.Controls.MetroTextBox RemiseTxt;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         public MetroFramework.Controls.MetroTextBox ResteTxt;
         public MetroFramework.Controls.MetroTextBox VesréTxt;
-        public MetroFramework.Controls.MetroTextBox metroTextBox4;
+        public MetroFramework.Controls.MetroTextBox RenduTxt;
         private MetroFramework.Controls.MetroLabel NumdeBon;
         public MetroFramework.Controls.MetroTextBox NameTxt;
         public System.Windows.Forms.Button Confirm2;
@@ -802,5 +815,6 @@ namespace StandManagementProject
         public System.Windows.Forms.Button NoRéf;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel TotalLbl;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }

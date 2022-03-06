@@ -86,7 +86,7 @@ namespace StandManagementProject
         public void pass_to_four()
         {
 
-            vnt.id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
+            vnt.id_f = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
             vnt.NameTxt.Text = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
         }
 
@@ -125,9 +125,9 @@ namespace StandManagementProject
             {
                 Ajouter_Four(Nom.Text, Prénom.Text, PhoneFour.Text);
                 last_ID_Four();
-                vnt.id = this.id;
+                vnt.id_f = this.id;
                 vnt.NameTxt.Text = Nom.Text + ' ' + Prénom.Text;
-                MessageBox.Show("Name" + vnt.NameTxt.Text + " ID " + vnt.id);
+                MessageBox.Show("Name" + vnt.NameTxt.Text + " ID " + vnt.id_f);
                 this.Close();
 
             }
