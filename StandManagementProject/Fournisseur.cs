@@ -86,13 +86,7 @@ namespace StandManagementProject
                 sqlcon.Close();
             }
         }
-        public void pass_to_four()
-        {
-            
-            vnt.id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
-            vnt.NameTxt.Text = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
-            vnt.PhoneFourTxt.Text = this.DataFournisseur.CurrentRow.Cells[2].Value.ToString();
-        }
+       
 
         private void Recherchetxt_TextChanged(object sender, EventArgs e)
         {
@@ -115,7 +109,7 @@ namespace StandManagementProject
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
                 string PhoneFourTxt = this.DataFournisseur.CurrentRow.Cells[2].Value.ToString();                
                 //pass_to_four();
-                MessageBox.Show("Name"+ vnt.four + " ID "+ vnt.id);               
+                /*MessageBox.Show("Name"+ vnt.four + " ID "+ vnt.id);   */            
                 this.Close();        
             }
         }
@@ -130,9 +124,6 @@ namespace StandManagementProject
             {
                 Ajouter_Four(Nom.Text, Prénom.Text,PhoneFour.Text);
                 last_ID_Four();
-                vnt.id = id;
-                vnt.NameTxt.Text = Nom.Text + ' ' + Prénom.Text;
-                vnt.PhoneFourTxt.Text = PhoneFour.Text.ToString();
                 this.Close();
 
             }

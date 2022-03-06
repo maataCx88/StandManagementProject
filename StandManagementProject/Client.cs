@@ -86,7 +86,7 @@ namespace StandManagementProject
         public void pass_to_four()
         {
 
-            vnt.id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
+            vnt.id_f = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
             vnt.NameTxt.Text = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
         }
 
@@ -110,7 +110,7 @@ namespace StandManagementProject
                 int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
                 pass_to_four();
-                MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);
+                /*MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);*/
                 this.Close();
             }
         }
@@ -119,15 +119,15 @@ namespace StandManagementProject
         {
             if (Nom.Text == string.Empty || Prénom.Text == string.Empty)
             {
-                MessageBox.Show("au moins Remplissez le nom et le prénom S.V.P !");
+                MessageBox.Show("Veuillez Remplir le nom et le prénom S.V.P !");
             }
             else
             {
                 Ajouter_Four(Nom.Text, Prénom.Text, PhoneFour.Text);
                 last_ID_Four();
-                vnt.id = this.id;
+                vnt.id_f = this.id;
                 vnt.NameTxt.Text = Nom.Text + ' ' + Prénom.Text;
-                MessageBox.Show("Name" + vnt.NameTxt.Text + " ID " + vnt.id);
+                MessageBox.Show("Name" + vnt.NameTxt.Text + " ID " + vnt.id_f);
                 this.Close();
 
             }
@@ -141,7 +141,7 @@ namespace StandManagementProject
                 int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
                 pass_to_four();
-                MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);
+                /*MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);*/
                 this.Close();
             }
         }
