@@ -33,19 +33,6 @@ namespace StandManagementProject
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.NameTxt = new MetroFramework.Controls.MetroTextBox();
             this.PhoneFourTxt = new MetroFramework.Controls.MetroTextBox();
@@ -73,6 +60,19 @@ namespace StandManagementProject
             this.QteNoRéftxt = new MetroFramework.Controls.MetroTextBox();
             this.NoRéf = new System.Windows.Forms.Button();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -147,93 +147,6 @@ namespace StandManagementProject
             this.metroGrid1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.metroGrid1_EditingControlShowing);
             this.metroGrid1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.metroGrid1_RowsAdded);
             this.metroGrid1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.metroGrid1_KeyPress);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id_P";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "ID_A";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "N°";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Code Barre";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Désignation";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Prix Unitaire";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Prix";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Qte";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Visible = false;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "QteC";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Montant";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "remise";
-            this.Column13.MinimumWidth = 6;
-            this.Column13.Name = "Column13";
-            this.Column13.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column7.HeaderText = "";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 23;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column8.HeaderText = "";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 23;
             // 
             // metroPanel1
             // 
@@ -436,7 +349,7 @@ namespace StandManagementProject
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(40, 67);
+            this.metroLabel5.Location = new System.Drawing.Point(29, 67);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(37, 20);
             this.metroLabel5.TabIndex = 12;
@@ -445,11 +358,12 @@ namespace StandManagementProject
             // TotalLbl
             // 
             this.TotalLbl.AutoSize = true;
-            this.TotalLbl.Location = new System.Drawing.Point(49, 103);
+            this.TotalLbl.Location = new System.Drawing.Point(40, 103);
             this.TotalLbl.Name = "TotalLbl";
             this.TotalLbl.Size = new System.Drawing.Size(17, 20);
             this.TotalLbl.TabIndex = 11;
             this.TotalLbl.Text = "0";
+            this.TotalLbl.TextChanged += new System.EventHandler(this.VesréTxt_TextChanged);
             // 
             // Confirm2
             // 
@@ -525,6 +439,7 @@ namespace StandManagementProject
             this.ResteTxt.Name = "ResteTxt";
             this.ResteTxt.PasswordChar = '\0';
             this.ResteTxt.PromptText = "Reste";
+            this.ResteTxt.ReadOnly = true;
             this.ResteTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.ResteTxt.SelectedText = "";
             this.ResteTxt.SelectionLength = 0;
@@ -571,6 +486,7 @@ namespace StandManagementProject
             this.VesréTxt.WaterMark = "Reçu";
             this.VesréTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.VesréTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.VesréTxt.TextChanged += new System.EventHandler(this.VesréTxt_TextChanged);
             this.VesréTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // ConfirmBillBtn
@@ -616,6 +532,7 @@ namespace StandManagementProject
             this.RemiseTxt.WaterMark = "Remise";
             this.RemiseTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.RemiseTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.RemiseTxt.TextChanged += new System.EventHandler(this.VesréTxt_TextChanged);
             this.RemiseTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixNoRéfTxt_KeyPress);
             // 
             // metroLabel3
@@ -748,6 +665,88 @@ namespace StandManagementProject
             this.metroLabel4.TabIndex = 2;
             this.metroLabel4.Text = "Autre Article ";
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Id_P";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "ID_A";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "N°";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Code Barre";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Désignation";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Prix Unitaire";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Prix";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Qte";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "QteC";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Montant";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "remise";
+            this.Column13.MinimumWidth = 6;
+            this.Column13.Name = "Column13";
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column7.HeaderText = "";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 23;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column8.HeaderText = "";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 23;
+            // 
             // Vente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -796,6 +795,13 @@ namespace StandManagementProject
         public MetroFramework.Controls.MetroTextBox NameTxt;
         public System.Windows.Forms.Button Confirm2;
         public MetroFramework.Controls.MetroPanel metroPanel1;
+        public MetroFramework.Controls.MetroPanel metroPanel4;
+        public MetroFramework.Controls.MetroTextBox PrixNoRéfTxt;
+        public MetroFramework.Controls.MetroTextBox QteNoRéftxt;
+        public System.Windows.Forms.Button NoRéf;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel TotalLbl;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
@@ -809,12 +815,5 @@ namespace StandManagementProject
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewImageColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn Column8;
-        public MetroFramework.Controls.MetroPanel metroPanel4;
-        public MetroFramework.Controls.MetroTextBox PrixNoRéfTxt;
-        public MetroFramework.Controls.MetroTextBox QteNoRéftxt;
-        public System.Windows.Forms.Button NoRéf;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel TotalLbl;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }

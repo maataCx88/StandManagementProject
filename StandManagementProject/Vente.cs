@@ -29,16 +29,21 @@ namespace StandManagementProject
             metroGrid1.Columns[10].ReadOnly = true;
             metroGrid1.Columns[11].ReadOnly = true;
             metroGrid1.Columns[12].ReadOnly = true;
+            id_u = 1;
+            NameTxt.Text = "Client Comptoir";
             TotalLbl.Text = montant.ToString();
-           
+            last_id_facture_client();
+            NumdeBon.Text = id_facture.ToString();
 
         }
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
-        public int id_f = 0;//id de client
+        public int id_facture = 0;
+        public int id_f = 1;//id de client
         public int id_p = 0;//id de produt
         public int id_u = 1;//id de user
         int index_cell = -1;
         decimal prix = -1;
+ 
         decimal prix_u = -1;//prix_vente 1
         decimal prix_r = -1;//prix_remise 1
         int qte = -1;
@@ -54,7 +59,26 @@ namespace StandManagementProject
         int id_achat = -1;
         bool exist = true;
         decimal montant = 0;
-        decimal montantR = 0;
+  
+
+        void calc()
+        {
+            montant = 0;
+            for(int i=0 ; i<metroGrid1.RowCount-1; i++)
+            {
+                montant += Convert.ToDecimal(metroGrid1.Rows[i].Cells[9].Value);
+            }
+            TotalLbl.Text = montant.ToString();
+        }
+        void ReIndex()
+        {
+ 
+            for (int i = 0; i < metroGrid1.RowCount -1 ; i++)
+            {
+                metroGrid1.Rows[i].Cells[2].Value = (i+1).ToString(); 
+            }
+
+        }
         void ajouter_facture_client(decimal montant, decimal versé, decimal reste, decimal remise)
         {
             if (sqlcon.State == ConnectionState.Closed)
@@ -73,6 +97,20 @@ namespace StandManagementProject
                 sqlcon.Close();
             }
         }
+        void ajouter_reglement_client(int id, decimal versé)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("add_reg_clt", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", id);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@versé", versé);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@date_reg_clt", DateTime.Today);
+                sqlcmd.SelectCommand.ExecuteNonQuery();
+                sqlcon.Close();
+            }
+        }
         void ajouter_vente(int prod,decimal prix_u,int qte)
         {
             if (sqlcon.State == ConnectionState.Closed)
@@ -80,7 +118,7 @@ namespace StandManagementProject
                 sqlcon.Open();
                 SqlDataAdapter sqlcmd = new SqlDataAdapter("add_vente ", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlcmd.SelectCommand.Parameters.AddWithValue("@id_f", id_f);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id_f", id_facture);
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@id_p", prod);
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@prix_u", prix_u);
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@qte", qte);
@@ -119,6 +157,48 @@ namespace StandManagementProject
                         MessageBox.Show("Produit Existe avec plusieurs fois njibou mn la table achat");
                         plusieur = true;
                     }
+                }
+                sqlcon.Close();
+            }
+        }
+        void update_achat(int idprod,int achat, int pqte)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("sale__from_achat", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", achat);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id_p", idprod );
+                sqlcmd.SelectCommand.Parameters.AddWithValue("qte", pqte);
+                using (DataTable dt = new DataTable())
+                {
+                    sqlcmd.Fill(dt);
+                    if (dt.Rows.Count == 1)
+                    {
+                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit");
+                        plusieur = false;
+                    }
+                    else if (dt.Rows.Count > 1)
+                    {
+                        MessageBox.Show("Produit Existe avec plusieurs fois njibou mn la table achat");
+                        plusieur = true;
+                    }
+                }
+                sqlcon.Close();
+            }
+        }
+        void last_id_facture_client()
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("last_id_client_facture", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                using (DataTable dt = new DataTable())
+                {
+                    sqlcmd.Fill(dt);
+                    id_facture = Convert.ToInt32(dt.Rows[0][0]);
                 }
                 sqlcon.Close();
             }
@@ -201,9 +281,15 @@ namespace StandManagementProject
             this.prix_r = -1;
             this.qte = -1;
             this.qteC = -1;
+            montant = 0;
+            TotalLbl.Text = "0";
             CodeBarre.Text = string.Empty;
             PrixNoRéfTxt.Text = string.Empty;
             QteNoRéftxt.Text = string.Empty;
+            metroGrid1.Rows.Clear();
+            last_id_facture_client();
+            id_u = 1;
+            NameTxt.Text = "Client Comptoir";
         }
         private void RecherchOrAddFour_Click(object sender, EventArgs e)
         {
@@ -211,11 +297,7 @@ namespace StandManagementProject
             frn.Show();
             
         }
-        public void pass_to_four(int id_f,string name,string phone)
-        {           
-            this.id_f = id_f;
-            
-        }
+       
 
         public void pass_to_datagrid(int id,int id_a, string des, decimal prix_v, decimal prix_r  , int qte)
         {
@@ -269,10 +351,10 @@ namespace StandManagementProject
                     DialogResult result = MessageBox.Show("Vous voulez annuler cet article", "Alert !",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if ( result == DialogResult.Yes)
                     {
-                        montantR = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[9].Value);
-                        montant = montant - montantR;
-                        TotalLbl.Text = montant.ToString();
+                        montant -= Convert.ToDecimal(metroGrid1.CurrentRow.Cells[9].Value);
                         metroGrid1.Rows.RemoveAt(metroGrid1.CurrentRow.Index);
+                        TotalLbl.Text = montant.ToString();
+                        ReIndex();
                     }
                     else
                     {
@@ -340,11 +422,11 @@ namespace StandManagementProject
 
         private void metroGrid1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if ( metroGrid1.Rows.Count - 1 != 0)
+            if ( metroGrid1.RowCount - 1 != 0)
             {
                
                 
-                TotalLbl.Text = montant.ToString();
+                
                 if (index_cell != -1)
                 {
                     if (metroGrid1.Rows[index_cell].Cells[6].Value == null || Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) == 0)
@@ -362,12 +444,7 @@ namespace StandManagementProject
                         }
                         else
                         {
-                            montantR = Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[9].Value);
-                            montant = montant - montantR;
                             metroGrid1.Rows[index_cell].Cells[9].Value = (Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) * Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value)).ToString();
-                            montantR = Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[9].Value);
-                            montant = montant + montantR;
-                            TotalLbl.Text = montant.ToString();
 
                         }
                     }
@@ -387,14 +464,11 @@ namespace StandManagementProject
                         }
                         else
                         {
-                            montantR = Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[9].Value);
-                            montant = montant - montantR;
+
                             metroGrid1.Rows[index_cell].Cells[9].Value = (Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) * Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value)).ToString();
-                            montantR = Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[9].Value);
-                            montant = montant + montantR;
-                            TotalLbl.Text = montant.ToString();
                         }
                     }
+                    calc();
                     
                 }
             }
@@ -431,18 +505,76 @@ namespace StandManagementProject
 
         private void metroGrid1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            int myindex = e.RowCount-1;
-            montantR = Convert.ToDecimal(metroGrid1.Rows[myindex].Cells[9].Value);
-            //myindex++;
-            montant = montant + montantR;
-            TotalLbl.Text = montant.ToString();
-            metroGrid1.Rows[myindex].Selected = true;
+            calc();
         }
 
         private void ConfirmBillBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("id client " + id_f);
+            if(montant != 0)
+            {
+                MessageBox.Show("id client " + id_f);
+                MessageBox.Show("montant " + montant);
+                MessageBox.Show("user " + id_u);
+                MessageBox.Show("facture N° " + id_facture);
+                ajouter_facture_client(this.montant,Convert.ToDecimal(VesréTxt.Text), Convert.ToDecimal(ResteTxt.Text), Convert.ToDecimal(RemiseTxt.Text));
+                ajouter_reglement_client(this.id_facture, Convert.ToDecimal(VesréTxt.Text));
+                for (int i=0; i< metroGrid1.RowCount - 1; i++)
+                {
+                    if(metroGrid1.Rows[i].Cells[4].Value.ToString() != "Autre Article")
+                    {
+                        id_p = Convert.ToInt32(metroGrid1.Rows[i].Cells[0].Value);
+                        id_achat = Convert.ToInt32(metroGrid1.Rows[i].Cells[1].Value);
+                        prix_u = Convert.ToDecimal(metroGrid1.Rows[i].Cells[6].Value);
+                        qteC = Convert.ToInt32(metroGrid1.Rows[i].Cells[8].Value);
+                        decimal totalp = Convert.ToDecimal(metroGrid1.Rows[i].Cells[9].Value);
+                        ajouter_vente(this.id_p, this.prix_u, this.qteC);
+                        update_achat(this.id_p, this.id_achat, this.qteC);
+                        MessageBox.Show("Rows"+ i +" id_p : " +id_p+ " Achat : " + id_achat +
+                            "\n prix_u : "+ prix_u +" qte : "+ qteC + "with total"+totalp);
+                    }
+                }
+                MessageBox.Show("Opération Réussie");
+                vider_tous_cas();
+            }
+            else
+            {
+                MessageBox.Show("Facture " + id_facture + " Vide !");
+            }
 
+        }
+
+        private void VesréTxt_TextChanged(object sender, EventArgs e)
+        {
+            if(montant != 0 && VesréTxt.Text != string.Empty)
+            {
+                decimal myreste = montant- Convert.ToDecimal(VesréTxt.Text);
+                if( RemiseTxt.Text != string.Empty)
+                {
+                    myreste += Convert.ToDecimal(RemiseTxt.Text);
+                }
+                if(myreste < 0)
+                {
+
+                    ResteTxt.Text = "0";
+                    RenduTxt.Text = (0-myreste).ToString();
+                }
+                else
+                {
+                    ResteTxt.Text = myreste.ToString();
+                    RenduTxt.Text = "0";
+   
+                }
+                 
+               
+
+            }
+            else
+            {
+                VesréTxt.Text = string.Empty;
+                RemiseTxt.Text = string.Empty;
+                ResteTxt.Text = string.Empty;
+                RenduTxt.Text = string.Empty;
+            }
         }
     }
 }
