@@ -631,3 +631,11 @@ ALTER proc [dbo].[update_produit]
 @id int,@prix_v decimal(18,3),@prix_u decimal(18,3),@prix_r decimal(18,3),@qte int
 as update produit set  prix_v=@prix_v ,prix_u=@prix_u ,prix_r=@prix_r ,qte+=@qte
 where produit.id=@id
+-------21:08 06/03/2022-------
+alter proc show_facture_clt_byDate
+@date1 date,@date2 date 
+as begin
+select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',fc.remise as 'Remise',(fc.reste-fc.remise) as 'Rendu',
+fc.date_fact as 'Date',c.nom+' '+c.prenom as 'Client',e.nom as 'Vendeur' 
+from facture_clt as fc,client as c , employee as e where (c.id=fc.id_c and e.id=fc.id_u) --and fc.date_fact between @date1 and @date2 
+end
