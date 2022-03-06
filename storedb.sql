@@ -543,3 +543,72 @@ from produit as p
 where p.code=@code 
 end
 
+----------------------02:17 06/03/2022---------
+alter table facture_clt add remise decimal
+alter proc add_facture_clt
+@id_c int ,@id_u int,@montant decimal,@versé decimal,@reste decimal,@remise decimal,@date_fact date
+as begin
+insert into facture_clt(id_c,id_u,montant,versé,reste,remise,date_fact) 
+values (@id_c  ,@id_u ,@montant ,@versé ,@reste ,@remise,@date_fact)
+end
+
+alter proc show_facture_clt
+as begin
+select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.remise as 'remise',fc.reste as 'Reste',fc.date_fact as 'Date',
+c.nom+''+c.prenom as 'Client',e.nom as 'Vendeur' from facture_clt as fc,client as c , employee as e
+where c.id=fc.id_c and e.id=fc.id_u
+end
+
+alter proc show_facture_clt_byId
+@id int 
+as begin
+select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.remise as 'remise',fc.reste as 'Reste',
+fc.date_fact as 'Date',c.nom+''+c.prenom as 'Client',e.nom as 'Vendeur' 
+from facture_clt as fc,client as c , employee as e 
+where fc.id=@id and c.id=fc.id_c and e.id=fc.id_u
+end
+
+alter proc show_facture_clt_byDate
+@date1 date,@date2 date 
+as begin
+select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',fc.remise as 'remise',
+fc.date_fact as 'Date',c.nom+''+c.prenom as 'Client',e.nom as 'Vendeur' 
+from facture_clt as fc,client as c , employee as e where fc.date_fact between @date1 and @date2 and (c.id=fc.id_c and e.id=fc.id_u)
+end
+
+alter proc show_facture_clt_byNameC
+@nom nvarchar(50)
+as begin
+select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',fc.remise as 'remise',
+fc.date_fact as 'Date',c.nom+''+c.prenom as 'Client',fc.id_u as 'Vendeur' 
+from facture_clt as fc,client as c , employee as e where c.nom+''+c.prenom like @nom and (c.id=fc.id_c and e.id=fc.id_u)
+end
+--------------- 06:43 06/03/2022-----------
+alter proc show_prod 
+as 
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',p.prix_u as 'Prix d"achat',
+prix_v as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' from produit as p
+alter proc get_prod 
+@code varchar(100)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+prix_v as 'Prix vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code
+end
+alter proc search_prod 
+@code varchar(100),@des nvarchar(200)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+prix_v as 'Prix vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code or p.designation=@des
+end
+alter proc search_full_prod 
+@code varchar(100),@des nvarchar(200)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',p.prix_u as 'Prix d"achat',
+p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code or p.designation=@des
+end
