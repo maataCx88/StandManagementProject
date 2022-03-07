@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+//200020020222
 namespace StandManagementProject
 {
     public partial class Vente : MetroFramework.Forms.MetroForm
@@ -516,6 +516,10 @@ namespace StandManagementProject
                 MessageBox.Show("montant " + montant);
                 MessageBox.Show("user " + id_u);
                 MessageBox.Show("facture N° " + id_facture);
+                if(RemiseTxt.Text == string.Empty)
+                {
+                    RemiseTxt.Text = "0";
+                }
                 ajouter_facture_client(this.montant,Convert.ToDecimal(VesréTxt.Text), Convert.ToDecimal(ResteTxt.Text), Convert.ToDecimal(RemiseTxt.Text));
                 ajouter_reglement_client(this.id_facture, Convert.ToDecimal(VesréTxt.Text));
                 for (int i=0; i< metroGrid1.RowCount - 1; i++)
