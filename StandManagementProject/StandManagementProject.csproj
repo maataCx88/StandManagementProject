@@ -140,6 +140,9 @@
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factureclient.resx">
       <DependentUpon>Factureclient.cs</DependentUpon>
     </EmbeddedResource>
