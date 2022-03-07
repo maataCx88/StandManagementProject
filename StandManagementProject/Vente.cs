@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+//200020020222
 namespace StandManagementProject
 {
     public partial class Vente : MetroFramework.Forms.MetroForm
@@ -59,7 +59,10 @@ namespace StandManagementProject
         int id_achat = -1;
         bool exist = true;
         decimal montant = 0;
-  
+        public static bool FormIsOpen(FormCollection application, Type formtype)
+        {
+            return Application.OpenForms.Cast<Form>().Any(openform => openform.GetType() == formtype);
+        }
 
         void calc()
         {
@@ -125,17 +128,6 @@ namespace StandManagementProject
                 sqlcmd.SelectCommand.ExecuteNonQuery();
                 sqlcon.Close();
             }
-        }
-        void reglé_facture_client(int id,decimal versé)
-        {
-            sqlcon.Open();
-            SqlDataAdapter sqlcmd = new SqlDataAdapter("add_vente ", sqlcon);
-            sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
-            sqlcmd.SelectCommand.Parameters.AddWithValue("@id", id);
-            sqlcmd.SelectCommand.Parameters.AddWithValue("@versé", versé);
-            sqlcmd.SelectCommand.Parameters.AddWithValue("@date_reg_clt", System.DateTime.Now);
-            sqlcmd.SelectCommand.ExecuteNonQuery();
-            sqlcon.Close();
         }
         void affichage_achat_by_produit(int id)
         {
@@ -294,7 +286,15 @@ namespace StandManagementProject
         private void RecherchOrAddFour_Click(object sender, EventArgs e)
         {
            Client frn = new Client(this);
-            frn.Show();
+            if (FormIsOpen(Application.OpenForms, typeof(Client)))
+            {
+                MessageBox.Show("Form already open!");
+            }
+            else
+            {
+                frn.Show();
+            }
+            
             
         }
        
@@ -325,7 +325,16 @@ namespace StandManagementProject
                         }
                         else
                         {
-                            new Plusieurs_Prix_par_Produits(this, null,id_p).Show();
+                            Plusieurs_Prix_par_Produits pprp = new Plusieurs_Prix_par_Produits(this, null,id_p);
+                            if (FormIsOpen(Application.OpenForms, typeof(Plusieurs_Prix_par_Produits)))
+                            {
+                                MessageBox.Show("Form already open!");
+                            }
+                            else
+                            {
+                                pprp.Show();
+                            }
+
                         }
 
                     }
@@ -476,7 +485,15 @@ namespace StandManagementProject
 
         private void NoCode_Click(object sender, EventArgs e)
         {
-            new ProduitsSansCodeBarre(this).Show();
+            ProduitsSansCodeBarre prb =new ProduitsSansCodeBarre(this);
+            if (FormIsOpen(Application.OpenForms, typeof(ProduitsSansCodeBarre)))
+            {
+                MessageBox.Show("Form already open!");
+            }
+            else
+            {
+                prb.Show();
+            }
         }
 
         private void NoRéf_Click(object sender, EventArgs e)
@@ -516,6 +533,10 @@ namespace StandManagementProject
                 MessageBox.Show("montant " + montant);
                 MessageBox.Show("user " + id_u);
                 MessageBox.Show("facture N° " + id_facture);
+                if(RemiseTxt.Text == string.Empty)
+                {
+                    RemiseTxt.Text = "0";
+                }
                 ajouter_facture_client(this.montant,Convert.ToDecimal(VesréTxt.Text), Convert.ToDecimal(ResteTxt.Text), Convert.ToDecimal(RemiseTxt.Text));
                 ajouter_reglement_client(this.id_facture, Convert.ToDecimal(VesréTxt.Text));
                 for (int i=0; i< metroGrid1.RowCount - 1; i++)
