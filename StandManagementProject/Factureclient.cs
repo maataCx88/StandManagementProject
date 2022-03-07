@@ -17,7 +17,6 @@ namespace StandManagementProject
         {
             InitializeComponent();
             Affichage_Vente();
-            MessageBox.Show("Index " + (FacturClientGrid.RowCount - 1));
             this.FacturClientGrid.Columns[0].HeaderText = "N° Ticket";
             bunifuDatepicker1.Value = bunifuDatepicker1.Value = DateTime.Today;
 

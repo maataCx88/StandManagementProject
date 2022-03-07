@@ -20,6 +20,7 @@ namespace StandManagementProject
             this.montant = montant;
             this.versé = versé;
             this.reste = reste;
+            this.numlbl.Text = this.id.ToString();
             TotalLbl.Text = this.montant.ToString();
             VersementLbl.Text = this.versé.ToString();
             Restelbl.Text = this.reste.ToString();
