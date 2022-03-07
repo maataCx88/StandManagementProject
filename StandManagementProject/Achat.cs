@@ -15,6 +15,7 @@ namespace StandManagementProject
     {
         int idfacture = 0;
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SearchProduct search = new SearchProduct();
         public Achat()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace StandManagementProject
             setdefaultzero(MontanttotalTextBox);
             setdefaultzero(montantRestTextBox);
             getlastfactid();
+            affichagefourn();
         }
 
         private void Codelabel_Click(object sender, EventArgs e)
@@ -42,6 +44,13 @@ namespace StandManagementProject
             this.Opacity = .97;
             panel1.Visible = true;
             panel1.BackColor = Color.FromArgb(255, Color.White);
+            idfournisseur = 1;
+            NomTextBox.Enabled = true;
+            PrenomTextBox.Enabled = true;
+            TelephoneTextBox.Enabled = true;
+            ajouterfournButton.Enabled = true;
+            NomTextBox.Text = PrenomTextBox.Text = TelephoneTextBox.Text="";
+
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -49,13 +58,6 @@ namespace StandManagementProject
 
         }
 
-        private void bunifuMaterialTextbox1_Click(object sender, EventArgs e)
-        {
-            if (SearchTextBox.Text == "Recherchez produits existants")
-            {
-                SearchTextBox.Text = string.Empty;
-            }
-        }
         void setdefaultzero(MetroFramework.Controls.MetroTextBox t)
         {
             t.Text = "0";
@@ -104,24 +106,30 @@ namespace StandManagementProject
                     DialogResult rs = MessageBox.Show("Voulez vous ajouter un produit sans code  de reference ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (rs == DialogResult.Yes)
                     {
-                        object[] obj = { "","N/A", DescTextbox.Text, PrixAchatTextBox.Text, PrixRemiseTextBox.Text, PrixVenteTextBox.Text, PrixAchatTextBox.Text };
+                        object[] obj = { "", "N/A", DescTextbox.Text, PrixAchatTextBox.Text, QteTextBox1.Text, montantProduitTextBox.Text, PrixVenteTextBox.Text, PrixRemiseTextBox.Text, "" };
                         dataGridView1.Rows.Add(obj);
                         calc();
+                        clearproduct();
                     }
 
                 }
                 else
                 {
-                    object[] obj = { "", CodeTextBox.Text, DescTextbox.Text, PrixAchatTextBox.Text, PrixRemiseTextBox.Text, PrixVenteTextBox.Text, PrixAchatTextBox.Text };
+                    object[] obj = { "", CodeTextBox.Text, DescTextbox.Text, PrixAchatTextBox.Text, QteTextBox1.Text, montantProduitTextBox.Text, PrixVenteTextBox.Text, PrixRemiseTextBox.Text,""  };
                     dataGridView1.Rows.Add(obj);
                     calc();
+                    clearproduct();
                 }
             }
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            this.dataGridView1.Rows[e.RowIndex].Cells["num"].Value = (e.RowIndex + 1).ToString();
+            try
+            {
+                this.dataGridView1.Rows[e.RowIndex].Cells["num"].Value = (e.RowIndex + 1).ToString();
+            }
+            catch (Exception) { }
         }
         
 
@@ -191,10 +199,14 @@ namespace StandManagementProject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            NomTextBox.Text  = PrenomTextBox.Text = TelephoneTextBox.Text = AddresseTextBox.Text = string.Empty;
+            NomTextBox.Text  = PrenomTextBox.Text = TelephoneTextBox.Text =  string.Empty;
             panel1.Visible = false;
             this.Opacity = 1;
-
+            idfournisseur = 1;
+            NomTextBox.Enabled = true;
+            PrenomTextBox.Enabled = true;
+            TelephoneTextBox.Enabled = true;
+            ajouterfournButton.Enabled = true;
 
         }
 
@@ -205,7 +217,12 @@ namespace StandManagementProject
 
         private void montantverseTextBox_TextChanged(object sender, EventArgs e)
         {
-            montantRestTextBox.Text = (Convert.ToDecimal(MontanttotalTextBox.Text) - Convert.ToDecimal(montantverseTextBox.Text)).ToString();
+            try
+            {
+                if(Convert.ToDecimal(montantverseTextBox.Text)!=0)
+                montantRestTextBox.Text = (Convert.ToDecimal(MontanttotalTextBox.Text) - Convert.ToDecimal(montantverseTextBox.Text)).ToString();
+            }
+            catch (Exception) { }
         }
 
         private void montantRestTextBox_TextChanged(object sender, EventArgs e)
@@ -234,7 +251,7 @@ namespace StandManagementProject
             SqlDataAdapter sda = new SqlDataAdapter("search_full_prod", sqlcon);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             sda.SelectCommand.Parameters.AddWithValue("@code", "");
-            sda.SelectCommand.Parameters.AddWithValue("@desc", s);
+            sda.SelectCommand.Parameters.AddWithValue("@des", s);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             if(dtbl.Rows.Count > 0)
@@ -269,7 +286,7 @@ namespace StandManagementProject
             sqlcmd.Parameters.AddWithValue("@prix_v", prix_v);
             sqlcmd.Parameters.AddWithValue("@prix_r", prix_r);
             sqlcmd.Parameters.AddWithValue("@qte", qte);
-            sqlcmd.Parameters.AddWithValue("@date", DateTime.Now);
+            sqlcmd.Parameters.AddWithValue("@date_a", DateTime.Now);
             sqlcmd.ExecuteNonQuery();
         }
         void ajouterfacture(int id_f, decimal montant, decimal versé, decimal reste)
@@ -278,12 +295,27 @@ namespace StandManagementProject
                 sqlcon.Open();
             SqlCommand sqlcmd = new SqlCommand("add_facture_four", sqlcon);
             sqlcmd.CommandType = CommandType.StoredProcedure;
-            sqlcmd.Parameters.AddWithValue("@id_f", id_f);
+            sqlcmd.Parameters.AddWithValue("@id_f", idfournisseur);
             sqlcmd.Parameters.AddWithValue("@montant", montant);
             sqlcmd.Parameters.AddWithValue("@versé", versé);
             sqlcmd.Parameters.AddWithValue("@reste", reste);
-            sqlcmd.Parameters.AddWithValue("@date_f", DateTime.Now);
+            sqlcmd.Parameters.AddWithValue("@date_fact", DateTime.Now);
             sqlcmd.ExecuteNonQuery();
+        }
+        void addfourn(string nom, string prenom,string tel)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+                sqlcon.Open();
+            SqlCommand sqlcmd = new SqlCommand("add_four", sqlcon);
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+            sqlcmd.Parameters.AddWithValue("@nom", nom);
+            sqlcmd.Parameters.AddWithValue("@prenom", prenom);
+            sqlcmd.Parameters.AddWithValue("@phone", tel);
+            sqlcmd.ExecuteNonQuery();
+        }
+        void showallfourn()
+        {
+
         }
         int getproductid(string designation)
         {
@@ -301,7 +333,42 @@ namespace StandManagementProject
             }
             return prodid;
         }
+        void affichagefourn()
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+                sqlcon.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("show_four", sqlcon);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            dataGridView2.DataSource = dtbl;
+            dataGridView2.Columns[1].Width = 200;
+            dataGridView2.Columns[2].Width = 200;
+        }
+        void rech_four(string s)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+                sqlcon.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("search_four", sqlcon);
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sda.SelectCommand.Parameters.AddWithValue("@nom", s);
+            sda.SelectCommand.Parameters.AddWithValue("@prenom", s);
+            DataTable dtbl = new DataTable();
+            sda.Fill(dtbl);
+            dataGridView2.DataSource = dtbl;
+            dataGridView2.Columns[1].Width = 200;
+            dataGridView2.Columns[2].Width = 200;
 
+        }
+        void clear()
+        {
+            dataGridView1.Rows.Clear();
+            countproduitsTextBox.Text = MontanttotalTextBox.Text = QuantitetotalTextBox.Text = montantverseTextBox.Text = montantRestTextBox.Text = "0";
+            clearproduct();
+        }
+        void clearproduct()
+        {
+            CodeTextBox.Text = DescTextbox.Text = ""; PrixAchatTextBox.Text = PrixVenteTextBox.Text = PrixRemiseTextBox.Text = QteTextBox1.Text = montantProduitTextBox.Text = "0";
+        }
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             if(montantverseTextBox.Text == string.Empty)
@@ -310,27 +377,120 @@ namespace StandManagementProject
             }
             else
             {
-                string code = "";string desig="";decimal prxachat = 0, prxvente = 0, prxrems = 0, qte = 0; DateTime now = DateTime.Now;int prodid = 0;
-                decimal montantfacture = Convert.ToDecimal(MontanttotalTextBox.Text), montantfactureverse = Convert.ToDecimal(montantverseTextBox.Text), montantfacturereste = Convert.ToDecimal(montantRestTextBox.Text);
-                getlastfactid();
-                ajouterfacture(idfacture,montantfacture,montantfactureverse,montantfacturereste);
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                DialogResult rs = MessageBox.Show("Voulez vous enrigistrer votre factue sans fournisseurdgdgf?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
                 {
-                    code = row.Cells[1].Value.ToString();
-                    desig = row.Cells[2].Value.ToString();
-                    prxvente = Convert.ToDecimal(row.Cells[6].Value.ToString());
-                    prxrems = Convert.ToDecimal(row.Cells[7].Value.ToString());
-                    prxachat = Convert.ToDecimal(row.Cells[3].Value.ToString());
-                    qte = Convert.ToDecimal(row.Cells[4].Value.ToString());
-                    if (!checkproduct(row.Cells[2].Value.ToString()))
+                    string code = ""; string desig = ""; decimal prxachat = 0, prxvente = 0, prxrems = 0, qte = 0; DateTime now = DateTime.Now; int prodid = 0;
+                    decimal montantfacture = Convert.ToDecimal(MontanttotalTextBox.Text), montantfactureverse = Convert.ToDecimal(montantverseTextBox.Text), montantfacturereste = Convert.ToDecimal(montantRestTextBox.Text);
+                    ajouterfacture(idfacture, montantfacture, montantfactureverse, montantfacturereste);
+                    getlastfactid();
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        ajouterproduit(code, desig, prxvente,prxachat , prxrems,qte);
+                        code = row.Cells[1].Value.ToString();
+                        desig = row.Cells[2].Value.ToString();
+                        prxvente = Convert.ToDecimal(row.Cells[6].Value.ToString());
+                        prxrems = Convert.ToDecimal(row.Cells[7].Value.ToString());
+                        prxachat = Convert.ToDecimal(row.Cells[3].Value.ToString());
+                        qte = Convert.ToDecimal(row.Cells[4].Value.ToString());
+                        if (!checkproduct(row.Cells[2].Value.ToString()))
+                        {
+                            ajouterproduit(code, desig, prxvente, prxachat, prxrems, qte);
+                        }
+                        prodid = getproductid(desig);
+                        ajouterachat(idfacture, prodid, prxvente, prxachat, prxrems, qte);
                     }
-                    prodid=getproductid(desig);                   
-                    ajouterachat(idfacture, prodid,prxvente,prxachat,prxrems,qte);
+                    getlastfactid();
+                    idfournisseur = 1;
+                    clear();
                 }
-                getlastfactid();
             }
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            if(NomTextBox.Text == string.Empty || PrenomTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Selectionner un fournisseur d'abord s.v.p", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if(PrenomTextBox.Enabled == false && NomTextBox.Enabled == false && ajouterfournButton.Enabled == false)
+            {
+                MessageBox.Show("Fournisseur : " + NomTextBox.Text + " " + PrenomTextBox.Text + " Selectionné");
+                panel1.Visible = false;
+                this.Opacity = 1;
+            }
+            
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            if (NomTextBox.Text == string.Empty || PrenomTextBox.Text == string.Empty)
+            {
+                MessageBox.Show("Veillez saisir nom ou prenom au moins s.v.p", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string nom = NomTextBox.Text, prenom = PrenomTextBox.Text, tel = TelephoneTextBox.Text;
+                addfourn(nom,prenom,tel);
+                affichagefourn();
+            }
+        }
+        int idfournisseur = 1;
+
+        private void dataGridView2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NomTextBox.Text = dataGridView2.CurrentRow.Cells[1].Value.ToString();
+                PrenomTextBox.Text = dataGridView2.CurrentRow.Cells[2].Value.ToString();
+                TelephoneTextBox.Text= dataGridView2.CurrentRow.Cells[3].Value.ToString();
+                idfournisseur = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString());
+                NomTextBox.Enabled = false;
+                PrenomTextBox.Enabled = false;
+                TelephoneTextBox.Enabled = false;
+                ajouterfournButton.Enabled = false;
+                
+            }
+            catch (Exception) { }
+        }
+
+        private void bunifuMaterialTextbox1_Click_1(object sender, EventArgs e)
+        {
+            if (searchfourn.Text == "Rechercher fournisseur")
+            {
+                searchfourn.Text = string.Empty;
+            }
+        }
+
+        private void searchfourn_OnValueChanged(object sender, EventArgs e)
+        {
+            if (searchfourn.Text == string.Empty)
+            {
+                affichagefourn();
+            }
+            else
+            {
+                rech_four(searchfourn.Text);
+            }
+        }
+
+        private void Achat_Load(object sender, EventArgs e)
+        {
+            
+        }
+        private void DataSent(string code, string desc, decimal prixachat, decimal prixvente, decimal prixremise)
+        {
+            CodeTextBox.Text = code;
+            DescTextbox.Text = desc;
+            PrixAchatTextBox.Text = prixachat.ToString();
+            PrixVenteTextBox.Text = prixvente.ToString();
+            PrixRemiseTextBox.Text = prixremise.ToString();
+        }
+
+
+        private void bunifuFlatButton2_Click_1(object sender, EventArgs e)
+        {
+            search.DataSent += DataSent;
+            search.ShowDialog();
         }
     }
 }
