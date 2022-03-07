@@ -19,6 +19,7 @@ namespace StandManagementProject
             Affichage_Vente();
             MessageBox.Show("Index " + (FacturClientGrid.RowCount - 1));
             this.FacturClientGrid.Columns[0].HeaderText = "N° Ticket";
+            bunifuDatepicker1.Value = bunifuDatepicker1.Value = DateTime.Today;
 
         }
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
@@ -57,14 +58,18 @@ namespace StandManagementProject
                 Affichage_Vente();
             }
         }
-        
+        decimal montant = 0, versé = 0, reste = 0;
         private void FacturClientGrid_DoubleClick(object sender, EventArgs e)
         {
             if(FacturClientGrid.RowCount-1 !=  0 && FacturClientGrid.CurrentRow.Index != FacturClientGrid.RowCount - 1)
             {
                 
                 id = Convert.ToInt32(FacturClientGrid.CurrentRow.Cells[0].Value);
-                Détails_Facture_Client__Achat_ dac = new Détails_Facture_Client__Achat_(this.id);
+                montant = Convert.ToDecimal(FacturClientGrid.CurrentRow.Cells[1].Value);
+                versé = Convert.ToDecimal(FacturClientGrid.CurrentRow.Cells[2].Value);
+                reste = Convert.ToDecimal(FacturClientGrid.CurrentRow.Cells[3].Value);
+
+                Détails_Facture_Client__Achat_ dac = new Détails_Facture_Client__Achat_(this.id,this.montant,this.versé,this.reste);
                 if (FormIsOpen(Application.OpenForms, typeof(Détails_Facture_Client__Achat_))){
                     MessageBox.Show("Form already open!");
                 }
