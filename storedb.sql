@@ -612,3 +612,30 @@ p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte'
 from produit as p
 where p.code=@code or p.designation=@des
 end
+---------14:22 06/03/2022--------
+
+create proc [dbo].[show_full_details_achat_by_prod]
+@id int
+as begin
+select a.id,p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte',a.qte-a.qte_vendue as 'reste' ,
+f.nom+' '+f.prenom as 'Fournisseur'
+from achat as a , produit as p,fournisseur f , facture_four as ft
+where a.id_p=@id
+and   p.id=a.id_p
+and	  ft.id=a.id_f	
+and   f.id=ft.id_f
+end
+
+
+ALTER proc [dbo].[update_produit] 
+@id int,@prix_v decimal(18,3),@prix_u decimal(18,3),@prix_r decimal(18,3),@qte int
+as update produit set  prix_v=@prix_v ,prix_u=@prix_u ,prix_r=@prix_r ,qte+=@qte
+where produit.id=@id
+-------21:08 06/03/2022-------
+alter proc show_facture_clt_byDate
+@date1 date,@date2 date 
+as begin
+select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste as 'Reste',fc.remise as 'Remise',(fc.reste-fc.remise) as 'Rendu',
+fc.date_fact as 'Date',c.nom+' '+c.prenom as 'Client',e.nom as 'Vendeur' 
+from facture_clt as fc,client as c , employee as e where (c.id=fc.id_c and e.id=fc.id_u) and fc.date_fact between @date1 and @date2 
+end
