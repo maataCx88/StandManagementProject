@@ -639,3 +639,50 @@ select fc.id as 'N° bon',fc.montant as 'Total',fc.versé as 'Versé',fc.reste a
 fc.date_fact as 'Date',c.nom+' '+c.prenom as 'Client',e.nom as 'Vendeur' 
 from facture_clt as fc,client as c , employee as e where (c.id=fc.id_c and e.id=fc.id_u) and fc.date_fact between @date1 and @date2 
 end
+
+-----------------------------------------07/03/2022 22:49 karim
+ALTER proc [dbo].[search_full_prod] 
+@code varchar(100),@des nvarchar(200)
+as begin
+select p.id as 'Num',p.code as 'Code bare',p.designation as 'Désignation',
+prix_u as 'Prix Achat',p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code like '%'+@code+'%' or p.designation like '%'+@des+'%'
+end
+
+alter proc [dbo].[show_full_prod] 
+as
+select p.id as 'Num',p.code as 'Code bare',p.designation as 'Désignation',
+prix_u as 'Prix Achat',p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+
+ALTER proc [dbo].[search_four] 
+@nom nvarchar(50),
+@prenom nvarchar(50)
+as select f.id as 'N',f.nom as 'nom',f.prenom as 'prénom', f.telephone as 'telephone' from fournisseur as f where f.nom like '%'+@nom+'%' or f.prenom like '%'+@prenom+'%'
+
+ALTER proc [dbo].[get_last_id_clt]
+as Select Ident_Current('client') as 'Id'
+
+
+create proc get_last_id_fact_four
+as select Ident_Current('facture_four') as 'Id' 
+
+alter proc [dbo].[get_prodid_bydesignation] 
+@designation varchar(100)
+as begin
+select p.id from produit as p
+where p.designation=@designation
+end
+---------------------hadi nta3k mahdi wa9il 9alta p.code 9adr twli null------------------------------
+ALTER proc [dbo].[get_prod] 
+@code varchar(100)
+as begin
+select p.id,p.code as 'Code bare',p.designation as 'Désignation',
+prix_u as 'Prix Unitaire',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code
+end
+------------------------------------------------------------------------------------------------------------------------------------
+
+
