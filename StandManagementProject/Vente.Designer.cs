@@ -739,6 +739,8 @@ namespace StandManagementProject
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column7.HeaderText = "";
+            this.Column7.Image = global::StandManagementProject.Properties.Resources.supprimer;
+            this.Column7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.Width = 23;
@@ -747,6 +749,8 @@ namespace StandManagementProject
             // 
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column8.HeaderText = "";
+            this.Column8.Image = global::StandManagementProject.Properties.Resources.available_updates_512px;
+            this.Column8.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.Width = 23;

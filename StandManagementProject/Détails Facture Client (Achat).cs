@@ -39,6 +39,7 @@ namespace StandManagementProject
             this.réglementGrid.Columns[1].Width = 100;
             bunifuDatepicker1.Value = DateTime.Today;
         }
+        Factureclient fct;
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         int id = 0;
         decimal montant = 0, versé = 0, reste = 0;
@@ -113,6 +114,7 @@ namespace StandManagementProject
                     reste = montant - versé;
                     Restelbl.Text = reste.ToString();
                     MessageBox.Show("vérsement réussie !");
+                    fct.Affichage_Vente();
                     metroTextBox1.Text = string.Empty;
                     
                     if (this.reste == 0)

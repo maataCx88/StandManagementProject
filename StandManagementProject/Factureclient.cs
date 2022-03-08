@@ -23,7 +23,7 @@ namespace StandManagementProject
         }
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         int id=0;
-        void Affichage_Vente()
+        public void Affichage_Vente()
         {
             if (sqlcon.State == ConnectionState.Closed)
             {
