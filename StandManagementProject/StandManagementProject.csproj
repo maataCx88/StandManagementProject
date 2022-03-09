@@ -356,5 +356,17 @@
   <ItemGroup>
     <None Include="Resources\icons8_hide_32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

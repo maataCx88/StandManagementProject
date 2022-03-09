@@ -60,6 +60,8 @@ namespace StandManagementProject
             this.QteNoRéftxt = new MetroFramework.Controls.MetroTextBox();
             this.NoRéf = new System.Windows.Forms.Button();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -665,6 +667,26 @@ namespace StandManagementProject
             this.metroLabel4.TabIndex = 2;
             this.metroLabel4.Text = "Autre Article ";
             // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::StandManagementProject.Properties.Resources.delete_32px;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn3.MinimumWidth = 6;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Width = 23;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Image = global::StandManagementProject.Properties.Resources.available_updates_512px;
+            this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn4.MinimumWidth = 6;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.Width = 23;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "Id_P";
@@ -739,8 +761,8 @@ namespace StandManagementProject
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column7.HeaderText = "";
-            this.Column7.Image = global::StandManagementProject.Properties.Resources.supprimer;
-            this.Column7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Column7.Image = global::StandManagementProject.Properties.Resources.cancel_40px;
+            this.Column7.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.Width = 23;
@@ -750,7 +772,7 @@ namespace StandManagementProject
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column8.HeaderText = "";
             this.Column8.Image = global::StandManagementProject.Properties.Resources.available_updates_512px;
-            this.Column8.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Column8.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.Width = 23;
@@ -810,6 +832,8 @@ namespace StandManagementProject
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel TotalLbl;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;

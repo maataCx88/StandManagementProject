@@ -571,7 +571,7 @@ namespace StandManagementProject
                 decimal myreste = montant- Convert.ToDecimal(VesréTxt.Text);
                 if( RemiseTxt.Text != string.Empty)
                 {
-                    myreste += Convert.ToDecimal(RemiseTxt.Text);
+                    myreste -= Convert.ToDecimal(RemiseTxt.Text);
                 }
                 if(myreste < 0)
                 {
