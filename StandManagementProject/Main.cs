@@ -31,5 +31,10 @@ namespace StandManagementProject
             mb.label1.Location = new Point(65, 20);
             mb.Show();
         }
+
+        private void labeldate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
