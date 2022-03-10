@@ -243,22 +243,58 @@ namespace StandManagementProject
                 dataGridView1.Rows.Clear();
             }
         }
-        bool checkproduct(string s)
+        bool checkproduct(string s, string code)
         {
             bool checkingvar = false;
-            if (sqlcon.State == ConnectionState.Closed)
-                sqlcon.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("search_full_prod2", sqlcon);
-            sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-            sda.SelectCommand.Parameters.AddWithValue("@code", s);
-            sda.SelectCommand.Parameters.AddWithValue("@des", s);
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            if(dtbl.Rows.Count > 0)
+            if (code == "N/A")
             {
-                checkingvar = true;
+                if (sqlcon.State == ConnectionState.Closed)
+                    sqlcon.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("search_full_prod2", sqlcon);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@code", s);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
+                if (dtbl.Rows.Count > 0)
+                {
+                    checkingvar = true;
+                }
+                return checkingvar;
             }
-            return checkingvar;
+            else
+            {
+                if (sqlcon.State == ConnectionState.Closed)
+                    sqlcon.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("search_full_prod3", sqlcon);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@code", code);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
+                if (dtbl.Rows.Count > 0)
+                {
+                    checkingvar = true;
+                }
+                return checkingvar;
+            }
+        }
+        void checkproduct2(string s)
+        {
+            if (CodeTextBox.Text != string.Empty && CodeTextBox.Text != "N/A") {
+                if (sqlcon.State == ConnectionState.Closed)
+                    sqlcon.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("search_full_prod3", sqlcon);
+                sda.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sda.SelectCommand.Parameters.AddWithValue("@code", s);
+                DataTable dtbl = new DataTable();
+                sda.Fill(dtbl);
+                if (dtbl.Rows.Count > 0)
+                {
+                    DescTextbox.Text = dtbl.Rows[0][2].ToString();
+                    PrixAchatTextBox.Text = dtbl.Rows[0][3].ToString();
+                    PrixRemiseTextBox.Text= dtbl.Rows[0][5].ToString();
+                    PrixVenteTextBox.Text = dtbl.Rows[0][4].ToString();
+                }
+            }
         }
         void ajouterproduit(string code, string design, decimal prix_v, decimal prix_u, decimal prix_r, decimal qte)
         {
@@ -393,9 +429,9 @@ namespace StandManagementProject
                             prxrems = Convert.ToDecimal(row.Cells[7].Value.ToString());
                             prxachat = Convert.ToDecimal(row.Cells[3].Value.ToString());
                             qte = Convert.ToDecimal(row.Cells[4].Value.ToString());
-                            if (!checkproduct(row.Cells[2].Value.ToString()))
+                            if (!checkproduct(row.Cells[2].Value.ToString(), row.Cells[1].Value.ToString()))
                             {
-                                MessageBox.Show("ENTERED");
+                                
                                 ajouterproduit(code, desig, prxvente, prxachat, prxrems, qte);
                             }
                             prodid = getproductid(desig);
@@ -421,7 +457,7 @@ namespace StandManagementProject
                         prxrems = Convert.ToDecimal(row.Cells[7].Value.ToString());
                         prxachat = Convert.ToDecimal(row.Cells[3].Value.ToString());
                         qte = Convert.ToDecimal(row.Cells[4].Value.ToString());
-                        if (!checkproduct(row.Cells[2].Value.ToString()))
+                        if (!checkproduct(row.Cells[2].Value.ToString(), row.Cells[1].Value.ToString()))
                         {
                             MessageBox.Show("ENTERED");
                             ajouterproduit(code, desig, prxvente, prxachat, prxrems, qte);
@@ -521,6 +557,11 @@ namespace StandManagementProject
         {
             search.DataSent += DataSent;
             search.ShowDialog();
+        }
+
+        private void CodeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            checkproduct2(CodeTextBox.Text);
         }
     }
 }

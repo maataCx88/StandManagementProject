@@ -37,7 +37,6 @@ namespace StandManagementProject
             SqlDataAdapter sda = new SqlDataAdapter("search_full_prod", sqlcon);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
             sda.SelectCommand.Parameters.AddWithValue("@code", s);
-            sda.SelectCommand.Parameters.AddWithValue("@des", s);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             dataGridView2.DataSource = dtbl;
@@ -58,6 +57,12 @@ namespace StandManagementProject
         private void dataGridView2_DoubleClick(object sender, EventArgs e)
         {
             this.DataSent(this.dataGridView2.CurrentRow.Cells[1].Value.ToString(), this.dataGridView2.CurrentRow.Cells[2].Value.ToString(), Convert.ToDecimal(this.dataGridView2.CurrentRow.Cells[3].Value.ToString()), Convert.ToDecimal(this.dataGridView2.CurrentRow.Cells[4].Value.ToString()), Convert.ToDecimal(this.dataGridView2.CurrentRow.Cells[5].Value.ToString()));
+            this.Hide();
+        }
+
+        private void SearchProduct_Load(object sender, EventArgs e)
+        {
+            show_all();
         }
     }
 }
