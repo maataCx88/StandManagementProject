@@ -120,17 +120,19 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="closeprgrm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAGYktHRAD/AP8A/6C9p5MAAAIsSURBVGhD7VnLTgMxDKyo+hlw4sDfAC03oOXHkFCBEw/xXwhE
-        4cRLy7hKUBKSjZ3QZA+JFFXtxvbMxI53u6NRG02BpkBTYLAKdF23g3mH+YhZelDMe8zdJIEU+OfSqD3x
-        CMO2mIRSfgD41xBuUgi8DgU9cLykELDwix1kGrjiid1lOxBHtA2y42c7aARsCcV6cHYAa8aY55j70gCw
-        OVC2Y58tJ35vzJgDXJ9g3qp1X/g84ZKgtZhkQ4N8TFzbWPxorJgDXL901nzg+zTmGGtmmLTWHMsaBKYe
-        IKTqaYgErs0N5TUBInNYnAAFJMUDJOYeQIsAeO+uxTIgttMEzho9qoZILLQNHBH4b0nKceMHiUgcBPKa
-        ABPwMyl4tbssAf+FgAponiw6+KcnbahOjmMpIBHQ6yvFQWAnTFdUsLMY+Co7YOT7kaewiQQbfG0C1GHf
-        3R1Uv7E7dkoGWDub4gA2vjowXbE7dkr8LAKB/PcVMbdjlzuFECnYYXFN3LGL1oA66/WNmVbNUrmHxJ+O
-        bRwGm98BBZ7VYXtI/HZsM4c3XgMIIO6wgTpZd+ziN3MIeu2oxO2wvpPqqgYBehrTzwTSJmU+EyzhZ6s4
-        AXVSEIkL7u2Bk+PUscm2ziMl534mZ83GizgHHMe2EchWgCNzz5rs+HDw5jqp+H0l1gNgHyoCdkMn/b2+
-        By9DeMHxBBzyFxzqnNevmGq8K1gBOP1rlwZenHPNoCnQFGgKpCjwA8OpORR2v0VXAAAAAElFTkSuQmCC
+        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
+        AcOpORRqgRrUAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

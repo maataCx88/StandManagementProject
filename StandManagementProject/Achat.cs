@@ -248,9 +248,9 @@ namespace StandManagementProject
             bool checkingvar = false;
             if (sqlcon.State == ConnectionState.Closed)
                 sqlcon.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("search_full_prod", sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter("search_full_prod2", sqlcon);
             sda.SelectCommand.CommandType = CommandType.StoredProcedure;
-            sda.SelectCommand.Parameters.AddWithValue("@code", "");
+            sda.SelectCommand.Parameters.AddWithValue("@code", s);
             sda.SelectCommand.Parameters.AddWithValue("@des", s);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -377,12 +377,41 @@ namespace StandManagementProject
             }
             else
             {
-                DialogResult rs = MessageBox.Show("Voulez vous enrigistrer votre factue sans fournisseurdgdgf?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (rs == DialogResult.Yes)
+                if(NomTextBox.Enabled != false && PrenomTextBox.Enabled != false && ajouterfournButton.Enabled != false) { 
+                DialogResult rs = MessageBox.Show("Voulez vous enrigistrer votre factue sans fournisseur", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (rs == DialogResult.Yes)
+                    {
+                        string code = ""; string desig = ""; decimal prxachat = 0, prxvente = 0, prxrems = 0, qte = 0; DateTime now = DateTime.Now; int prodid = 0;
+                        decimal montantfacture = Convert.ToDecimal(MontanttotalTextBox.Text), montantfactureverse = Convert.ToDecimal(montantverseTextBox.Text), montantfacturereste = Convert.ToDecimal(montantRestTextBox.Text);
+                        ajouterfacture(idfournisseur, montantfacture, montantfactureverse, montantfacturereste);
+                        getlastfactid();
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            code = row.Cells[1].Value.ToString();
+                            desig = row.Cells[2].Value.ToString();
+                            prxvente = Convert.ToDecimal(row.Cells[6].Value.ToString());
+                            prxrems = Convert.ToDecimal(row.Cells[7].Value.ToString());
+                            prxachat = Convert.ToDecimal(row.Cells[3].Value.ToString());
+                            qte = Convert.ToDecimal(row.Cells[4].Value.ToString());
+                            if (!checkproduct(row.Cells[2].Value.ToString()))
+                            {
+                                MessageBox.Show("ENTERED");
+                                ajouterproduit(code, desig, prxvente, prxachat, prxrems, qte);
+                            }
+                            prodid = getproductid(desig);
+                            ajouterachat(idfacture, prodid, prxvente, prxachat, prxrems, qte);
+                        }
+                        getlastfactid();
+                        idfournisseur = 1;
+                        clear();
+                    }
+                    
+                }
+                else
                 {
                     string code = ""; string desig = ""; decimal prxachat = 0, prxvente = 0, prxrems = 0, qte = 0; DateTime now = DateTime.Now; int prodid = 0;
                     decimal montantfacture = Convert.ToDecimal(MontanttotalTextBox.Text), montantfactureverse = Convert.ToDecimal(montantverseTextBox.Text), montantfacturereste = Convert.ToDecimal(montantRestTextBox.Text);
-                    ajouterfacture(idfacture, montantfacture, montantfactureverse, montantfacturereste);
+                    ajouterfacture(idfournisseur, montantfacture, montantfactureverse, montantfacturereste);
                     getlastfactid();
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
@@ -394,6 +423,7 @@ namespace StandManagementProject
                         qte = Convert.ToDecimal(row.Cells[4].Value.ToString());
                         if (!checkproduct(row.Cells[2].Value.ToString()))
                         {
+                            MessageBox.Show("ENTERED");
                             ajouterproduit(code, desig, prxvente, prxachat, prxrems, qte);
                         }
                         prodid = getproductid(desig);
@@ -414,7 +444,7 @@ namespace StandManagementProject
             }
             if(PrenomTextBox.Enabled == false && NomTextBox.Enabled == false && ajouterfournButton.Enabled == false)
             {
-                MessageBox.Show("Fournisseur : " + NomTextBox.Text + " " + PrenomTextBox.Text + " Selectionné");
+                MessageBox.Show("Fournisseur : " + NomTextBox.Text + " " + PrenomTextBox.Text + " Selectionné id : "+idfournisseur);
                 panel1.Visible = false;
                 this.Opacity = 1;
             }

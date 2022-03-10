@@ -63,7 +63,45 @@ namespace StandManagementProject
         {
             return Application.OpenForms.Cast<Form>().Any(openform => openform.GetType() == formtype);
         }
-
+        void valider_vente()
+        {
+            if (montant != 0)
+            {
+                MessageBox.Show("id client " + id_f);
+                MessageBox.Show("montant " + montant);
+                MessageBox.Show("user " + id_u);
+                MessageBox.Show("facture N° " + id_facture);
+                if (RemiseTxt.Text == string.Empty)
+                {
+                    RemiseTxt.Text = "0";
+                }
+                ajouter_facture_client(this.montant, Convert.ToDecimal(VesréTxt.Text), Convert.ToDecimal(ResteTxt.Text), Convert.ToDecimal(RemiseTxt.Text));
+                ajouter_reglement_client(this.id_facture, Convert.ToDecimal(VesréTxt.Text));
+                for (int i = 0; i < metroGrid1.RowCount - 1; i++)
+                {
+                    if (metroGrid1.Rows[i].Cells[4].Value.ToString() != "Autre Article")
+                    {
+                        id_p = Convert.ToInt32(metroGrid1.Rows[i].Cells[0].Value);
+                        id_achat = Convert.ToInt32(metroGrid1.Rows[i].Cells[1].Value);
+                        prix_u = Convert.ToDecimal(metroGrid1.Rows[i].Cells[6].Value);
+                        qteC = Convert.ToInt32(metroGrid1.Rows[i].Cells[8].Value);
+                        decimal totalp = Convert.ToDecimal(metroGrid1.Rows[i].Cells[9].Value);
+                        ajouter_vente(this.id_p, this.prix_u, this.qteC);
+                        update_achat(this.id_p, this.id_achat, this.qteC);
+                        MessageBox.Show("Rows" + i + " id_p : " + id_p + " Achat : " + id_achat +
+                            "\n prix_u : " + prix_u + " qte : " + qteC + "with total" + totalp);
+                    }
+                }
+                MessageBox.Show("Opération Réussie");
+                vider_tous_cas();
+                last_id_facture_client();
+                NumdeBon.Text = id_facture.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Facture " + id_facture + " Vide !");
+            }
+        }
         void calc()
         {
             montant = 0;
@@ -527,40 +565,8 @@ namespace StandManagementProject
 
         private void ConfirmBillBtn_Click(object sender, EventArgs e)
         {
-            if(montant != 0)
-            {
-                MessageBox.Show("id client " + id_f);
-                MessageBox.Show("montant " + montant);
-                MessageBox.Show("user " + id_u);
-                MessageBox.Show("facture N° " + id_facture);
-                if(RemiseTxt.Text == string.Empty)
-                {
-                    RemiseTxt.Text = "0";
-                }
-                ajouter_facture_client(this.montant,Convert.ToDecimal(VesréTxt.Text), Convert.ToDecimal(ResteTxt.Text), Convert.ToDecimal(RemiseTxt.Text));
-                ajouter_reglement_client(this.id_facture, Convert.ToDecimal(VesréTxt.Text));
-                for (int i=0; i< metroGrid1.RowCount - 1; i++)
-                {
-                    if(metroGrid1.Rows[i].Cells[4].Value.ToString() != "Autre Article")
-                    {
-                        id_p = Convert.ToInt32(metroGrid1.Rows[i].Cells[0].Value);
-                        id_achat = Convert.ToInt32(metroGrid1.Rows[i].Cells[1].Value);
-                        prix_u = Convert.ToDecimal(metroGrid1.Rows[i].Cells[6].Value);
-                        qteC = Convert.ToInt32(metroGrid1.Rows[i].Cells[8].Value);
-                        decimal totalp = Convert.ToDecimal(metroGrid1.Rows[i].Cells[9].Value);
-                        ajouter_vente(this.id_p, this.prix_u, this.qteC);
-                        update_achat(this.id_p, this.id_achat, this.qteC);
-                        MessageBox.Show("Rows"+ i +" id_p : " +id_p+ " Achat : " + id_achat +
-                            "\n prix_u : "+ prix_u +" qte : "+ qteC + "with total"+totalp);
-                    }
-                }
-                MessageBox.Show("Opération Réussie");
-                vider_tous_cas();
-            }
-            else
-            {
-                MessageBox.Show("Facture " + id_facture + " Vide !");
-            }
+            valider_vente();
+           
 
         }
 
@@ -596,6 +602,12 @@ namespace StandManagementProject
                 ResteTxt.Text = string.Empty;
                 RenduTxt.Text = string.Empty;
             }
+        }
+
+        private void Confirm2_Click(object sender, EventArgs e)
+        {
+            valider_vente();
+            MessageBox.Show("Impression en cours");
         }
     }
 }
