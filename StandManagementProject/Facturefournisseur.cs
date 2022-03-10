@@ -23,5 +23,10 @@ namespace StandManagementProject
         {
 
         }
+
+        private void metroDateTime1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
