@@ -72,6 +72,12 @@
     <Compile Include="Add_worker.Designer.cs">
       <DependentUpon>Add_worker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caisse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caisse.Designer.cs">
+      <DependentUpon>Caisse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add_worker.resx">
       <DependentUpon>Add_worker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caisse.resx">
+      <DependentUpon>Caisse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
@@ -367,6 +376,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_time_search_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

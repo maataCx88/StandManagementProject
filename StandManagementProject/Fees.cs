@@ -74,16 +74,15 @@ namespace StandManagementProject
 
         void nominate()
         {
-            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[0].HeaderText = "N°";
             dataGridView1.Columns[0].Width = 113;
             dataGridView1.Columns[1].HeaderText = "DESCRIPTION";
-            dataGridView1.Columns[1].Width = 140;
+            dataGridView1.Columns[1].Width = 200;
             dataGridView1.Columns[2].HeaderText = "MONTAT";
-            dataGridView1.Columns[2].Width = 120;
+            dataGridView1.Columns[2].Width = 180;
             dataGridView1.Columns[3].HeaderText = "DATE";
             dataGridView1.Columns[3].Width = 120;
-            dataGridView1.Columns[4].HeaderText = "ID EMP";
-            dataGridView1.Columns[4].Width = 120;
+            dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].HeaderText = "NOM";
             dataGridView1.Columns[5].Width = 120;
             dataGridView1.Columns[6].HeaderText = "PRENOM";
@@ -92,8 +91,19 @@ namespace StandManagementProject
 
         private void pictureBoxsearch_Click(object sender, EventArgs e)
         {
-            view_fees();
-            datagridviewchange();
+            if (metroDateTimestartdate.Value <= metroDateTimefinishdate.Value)
+            {
+                view_fees();
+                datagridviewchange();
+            }
+            else
+            {
+                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                mb.label1.Text = "Changer la date \n S.V.P";
+                mb.label1.Location = new Point(80, 20);
+                mb.Show();
+            }
+
         }
 
         private void buttonadd_Click(object sender, EventArgs e)

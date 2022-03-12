@@ -73,7 +73,7 @@ namespace StandManagementProject
             dataGridView1.Columns[5].HeaderText = "PRIX REMISE";
             dataGridView1.Columns[5].Width = 220;
             dataGridView1.Columns[6].HeaderText = "QUANTITE";
-            dataGridView1.Columns[6].Width = 220;
+            dataGridView1.Columns[6].Width = 110;
         }
 
         private void metroTextBoxsearch_TextChanged(object sender, EventArgs e)

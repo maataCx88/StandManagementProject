@@ -332,7 +332,7 @@
             // metroDateTimedate
             // 
             this.metroDateTimedate.Location = new System.Drawing.Point(50, 240);
-            this.metroDateTimedate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTimedate.MinimumSize = new System.Drawing.Size(4, 29);
             this.metroDateTimedate.Name = "metroDateTimedate";
             this.metroDateTimedate.Size = new System.Drawing.Size(170, 29);
             this.metroDateTimedate.TabIndex = 5;
@@ -364,11 +364,11 @@
             this.labelamount.AutoSize = true;
             this.labelamount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.labelamount.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelamount.Location = new System.Drawing.Point(80, 141);
+            this.labelamount.Location = new System.Drawing.Point(87, 141);
             this.labelamount.Name = "labelamount";
-            this.labelamount.Size = new System.Drawing.Size(112, 32);
+            this.labelamount.Size = new System.Drawing.Size(98, 32);
             this.labelamount.TabIndex = 0;
-            this.labelamount.Text = "Mountat:";
+            this.labelamount.Text = "Montat:";
             // 
             // richTextBox1
             // 

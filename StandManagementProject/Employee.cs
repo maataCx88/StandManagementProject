@@ -60,7 +60,7 @@ namespace StandManagementProject
 
         void nominate()
         {
-            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[0].HeaderText = "N°";
             dataGridView1.Columns[0].Width = 134;
             dataGridView1.Columns[1].HeaderText = "NOM";
             dataGridView1.Columns[1].Width = 142;
