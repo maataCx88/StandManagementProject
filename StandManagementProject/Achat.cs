@@ -33,7 +33,20 @@ namespace StandManagementProject
             getlastfactid();
             affichagefourn();
         }
-
+        void ajouter_reglement_fournisseur(int id, decimal versé)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("add_reg_four", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", id);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@versé", versé);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@date_reg_clt", DateTime.Today);
+                sqlcmd.SelectCommand.ExecuteNonQuery();
+                sqlcon.Close();
+            }
+        }
         private void Codelabel_Click(object sender, EventArgs e)
         {
 
@@ -420,6 +433,7 @@ namespace StandManagementProject
                         string code = ""; string desig = ""; decimal prxachat = 0, prxvente = 0, prxrems = 0, qte = 0; DateTime now = DateTime.Now; int prodid = 0;
                         decimal montantfacture = Convert.ToDecimal(MontanttotalTextBox.Text), montantfactureverse = Convert.ToDecimal(montantverseTextBox.Text), montantfacturereste = Convert.ToDecimal(montantRestTextBox.Text);
                         ajouterfacture(idfournisseur, montantfacture, montantfactureverse, montantfacturereste);
+                        ajouter_reglement_fournisseur(idfacture, montantfacture);
                         getlastfactid();
                         foreach (DataGridViewRow row in dataGridView1.Rows)
                         {
