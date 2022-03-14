@@ -17,8 +17,12 @@ namespace StandManagementProject
         public Facturefournisseur()
         {
             InitializeComponent();
-            show_all();
+            Affichage_fact();
 
+        }
+        public static bool FormIsOpen(FormCollection application, Type formtype)
+        {
+            return Application.OpenForms.Cast<Form>().Any(openform => openform.GetType() == formtype);
         }
         void show_all()
         {
@@ -51,7 +55,7 @@ namespace StandManagementProject
             dataGridView1.Columns[4].Width = 220;
             dataGridView1.Columns[5].Width = 280;
         }
-        void Affichage_fact()
+        public void Affichage_fact()
         {
             if (sqlcon.State == ConnectionState.Closed)
             sqlcon.Open();
@@ -111,7 +115,15 @@ namespace StandManagementProject
                 decimal montant = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[1].Value);
                 decimal versé = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value);
                 decimal reste = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value);
-                new Détail_Facture_Fournisseur(id, montant, versé, reste).Show();
+                Détail_Facture_Fournisseur dcf = new Détail_Facture_Fournisseur(id, montant,versé, reste);
+                if (FormIsOpen(Application.OpenForms, typeof(Détail_Facture_Fournisseur)))
+                {
+                    MessageBox.Show("Formulaire déja ouvert !");
+                }
+                else
+                {
+                    dcf.Show();
+                }
             }
         }
     }

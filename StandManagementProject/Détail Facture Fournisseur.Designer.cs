@@ -308,6 +308,7 @@ namespace StandManagementProject
             this.confirmBtn.TabIndex = 7;
             this.confirmBtn.Text = "Confirmer";
             this.confirmBtn.UseSelectable = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // bunifuDatepicker1
             // 

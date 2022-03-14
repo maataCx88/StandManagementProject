@@ -16,10 +16,29 @@ namespace StandManagementProject
         public Détail_Facture_Fournisseur(int id,decimal total,decimal versé,decimal Reste)
         {
             InitializeComponent();
+            this.id = id;
+            this.montant = total;
+            this.versé = versé;
+            this.reste = Reste;
+            this.numlbl.Text = this.id.ToString();
+            TotalLbl.Text = this.montant.ToString();
+            VersementLbl.Text = this.versé.ToString();
+            Restelbl.Text = this.reste.ToString();
+            if (this.reste == 0)
+            {
+                this.VerséTxt.Enabled = false;
+            }
+            else
+            {
+                this.VerséTxt.Enabled = true;
+            }
+            bunifuDatepicker1.Value = DateTime.Today;
             Affichage_achat(id);
             Affichage_reglement(id);
         }
+        Facturefournisseur fct;
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        decimal montant = 0, versé = 0, reste = 0; int id = 0;
         void Affichage_achat(int id)
         {
             if (sqlcon.State == ConnectionState.Closed)
@@ -39,6 +58,43 @@ namespace StandManagementProject
 
             }
         }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+            if (VerséTxt.Text != string.Empty)
+            {
+                if (versé + Convert.ToDecimal(VerséTxt.Text) > montant)
+                {
+                    MessageBox.Show("Montant versé trés élevé ! \n veuillez refaire le versement");
+                    VerséTxt.Text = string.Empty;
+                }
+                else
+                {
+                    versé = versé + Convert.ToDecimal(VerséTxt.Text);
+                    Ajouter_Réglement(this.id, Convert.ToDecimal(this.VerséTxt.Text));
+                    Affichage_reglement(this.id);
+                    reste = montant - versé;
+                    Restelbl.Text = reste.ToString();
+                    MessageBox.Show("vérsement réussie !");
+                    fct.Affichage_fact();
+                    VerséTxt.Text = string.Empty;
+
+                    if (this.reste == 0)
+                    {
+                        this.VerséTxt.Enabled = false;
+                    }
+                    else
+                    {
+                        this.VerséTxt.Enabled = true;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Montant versé vide !");
+            }
+        }
+
         void Ajouter_Réglement(int id, decimal verse)
         {
             if (sqlcon.State == ConnectionState.Closed)
