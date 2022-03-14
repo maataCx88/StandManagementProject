@@ -16,6 +16,8 @@ namespace StandManagementProject
         public Détail_Facture_Fournisseur(int id,decimal total,decimal versé,decimal Reste)
         {
             InitializeComponent();
+            Affichage_achat(id);
+            Affichage_reglement(id);
         }
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         void Affichage_achat(int id)

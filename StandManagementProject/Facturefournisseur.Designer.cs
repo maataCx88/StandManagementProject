@@ -77,6 +77,7 @@ namespace StandManagementProject
             this.dataGridView1.Location = new System.Drawing.Point(15, 196);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -98,6 +99,7 @@ namespace StandManagementProject
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.Size = new System.Drawing.Size(1676, 662);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // label7
             // 

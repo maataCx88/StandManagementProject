@@ -102,5 +102,17 @@ namespace StandManagementProject
                 Affichage_fact();
             }
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (dataGridView1.RowCount - 1 != 0 && dataGridView1.CurrentRow.Index != dataGridView1.RowCount - 1)
+            {
+                int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                decimal montant = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[1].Value);
+                decimal versé = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value);
+                decimal reste = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value);
+                new Détail_Facture_Fournisseur(id, montant, versé, reste).Show();
+            }
+        }
     }
 }
