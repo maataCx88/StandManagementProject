@@ -115,6 +115,56 @@ namespace StandManagementProject
                 MessageBox.Show("Facture " + id_facture + " Vide !");
             }
         }
+        void valider_vente2()
+        {
+            if (montant != 0)
+            {
+                MessageBox.Show("id client " + id_f);
+                MessageBox.Show("montant " + montant);
+                MessageBox.Show("user " + id_u);
+                MessageBox.Show("facture N° " + id_facture);
+                if (RemiseTxt.Text == string.Empty)
+                {
+                    RemiseTxt.Text = "0";
+                }
+                ajouter_facture_client(this.montant, Convert.ToDecimal(VesréTxt.Text), Convert.ToDecimal(ResteTxt.Text), Convert.ToDecimal(RemiseTxt.Text));
+                ajouter_reglement_client(this.id_facture, Convert.ToDecimal(VesréTxt.Text));
+                for (int i = 0; i < metroGrid1.RowCount - 1; i++)
+                {
+                    if (metroGrid1.Rows[i].Cells[4].Value.ToString() != "Autre Article")
+                    {
+                        id_p = Convert.ToInt32(metroGrid1.Rows[i].Cells[0].Value);
+                        prix_u = Convert.ToDecimal(metroGrid1.Rows[i].Cells[6].Value);
+                        qteC = Convert.ToInt32(metroGrid1.Rows[i].Cells[8].Value);
+                        decimal totalp = Convert.ToDecimal(metroGrid1.Rows[i].Cells[9].Value);
+                        ajouter_vente(this.id_p, this.prix_u, this.qteC);
+                        if (metroGrid1.Rows[i].Cells[1].Value.ToString() == string.Empty)
+                        {
+                            update_qte_prod(id_p, qteC);
+                        }
+                        else
+                        {
+                            id_achat = Convert.ToInt32(metroGrid1.Rows[i].Cells[1].Value);
+                            update_achat(this.id_p, this.id_achat, this.qteC);
+                        }
+
+
+                        MessageBox.Show("Rows" + i + " id_p : " + id_p + " Achat : " + id_achat +
+                            "\n prix_u : " + prix_u + " qte : " + qteC + "with total" + totalp);
+                    }
+                }
+                MessageBox.Show("Opération Réussie");
+                FactPrinter fct = new FactPrinter(id_facture, "HAMID", "69", this.montant.ToString(), VesréTxt.Text, ResteTxt.Text);
+                fct.ShowDialog();
+                vider_tous_cas();
+                last_id_facture_client();
+                NumdeBon.Text = id_facture.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Facture " + id_facture + " Vide !");
+            }
+        }
         public void total_qte_in_panier(int id)
         {
             total_p = 0;
@@ -509,7 +559,7 @@ namespace StandManagementProject
                     if (total_p+1 <= total)
                     {
                         
-                        Get_Achat_lastId(id_p);
+                        //Get_Achat_lastId(id_p);
                         affichage_achat_by_produit(id_p);
                         if (plusieur)
                         {
@@ -795,8 +845,8 @@ namespace StandManagementProject
 
         private void Confirm2_Click(object sender, EventArgs e)
         {
-            valider_vente();
-            MessageBox.Show("Impression en cours");
+            valider_vente2();
+           
         }
     }
 }
