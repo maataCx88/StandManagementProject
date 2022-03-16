@@ -54,11 +54,15 @@ namespace StandManagementProject
         string designp = "";
         decimal ventep = -1;//prix_v 2
         decimal remisep = -1;//prix_remise 2
-        int stockp = -1;
+        public int stockp = -1;
         bool plusieur = false;
         int id_achat = -1;
         bool exist = true;
+        public bool existontable = false;
         decimal montant = 0;
+        public int total = 0;
+        public int total_p = 0;
+        string scb = "";
         public static bool FormIsOpen(FormCollection application, Type formtype)
         {
             return Application.OpenForms.Cast<Form>().Any(openform => openform.GetType() == formtype);
@@ -82,12 +86,21 @@ namespace StandManagementProject
                     if (metroGrid1.Rows[i].Cells[4].Value.ToString() != "Autre Article")
                     {
                         id_p = Convert.ToInt32(metroGrid1.Rows[i].Cells[0].Value);
-                        id_achat = Convert.ToInt32(metroGrid1.Rows[i].Cells[1].Value);
                         prix_u = Convert.ToDecimal(metroGrid1.Rows[i].Cells[6].Value);
                         qteC = Convert.ToInt32(metroGrid1.Rows[i].Cells[8].Value);
                         decimal totalp = Convert.ToDecimal(metroGrid1.Rows[i].Cells[9].Value);
                         ajouter_vente(this.id_p, this.prix_u, this.qteC);
-                        update_achat(this.id_p, this.id_achat, this.qteC);
+                        if (metroGrid1.Rows[i].Cells[1].Value.ToString() == string.Empty)
+                        {
+                            update_qte_prod(id_p, qteC);
+                        }
+                        else
+                        {
+                            id_achat = Convert.ToInt32(metroGrid1.Rows[i].Cells[1].Value);
+                            update_achat(this.id_p, this.id_achat, this.qteC);
+                        }
+                     
+                        
                         MessageBox.Show("Rows" + i + " id_p : " + id_p + " Achat : " + id_achat +
                             "\n prix_u : " + prix_u + " qte : " + qteC + "with total" + totalp);
                     }
@@ -101,6 +114,19 @@ namespace StandManagementProject
             {
                 MessageBox.Show("Facture " + id_facture + " Vide !");
             }
+        }
+        public void total_qte_in_panier(int id)
+        {
+            total_p = 0;
+            for (int i = 0; i < metroGrid1.RowCount - 1; i++)
+            {
+                if(id == Convert.ToInt32(metroGrid1.Rows[i].Cells[0].Value))
+                {
+                    total_p += Convert.ToInt32(metroGrid1.Rows[i].Cells[8].Value);
+                }
+               
+            }
+            
         }
         void calc()
         {
@@ -191,30 +217,50 @@ namespace StandManagementProject
                 sqlcon.Close();
             }
         }
-        void update_achat(int idprod,int achat, int pqte)
+        void get_qte_produit(int id)
         {
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlcmd = new SqlDataAdapter("sale__from_achat", sqlcon);
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("show_achat_by_prod", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", achat);
-                sqlcmd.SelectCommand.Parameters.AddWithValue("@id_p", idprod );
-                sqlcmd.SelectCommand.Parameters.AddWithValue("qte", pqte);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", id);
                 using (DataTable dt = new DataTable())
                 {
                     sqlcmd.Fill(dt);
                     if (dt.Rows.Count == 1)
                     {
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit");
-                        plusieur = false;
+                        total = Convert.ToInt32(dt.Rows[0][0]);
                     }
-                    else if (dt.Rows.Count > 1)
-                    {
-                        MessageBox.Show("Produit Existe avec plusieurs fois njibou mn la table achat");
-                        plusieur = true;
-                    }
+                   
                 }
+                sqlcon.Close();
+            }
+        }
+        void update_qte_prod(int idprod,  int pqte)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("decrese_qte", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", idprod);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@qte", pqte);
+                sqlcmd.SelectCommand.ExecuteNonQuery();
+                sqlcon.Close();
+            }
+        }
+        void update_achat(int idprod,int achat, int pqte)
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("sale__from_achat ", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id", achat);
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@id_p", idprod );
+                sqlcmd.SelectCommand.Parameters.AddWithValue("@qte", pqte);
+                sqlcmd.SelectCommand.ExecuteNonQuery();
                 sqlcon.Close();
             }
         }
@@ -252,7 +298,8 @@ namespace StandManagementProject
                         ventep= Convert.ToInt32(dt.Rows[0][4]);
                         remisep = Convert.ToInt32(dt.Rows[0][5]);
                         stockp = Convert.ToInt32(dt.Rows[0][6]);
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id : "+id_p);
+                        total = Convert.ToInt32(dt.Rows[0][6]);
+                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id : "+id_p );
                         
                     }
                     else if (dt.Rows.Count == 0)
@@ -264,6 +311,111 @@ namespace StandManagementProject
                 sqlcon.Close();
             }
         }
+        public void update_qte_byachat(int achat)
+        {
+            int quantité = 0; existontable = false;
+            if (metroGrid1.RowCount-1 > 0)
+            {
+                foreach (DataGridViewRow row in metroGrid1.Rows )
+                {
+                   
+                    if(row.Index != metroGrid1.Rows.Count - 1 && row.Cells[1].Value.ToString() != string.Empty)
+                    {
+                        if (achat == Convert.ToInt32(row.Cells[1].Value.ToString()))
+                        {
+                           
+                                existontable = true;
+                                quantité = Convert.ToInt32(row.Cells[8].Value);
+                                if ((quantité + 1) <= stockp)
+                                {
+                                    row.Cells[8].Value = (quantité + 1).ToString();
+                                    row.Cells[9].Value = Convert.ToDecimal(Convert.ToDecimal(row.Cells[8].Value) * Convert.ToDecimal(row.Cells[6].Value)).ToString();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Qte max " + stockp);
+                                }
+                                break;
+                           
+                        }
+                    }
+                       
+                  
+                    
+                }
+            }
+        }
+        public void update_qte_bydes(string des)
+        {
+            int quantité = 0; existontable = false;
+            if (metroGrid1.RowCount - 1 > 0)
+            {
+                foreach (DataGridViewRow row in metroGrid1.Rows)
+                {
+
+                    if (row.Index != metroGrid1.Rows.Count - 1 )
+                    {
+                        if (des == row.Cells[4].Value.ToString() && row.Cells[1].Value.ToString() == string.Empty)
+                        {
+                           
+                                existontable = true;
+                                quantité = Convert.ToInt32(row.Cells[8].Value);
+                                if ((quantité + 1) <= stockp)
+                            {
+                                    row.Cells[8].Value = (quantité + 1).ToString();
+                                    row.Cells[9].Value =Convert.ToDecimal(Convert.ToDecimal(row.Cells[8].Value) * Convert.ToDecimal(row.Cells[6].Value)).ToString();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Qte max " + stockp);
+                                }
+                                break;
+                            
+
+
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+        public void update_qte_bycode(string code)
+        {
+            int quantité = 0; existontable = false;
+            if (metroGrid1.RowCount - 1 > 0)
+            {
+                foreach (DataGridViewRow row in metroGrid1.Rows)
+                {
+
+                    if (row.Index != metroGrid1.Rows.Count - 1 )
+                    {
+                        if (code == row.Cells[3].Value.ToString() && row.Cells[1].Value.ToString() == string.Empty)
+                        {
+                            
+                                existontable = true;
+                                quantité = Convert.ToInt32(row.Cells[8].Value);
+                                if ((quantité+1 ) <= stockp)
+                                {
+                                    row.Cells[8].Value = (quantité + 1).ToString();
+                                    row.Cells[9].Value = Convert.ToDecimal(Convert.ToInt32(row.Cells[8].Value) * Convert.ToDecimal(row.Cells[6].Value)).ToString();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Qte max " + stockp);
+                                }
+                                break;
+                          
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+        
         void Get_Achat_lastId(int id)
         {
             if (sqlcon.State == ConnectionState.Closed)
@@ -289,7 +441,7 @@ namespace StandManagementProject
                 sqlcon.Close();
             }
         }
-        public void ajouter_article_sans_code(int id,int id_a,string des,decimal prix_v,decimal prix_r,int qte)
+        public void ajouter_article_sans_code(int id,string id_a,string des,decimal prix_v,decimal prix_r,int qte)
         {
             this.metroGrid1.Rows.Add(id, id_a, (metroGrid1.Rows.Count).ToString(), " ", des,
                 prix_v.ToString(), Convert.ToDecimal(prix_v).ToString(), qte.ToString(), 1, (1 * prix_v).ToString(), prix_r.ToString());
@@ -339,7 +491,7 @@ namespace StandManagementProject
 
         public void pass_to_datagrid(int id,int id_a, string des, decimal prix_v, decimal prix_r  , int qte)
         {
-            this.metroGrid1.Rows.Add(id,id_a,(metroGrid1.Rows.Count).ToString(),CodeBarre.Text,des,
+            this.metroGrid1.Rows.Add(id,id_a,(metroGrid1.Rows.Count).ToString(),scb,des,
                 prix_v.ToString(), Convert.ToDecimal( prix_v).ToString(), qte.ToString(), 1,(1 * prix_v).ToString(),prix_r.ToString());
 
         }
@@ -348,41 +500,64 @@ namespace StandManagementProject
         {
             if(CodeBarre.Text != string.Empty)
             {
+                scb = CodeBarre.Text;
                 Informations_produit(CodeBarre.Text);
                 if (exist)
                 {
-                    Get_Achat_lastId(id_p);
-                    affichage_achat_by_produit(id_p);
-                    if (plusieur)
+                    total_qte_in_panier(id_p);
+                    MessageBox.Show("Total_P is " + total_p);
+                    if (total_p+1 <= total)
                     {
-                        DialogResult result = MessageBox.Show("ce produit existe avec plusieurs prix \n vous voulez vendre avec ce prix : " + ventep, "Alert !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
+                        
+                        Get_Achat_lastId(id_p);
+                        affichage_achat_by_produit(id_p);
+                        if (plusieur)
                         {
-                            this.metroGrid1.Rows.Add(id_p, id_achat, (metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
-                        ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());
-                        }
-                        else
-                        {
-                            Plusieurs_Prix_par_Produits pprp = new Plusieurs_Prix_par_Produits(this, null,id_p);
-                            if (FormIsOpen(Application.OpenForms, typeof(Plusieurs_Prix_par_Produits)))
+                            DialogResult result = MessageBox.Show("ce produit existe avec plusieurs prix \n vous voulez vendre avec ce prix : " + ventep, "Alert !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
                             {
-                                MessageBox.Show("Form already open!");
+                                update_qte_bycode(CodeBarre.Text);
+                                if (!existontable)
+                                {
+                                    this.metroGrid1.Rows.Add(id_p, "", (metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
+                                    ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1,
+                                    (1 * ventep).ToString(), remisep.ToString());
+                                }
+
+
                             }
                             else
                             {
-                                pprp.Show();
+                                Plusieurs_Prix_par_Produits pprp = new Plusieurs_Prix_par_Produits(this, null, id_p);
+                                if (FormIsOpen(Application.OpenForms, typeof(Plusieurs_Prix_par_Produits)))
+                                {
+                                    MessageBox.Show("Formulaire déja ouvert!");
+                                }
+                                else
+                                {
+                                    pprp.Show();
+                                }
+
+                            }
+
+
+                        }
+                        else
+                        {
+
+                            update_qte_bycode(CodeBarre.Text);
+                            if (!existontable)
+                            {
+                                this.metroGrid1.Rows.Add(id_p, "", (metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
+                                ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());
                             }
 
                         }
-
                     }
-                    else
-                    {
-                        this.metroGrid1.Rows.Add(id_p, id_achat, (metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
-                        ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());
-                    }
+                    
                 }                             
             }
+            
             CodeBarre.Text = string.Empty;
         }
 
@@ -410,12 +585,13 @@ namespace StandManagementProject
                 }
                 else if (metroGrid1.Columns[e.ColumnIndex].Index == 12 && metroGrid1.CurrentRow.Cells[4].Value.ToString() != "Autre Article")
                 {
+                    
                     prix = -1;
                     prix_u = -1;
                     qte = -1;
                     qteC = -1;
+                   
                     metroGrid1.CurrentRow.Cells[6].ReadOnly = false;
-                    metroGrid1.CurrentRow.Cells[8].ReadOnly = false;
                     index_cell = metroGrid1.CurrentRow.Index;
                     prix_u = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[5].Value);
                     qte = Convert.ToInt32(metroGrid1.CurrentRow.Cells[7].Value);
@@ -423,8 +599,21 @@ namespace StandManagementProject
                     prix = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[6].Value);
                     prix_r = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[10].Value);
                     MessageBox.Show(" Price " + prix_u + " qte " + qte + " new Price " + prix+ " Remise " + prix_r);
-                    
-                       
+                    int idprod = Convert.ToInt32(metroGrid1.Rows[index_cell].Cells[0].Value);
+                    total_qte_in_panier(idprod);
+                    get_qte_produit(idprod);
+                    MessageBox.Show("Total is " + total);
+                    MessageBox.Show("Totalp is " + total_p);
+                    if ((total_p + 1) <= total)
+                    {
+                        metroGrid1.CurrentRow.Cells[8].ReadOnly = false;
+                    }
+                    else
+                    {
+                        metroGrid1.CurrentRow.Cells[8].ReadOnly = true;
+                        MessageBox.Show(" qte Total " + total_p + " est atteint " );
+                    }
+
                 }
             }
         }
@@ -471,11 +660,10 @@ namespace StandManagementProject
         {
             if ( metroGrid1.RowCount - 1 != 0)
             {
-               
-                
-                
+              
                 if (index_cell != -1)
                 {
+                   
                     if (metroGrid1.Rows[index_cell].Cells[6].Value == null || Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) == 0)
                     {
                         metroGrid1.Rows[index_cell].Cells[6].Value = prix_u.ToString();
@@ -494,27 +682,28 @@ namespace StandManagementProject
                             metroGrid1.Rows[index_cell].Cells[9].Value = (Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) * Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value)).ToString();
 
                         }
-                    }
-                    if ( metroGrid1.Rows[index_cell].Cells[8].Value == null ||  Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value) == 0)
-                    {
-                        metroGrid1.Rows[index_cell].Cells[8].Value = "1";
-                        
-                    }
+                    }                    
+                     if (metroGrid1.Rows[index_cell].Cells[8].Value == null || Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value) == 0)
+                     {
+                         metroGrid1.Rows[index_cell].Cells[8].Value = "1";
+                     
+                     }
                     else
                     {
-                        if (Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value) > qte )
-                            
-                        {
-                            MessageBox.Show("quantité"+ Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value) + " insuffisante, max " 
-                                + qte );
-                            metroGrid1.Rows[index_cell].Cells[8].Value = "1";
-                        }
-                        else
-                        {
 
-                            metroGrid1.Rows[index_cell].Cells[9].Value = (Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) * Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value)).ToString();
-                        }
+                         if (Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value) > qte /*|| (total_p+1)> total */)
+                         {                               
+                           MessageBox.Show("quantité" + Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value) + " insuffisante, max "
+                                + qte);
+                           metroGrid1.Rows[index_cell].Cells[8].Value = "1";     
+                         }
+                         else
+                         {
+                             metroGrid1.Rows[index_cell].Cells[9].Value = (Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[6].Value) * Convert.ToDecimal(metroGrid1.Rows[index_cell].Cells[8].Value)).ToString();
+                         }
+                     
                     }
+                    
                     calc();
                     
                 }
