@@ -242,7 +242,7 @@ namespace StandManagementProject
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlcmd = new SqlDataAdapter("sale__from_achat", sqlcon);
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("decrese_qte", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@id", idprod);
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@qte", pqte);
@@ -255,7 +255,7 @@ namespace StandManagementProject
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlcmd = new SqlDataAdapter("decrese_qte", sqlcon);
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("sale__from_achat ", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@id", achat);
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@id_p", idprod );
