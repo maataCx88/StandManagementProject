@@ -53,9 +53,19 @@ namespace StandManagementProject
                 decimal prix_v  = Convert.ToInt32(this.DataGridMultiPrice.CurrentRow.Cells[3].Value);
                 decimal prix_r = Convert.ToInt32(this.DataGridMultiPrice.CurrentRow.Cells[4].Value);
                 int qte = Convert.ToInt32(this.DataGridMultiPrice.CurrentRow.Cells[6].Value);
-                
-               
-                    vnt.pass_to_datagrid(this.id_p, id_achat, des, prix_v, prix_r, qte);
+                vnt.stockp = qte;
+                vnt.total_qte_in_panier(this.id_p);
+                MessageBox.Show("Total is " + vnt.total);
+                MessageBox.Show("Total_P is " + vnt.total_p);
+                if (vnt.total_p+1<= vnt.total)
+                {
+                    vnt.update_qte_byachat(id_achat);
+                    if (!vnt.existontable)
+                    {
+                        vnt.pass_to_datagrid(this.id_p, id_achat, des, prix_v, prix_r, qte);
+                    }
+                }
+                //vnt.existontable = false;   
                 
                            
                 this.Close();

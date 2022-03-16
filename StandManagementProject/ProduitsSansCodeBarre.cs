@@ -120,30 +120,49 @@ namespace StandManagementProject
                 prix_v = Convert.ToDecimal(ProduitSansCodeGrid.CurrentRow.Cells[2].Value);
                 prix_r = Convert.ToDecimal(ProduitSansCodeGrid.CurrentRow.Cells[3].Value);
                 qte = Convert.ToInt32(ProduitSansCodeGrid.CurrentRow.Cells[4].Value);
-                MessageBox.Show("id_p is" + id);
-                Get_Achat_lastId(id);
-                affichage_achat_by_produit(id);
-                if (plusieur)
+                vnt.stockp = qte;
+                vnt.total = qte;
+                vnt.total_qte_in_panier(this.id);
+                if (vnt.total_p + 1 <= vnt.total)
                 {
-                    DialogResult result = MessageBox.Show("ce produit existe avec plusieurs prix \n vous voulez vendre avec ce prix : " + prix_v, "Alert !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    Get_Achat_lastId(id);
+                    affichage_achat_by_produit(id);
+                    if (plusieur)
                     {
-                        vnt.ajouter_article_sans_code(id, id_achat, des, prix_v, prix_r, qte);
-                        /*vnt. metroGrid1.Rows.Add(id, id_achat, (vnt.metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
-                    ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());*/
+                        DialogResult result = MessageBox.Show("ce produit existe avec plusieurs prix \n vous voulez vendre avec ce prix : " + prix_v, "Alert !", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            vnt.update_qte_bydes(des);
+                            if (!vnt.existontable)
+                            {
+                                vnt.ajouter_article_sans_code(id, " ", des, prix_v, prix_r, qte);
+                            }
+                            /*vnt. metroGrid1.Rows.Add(id, id_achat, (vnt.metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
+                        ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());*/
+                        }
+                        else
+                        {
+
+                            new Plusieurs_Prix_par_Produits(this.vnt, this, id).Show();
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        
-                        new Plusieurs_Prix_par_Produits(this.vnt,this, id).Show();
+                        vnt.update_qte_bydes(des);
+                        if (!vnt.existontable)
+                        {
+                            vnt.ajouter_article_sans_code(id, "", des, prix_v, prix_r, qte);
+                        }
+                        //vnt.existontable = false;
                         this.Close();
+
                     }
                 }
                 else
                 {
-                    vnt.ajouter_article_sans_code(id, id_achat, des, prix_v, prix_r, qte);
+                    MessageBox.Show("Tout Qte Inséré ! \n Ajout Impossible !");
                     this.Close();
-
                 }
                 
             }
