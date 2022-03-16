@@ -237,6 +237,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="SearchProduct.resx">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </EmbeddedResource>

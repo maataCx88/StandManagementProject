@@ -174,7 +174,7 @@ namespace StandManagementProject
             }
             else
             {
-                DialogResult rs = MessageBox.Show("Voulez vous vraiment supprimer l'enregistrement sélectionner ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult rs = MessageBox.Show("Voulez vous vraiment supprimer la ligne sélectionnée ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rs == DialogResult.Yes)
                 {
                    
