@@ -508,8 +508,8 @@ namespace StandManagementProject
                     MessageBox.Show("Total_P is " + total_p);
                     if (total_p+1 <= total)
                     {
-                        
-                        Get_Achat_lastId(id_p);
+
+                        /*Get_Achat_lastId(id_p);
                         affichage_achat_by_produit(id_p);
                         if (plusieur)
                         {
@@ -552,6 +552,12 @@ namespace StandManagementProject
                                 ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());
                             }
 
+                        }*/
+                        update_qte_bycode(CodeBarre.Text);
+                        if (!existontable)
+                        {
+                            this.metroGrid1.Rows.Add(id_p, "", (metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
+                            ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());
                         }
                     }
                     
