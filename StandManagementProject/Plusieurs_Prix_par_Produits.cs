@@ -66,8 +66,8 @@ namespace StandManagementProject
                     }
                 }
                 //vnt.existontable = false;   
-                
-                           
+
+                vnt.calc();           
                 this.Close();
 
 

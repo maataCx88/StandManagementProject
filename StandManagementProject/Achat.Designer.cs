@@ -121,9 +121,10 @@ namespace StandManagementProject
             // Codelabel
             // 
             this.Codelabel.AutoSize = true;
-            this.Codelabel.Location = new System.Drawing.Point(144, 59);
+            this.Codelabel.Location = new System.Drawing.Point(192, 73);
+            this.Codelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Codelabel.Name = "Codelabel";
-            this.Codelabel.Size = new System.Drawing.Size(85, 13);
+            this.Codelabel.Size = new System.Drawing.Size(111, 17);
             this.Codelabel.TabIndex = 1;
             this.Codelabel.Text = "Code Reference";
             this.Codelabel.Click += new System.EventHandler(this.Codelabel_Click);
@@ -134,16 +135,18 @@ namespace StandManagementProject
             // 
             // 
             this.CodeTextBox.CustomButton.Image = null;
-            this.CodeTextBox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.CodeTextBox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.CodeTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.CodeTextBox.CustomButton.Name = "";
-            this.CodeTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.CodeTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.CodeTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.CodeTextBox.CustomButton.TabIndex = 1;
             this.CodeTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CodeTextBox.CustomButton.UseSelectable = true;
             this.CodeTextBox.CustomButton.Visible = false;
             this.CodeTextBox.Lines = new string[0];
-            this.CodeTextBox.Location = new System.Drawing.Point(17, 85);
+            this.CodeTextBox.Location = new System.Drawing.Point(23, 105);
+            this.CodeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CodeTextBox.MaxLength = 32767;
             this.CodeTextBox.Name = "CodeTextBox";
             this.CodeTextBox.PasswordChar = '\0';
@@ -152,7 +155,7 @@ namespace StandManagementProject
             this.CodeTextBox.SelectionLength = 0;
             this.CodeTextBox.SelectionStart = 0;
             this.CodeTextBox.ShortcutsEnabled = true;
-            this.CodeTextBox.Size = new System.Drawing.Size(338, 23);
+            this.CodeTextBox.Size = new System.Drawing.Size(451, 28);
             this.CodeTextBox.TabIndex = 2;
             this.CodeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.CodeTextBox.UseSelectable = true;
@@ -166,16 +169,18 @@ namespace StandManagementProject
             // 
             // 
             this.DescTextbox.CustomButton.Image = null;
-            this.DescTextbox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.DescTextbox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.DescTextbox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.DescTextbox.CustomButton.Name = "";
-            this.DescTextbox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.DescTextbox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.DescTextbox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.DescTextbox.CustomButton.TabIndex = 1;
             this.DescTextbox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.DescTextbox.CustomButton.UseSelectable = true;
             this.DescTextbox.CustomButton.Visible = false;
             this.DescTextbox.Lines = new string[0];
-            this.DescTextbox.Location = new System.Drawing.Point(17, 147);
+            this.DescTextbox.Location = new System.Drawing.Point(23, 181);
+            this.DescTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.DescTextbox.MaxLength = 32767;
             this.DescTextbox.Name = "DescTextbox";
             this.DescTextbox.PasswordChar = '\0';
@@ -184,7 +189,7 @@ namespace StandManagementProject
             this.DescTextbox.SelectionLength = 0;
             this.DescTextbox.SelectionStart = 0;
             this.DescTextbox.ShortcutsEnabled = true;
-            this.DescTextbox.Size = new System.Drawing.Size(338, 23);
+            this.DescTextbox.Size = new System.Drawing.Size(451, 28);
             this.DescTextbox.TabIndex = 4;
             this.DescTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DescTextbox.UseSelectable = true;
@@ -194,9 +199,10 @@ namespace StandManagementProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 121);
+            this.label1.Location = new System.Drawing.Point(175, 149);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.Size = new System.Drawing.Size(148, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Description du Produit";
             // 
@@ -206,16 +212,18 @@ namespace StandManagementProject
             // 
             // 
             this.PrixAchatTextBox.CustomButton.Image = null;
-            this.PrixAchatTextBox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.PrixAchatTextBox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.PrixAchatTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.PrixAchatTextBox.CustomButton.Name = "";
-            this.PrixAchatTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PrixAchatTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.PrixAchatTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PrixAchatTextBox.CustomButton.TabIndex = 1;
             this.PrixAchatTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PrixAchatTextBox.CustomButton.UseSelectable = true;
             this.PrixAchatTextBox.CustomButton.Visible = false;
             this.PrixAchatTextBox.Lines = new string[0];
-            this.PrixAchatTextBox.Location = new System.Drawing.Point(17, 209);
+            this.PrixAchatTextBox.Location = new System.Drawing.Point(23, 257);
+            this.PrixAchatTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PrixAchatTextBox.MaxLength = 32767;
             this.PrixAchatTextBox.Name = "PrixAchatTextBox";
             this.PrixAchatTextBox.PasswordChar = '\0';
@@ -224,29 +232,32 @@ namespace StandManagementProject
             this.PrixAchatTextBox.SelectionLength = 0;
             this.PrixAchatTextBox.SelectionStart = 0;
             this.PrixAchatTextBox.ShortcutsEnabled = true;
-            this.PrixAchatTextBox.Size = new System.Drawing.Size(338, 23);
+            this.PrixAchatTextBox.Size = new System.Drawing.Size(451, 28);
             this.PrixAchatTextBox.TabIndex = 6;
             this.PrixAchatTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PrixAchatTextBox.UseSelectable = true;
             this.PrixAchatTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PrixAchatTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.PrixAchatTextBox.TextChanged += new System.EventHandler(this.PrixAchatTextBox_TextChanged_1);
+            this.PrixAchatTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixAchatTextBox_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 183);
+            this.label2.Location = new System.Drawing.Point(180, 225);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 13);
+            this.label2.Size = new System.Drawing.Size(135, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Prix Unitaire d\'Achat";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(131, 245);
+            this.label3.Location = new System.Drawing.Point(175, 302);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 13);
+            this.label3.Size = new System.Drawing.Size(147, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Prix Unitaire De Vente";
             // 
@@ -256,16 +267,18 @@ namespace StandManagementProject
             // 
             // 
             this.PrixVenteTextBox.CustomButton.Image = null;
-            this.PrixVenteTextBox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.PrixVenteTextBox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.PrixVenteTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.PrixVenteTextBox.CustomButton.Name = "";
-            this.PrixVenteTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PrixVenteTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.PrixVenteTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PrixVenteTextBox.CustomButton.TabIndex = 1;
             this.PrixVenteTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PrixVenteTextBox.CustomButton.UseSelectable = true;
             this.PrixVenteTextBox.CustomButton.Visible = false;
             this.PrixVenteTextBox.Lines = new string[0];
-            this.PrixVenteTextBox.Location = new System.Drawing.Point(17, 271);
+            this.PrixVenteTextBox.Location = new System.Drawing.Point(23, 334);
+            this.PrixVenteTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PrixVenteTextBox.MaxLength = 32767;
             this.PrixVenteTextBox.Name = "PrixVenteTextBox";
             this.PrixVenteTextBox.PasswordChar = '\0';
@@ -274,13 +287,14 @@ namespace StandManagementProject
             this.PrixVenteTextBox.SelectionLength = 0;
             this.PrixVenteTextBox.SelectionStart = 0;
             this.PrixVenteTextBox.ShortcutsEnabled = true;
-            this.PrixVenteTextBox.Size = new System.Drawing.Size(338, 23);
+            this.PrixVenteTextBox.Size = new System.Drawing.Size(451, 28);
             this.PrixVenteTextBox.TabIndex = 6;
             this.PrixVenteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PrixVenteTextBox.UseSelectable = true;
             this.PrixVenteTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PrixVenteTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.PrixVenteTextBox.TextChanged += new System.EventHandler(this.PrixVenteTextBox_TextChanged);
+            this.PrixVenteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixAchatTextBox_KeyPress);
             // 
             // PrixRemiseTextBox
             // 
@@ -288,16 +302,18 @@ namespace StandManagementProject
             // 
             // 
             this.PrixRemiseTextBox.CustomButton.Image = null;
-            this.PrixRemiseTextBox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.PrixRemiseTextBox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.PrixRemiseTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.PrixRemiseTextBox.CustomButton.Name = "";
-            this.PrixRemiseTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PrixRemiseTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.PrixRemiseTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PrixRemiseTextBox.CustomButton.TabIndex = 1;
             this.PrixRemiseTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PrixRemiseTextBox.CustomButton.UseSelectable = true;
             this.PrixRemiseTextBox.CustomButton.Visible = false;
             this.PrixRemiseTextBox.Lines = new string[0];
-            this.PrixRemiseTextBox.Location = new System.Drawing.Point(17, 333);
+            this.PrixRemiseTextBox.Location = new System.Drawing.Point(23, 410);
+            this.PrixRemiseTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PrixRemiseTextBox.MaxLength = 32767;
             this.PrixRemiseTextBox.Name = "PrixRemiseTextBox";
             this.PrixRemiseTextBox.PasswordChar = '\0';
@@ -306,20 +322,22 @@ namespace StandManagementProject
             this.PrixRemiseTextBox.SelectionLength = 0;
             this.PrixRemiseTextBox.SelectionStart = 0;
             this.PrixRemiseTextBox.ShortcutsEnabled = true;
-            this.PrixRemiseTextBox.Size = new System.Drawing.Size(338, 23);
+            this.PrixRemiseTextBox.Size = new System.Drawing.Size(451, 28);
             this.PrixRemiseTextBox.TabIndex = 8;
             this.PrixRemiseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PrixRemiseTextBox.UseSelectable = true;
             this.PrixRemiseTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.PrixRemiseTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.PrixRemiseTextBox.TextChanged += new System.EventHandler(this.PrixRemiseTextBox_TextChanged);
+            this.PrixRemiseTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixAchatTextBox_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(128, 307);
+            this.label4.Location = new System.Drawing.Point(171, 378);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 13);
+            this.label4.Size = new System.Drawing.Size(155, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Prix Unitaire de Remise";
             // 
@@ -329,16 +347,18 @@ namespace StandManagementProject
             // 
             // 
             this.QteTextBox1.CustomButton.Image = null;
-            this.QteTextBox1.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.QteTextBox1.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.QteTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.QteTextBox1.CustomButton.Name = "";
-            this.QteTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.QteTextBox1.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.QteTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.QteTextBox1.CustomButton.TabIndex = 1;
             this.QteTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.QteTextBox1.CustomButton.UseSelectable = true;
             this.QteTextBox1.CustomButton.Visible = false;
             this.QteTextBox1.Lines = new string[0];
-            this.QteTextBox1.Location = new System.Drawing.Point(17, 395);
+            this.QteTextBox1.Location = new System.Drawing.Point(23, 486);
+            this.QteTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.QteTextBox1.MaxLength = 32767;
             this.QteTextBox1.Name = "QteTextBox1";
             this.QteTextBox1.PasswordChar = '\0';
@@ -347,20 +367,22 @@ namespace StandManagementProject
             this.QteTextBox1.SelectionLength = 0;
             this.QteTextBox1.SelectionStart = 0;
             this.QteTextBox1.ShortcutsEnabled = true;
-            this.QteTextBox1.Size = new System.Drawing.Size(338, 23);
+            this.QteTextBox1.Size = new System.Drawing.Size(451, 28);
             this.QteTextBox1.TabIndex = 10;
             this.QteTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.QteTextBox1.UseSelectable = true;
             this.QteTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.QteTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.QteTextBox1.TextChanged += new System.EventHandler(this.PrixAchatTextBox_TextChanged_1);
+            this.QteTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixAchatTextBox_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(163, 369);
+            this.label5.Location = new System.Drawing.Point(217, 454);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(62, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Quantité";
             // 
@@ -370,9 +392,10 @@ namespace StandManagementProject
             // 
             // 
             this.montantProduitTextBox.CustomButton.Image = null;
-            this.montantProduitTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.montantProduitTextBox.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.montantProduitTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.montantProduitTextBox.CustomButton.Name = "";
-            this.montantProduitTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.montantProduitTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.montantProduitTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.montantProduitTextBox.CustomButton.TabIndex = 1;
             this.montantProduitTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -380,7 +403,8 @@ namespace StandManagementProject
             this.montantProduitTextBox.CustomButton.Visible = false;
             this.montantProduitTextBox.Enabled = false;
             this.montantProduitTextBox.Lines = new string[0];
-            this.montantProduitTextBox.Location = new System.Drawing.Point(19, 457);
+            this.montantProduitTextBox.Location = new System.Drawing.Point(25, 562);
+            this.montantProduitTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.montantProduitTextBox.MaxLength = 32767;
             this.montantProduitTextBox.Name = "montantProduitTextBox";
             this.montantProduitTextBox.PasswordChar = '\0';
@@ -389,7 +413,7 @@ namespace StandManagementProject
             this.montantProduitTextBox.SelectionLength = 0;
             this.montantProduitTextBox.SelectionStart = 0;
             this.montantProduitTextBox.ShortcutsEnabled = true;
-            this.montantProduitTextBox.Size = new System.Drawing.Size(334, 23);
+            this.montantProduitTextBox.Size = new System.Drawing.Size(445, 28);
             this.montantProduitTextBox.TabIndex = 12;
             this.montantProduitTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.montantProduitTextBox.UseSelectable = true;
@@ -400,9 +424,10 @@ namespace StandManagementProject
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(137, 431);
+            this.label6.Location = new System.Drawing.Point(183, 530);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 13);
+            this.label6.Size = new System.Drawing.Size(130, 17);
             this.label6.TabIndex = 11;
             this.label6.Text = "Montant Du Produit";
             // 
@@ -423,14 +448,15 @@ namespace StandManagementProject
             this.metroPanel1.Controls.Add(this.label7);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(553, 500);
+            this.metroPanel1.HorizontalScrollbarSize = 12;
+            this.metroPanel1.Location = new System.Drawing.Point(737, 615);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(718, 197);
+            this.metroPanel1.Size = new System.Drawing.Size(957, 242);
             this.metroPanel1.TabIndex = 15;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.metroPanel1.VerticalScrollbarSize = 13;
             // 
             // QuantitetotalTextBox
             // 
@@ -438,9 +464,10 @@ namespace StandManagementProject
             // 
             // 
             this.QuantitetotalTextBox.CustomButton.Image = null;
-            this.QuantitetotalTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.QuantitetotalTextBox.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.QuantitetotalTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.QuantitetotalTextBox.CustomButton.Name = "";
-            this.QuantitetotalTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.QuantitetotalTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.QuantitetotalTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.QuantitetotalTextBox.CustomButton.TabIndex = 1;
             this.QuantitetotalTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -448,7 +475,8 @@ namespace StandManagementProject
             this.QuantitetotalTextBox.CustomButton.Visible = false;
             this.QuantitetotalTextBox.Enabled = false;
             this.QuantitetotalTextBox.Lines = new string[0];
-            this.QuantitetotalTextBox.Location = new System.Drawing.Point(373, 43);
+            this.QuantitetotalTextBox.Location = new System.Drawing.Point(497, 53);
+            this.QuantitetotalTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.QuantitetotalTextBox.MaxLength = 32767;
             this.QuantitetotalTextBox.Name = "QuantitetotalTextBox";
             this.QuantitetotalTextBox.PasswordChar = '\0';
@@ -457,7 +485,7 @@ namespace StandManagementProject
             this.QuantitetotalTextBox.SelectionLength = 0;
             this.QuantitetotalTextBox.SelectionStart = 0;
             this.QuantitetotalTextBox.ShortcutsEnabled = true;
-            this.QuantitetotalTextBox.Size = new System.Drawing.Size(334, 23);
+            this.QuantitetotalTextBox.Size = new System.Drawing.Size(445, 28);
             this.QuantitetotalTextBox.TabIndex = 19;
             this.QuantitetotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.QuantitetotalTextBox.UseSelectable = true;
@@ -467,9 +495,10 @@ namespace StandManagementProject
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(121, 74);
+            this.label8.Location = new System.Drawing.Point(161, 91);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 13);
+            this.label8.Size = new System.Drawing.Size(144, 17);
             this.label8.TabIndex = 18;
             this.label8.Text = "Montant Total (T.T.C)";
             // 
@@ -479,16 +508,18 @@ namespace StandManagementProject
             // 
             // 
             this.montantverseTextBox.CustomButton.Image = null;
-            this.montantverseTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.montantverseTextBox.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.montantverseTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.montantverseTextBox.CustomButton.Name = "";
-            this.montantverseTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.montantverseTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.montantverseTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.montantverseTextBox.CustomButton.TabIndex = 1;
             this.montantverseTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.montantverseTextBox.CustomButton.UseSelectable = true;
             this.montantverseTextBox.CustomButton.Visible = false;
             this.montantverseTextBox.Lines = new string[0];
-            this.montantverseTextBox.Location = new System.Drawing.Point(373, 93);
+            this.montantverseTextBox.Location = new System.Drawing.Point(497, 114);
+            this.montantverseTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.montantverseTextBox.MaxLength = 32767;
             this.montantverseTextBox.Name = "montantverseTextBox";
             this.montantverseTextBox.PasswordChar = '\0';
@@ -497,20 +528,22 @@ namespace StandManagementProject
             this.montantverseTextBox.SelectionLength = 0;
             this.montantverseTextBox.SelectionStart = 0;
             this.montantverseTextBox.ShortcutsEnabled = true;
-            this.montantverseTextBox.Size = new System.Drawing.Size(334, 23);
+            this.montantverseTextBox.Size = new System.Drawing.Size(445, 28);
             this.montantverseTextBox.TabIndex = 17;
             this.montantverseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.montantverseTextBox.UseSelectable = true;
             this.montantverseTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.montantverseTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.montantverseTextBox.TextChanged += new System.EventHandler(this.montantverseTextBox_TextChanged);
+            this.montantverseTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixAchatTextBox_KeyPress);
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::StandManagementProject.Properties.Resources.supprimer;
-            this.pictureBox7.Location = new System.Drawing.Point(631, 123);
+            this.pictureBox7.Location = new System.Drawing.Point(841, 151);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(77, 64);
+            this.pictureBox7.Size = new System.Drawing.Size(103, 79);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 13;
             this.pictureBox7.TabStop = false;
@@ -519,9 +552,10 @@ namespace StandManagementProject
             // pictureBox6
             // 
             this.pictureBox6.Image = global::StandManagementProject.Properties.Resources.imprimante;
-            this.pictureBox6.Location = new System.Drawing.Point(502, 123);
+            this.pictureBox6.Location = new System.Drawing.Point(669, 151);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(77, 64);
+            this.pictureBox6.Size = new System.Drawing.Size(103, 79);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 13;
             this.pictureBox6.TabStop = false;
@@ -529,9 +563,10 @@ namespace StandManagementProject
             // pictureBox4
             // 
             this.pictureBox4.Image = global::StandManagementProject.Properties.Resources.sauvegarder;
-            this.pictureBox4.Location = new System.Drawing.Point(374, 123);
+            this.pictureBox4.Location = new System.Drawing.Point(499, 151);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(77, 64);
+            this.pictureBox4.Size = new System.Drawing.Size(103, 79);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 13;
             this.pictureBox4.TabStop = false;
@@ -543,9 +578,10 @@ namespace StandManagementProject
             // 
             // 
             this.montantRestTextBox.CustomButton.Image = null;
-            this.montantRestTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.montantRestTextBox.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.montantRestTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.montantRestTextBox.CustomButton.Name = "";
-            this.montantRestTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.montantRestTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.montantRestTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.montantRestTextBox.CustomButton.TabIndex = 1;
             this.montantRestTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -553,7 +589,8 @@ namespace StandManagementProject
             this.montantRestTextBox.CustomButton.Visible = false;
             this.montantRestTextBox.Enabled = false;
             this.montantRestTextBox.Lines = new string[0];
-            this.montantRestTextBox.Location = new System.Drawing.Point(8, 143);
+            this.montantRestTextBox.Location = new System.Drawing.Point(11, 176);
+            this.montantRestTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.montantRestTextBox.MaxLength = 32767;
             this.montantRestTextBox.Name = "montantRestTextBox";
             this.montantRestTextBox.PasswordChar = '\0';
@@ -562,7 +599,7 @@ namespace StandManagementProject
             this.montantRestTextBox.SelectionLength = 0;
             this.montantRestTextBox.SelectionStart = 0;
             this.montantRestTextBox.ShortcutsEnabled = true;
-            this.montantRestTextBox.Size = new System.Drawing.Size(334, 23);
+            this.montantRestTextBox.Size = new System.Drawing.Size(445, 28);
             this.montantRestTextBox.TabIndex = 17;
             this.montantRestTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.montantRestTextBox.UseSelectable = true;
@@ -573,9 +610,10 @@ namespace StandManagementProject
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(132, 123);
+            this.label11.Location = new System.Drawing.Point(176, 151);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 13);
+            this.label11.Size = new System.Drawing.Size(112, 17);
             this.label11.TabIndex = 16;
             this.label11.Text = "Montant Restant";
             // 
@@ -585,9 +623,10 @@ namespace StandManagementProject
             // 
             // 
             this.MontanttotalTextBox.CustomButton.Image = null;
-            this.MontanttotalTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.MontanttotalTextBox.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.MontanttotalTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.MontanttotalTextBox.CustomButton.Name = "";
-            this.MontanttotalTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.MontanttotalTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.MontanttotalTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.MontanttotalTextBox.CustomButton.TabIndex = 1;
             this.MontanttotalTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -595,7 +634,8 @@ namespace StandManagementProject
             this.MontanttotalTextBox.CustomButton.Visible = false;
             this.MontanttotalTextBox.Enabled = false;
             this.MontanttotalTextBox.Lines = new string[0];
-            this.MontanttotalTextBox.Location = new System.Drawing.Point(8, 93);
+            this.MontanttotalTextBox.Location = new System.Drawing.Point(11, 114);
+            this.MontanttotalTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.MontanttotalTextBox.MaxLength = 32767;
             this.MontanttotalTextBox.Name = "MontanttotalTextBox";
             this.MontanttotalTextBox.PasswordChar = '\0';
@@ -604,7 +644,7 @@ namespace StandManagementProject
             this.MontanttotalTextBox.SelectionLength = 0;
             this.MontanttotalTextBox.SelectionStart = 0;
             this.MontanttotalTextBox.ShortcutsEnabled = true;
-            this.MontanttotalTextBox.Size = new System.Drawing.Size(334, 23);
+            this.MontanttotalTextBox.Size = new System.Drawing.Size(445, 28);
             this.MontanttotalTextBox.TabIndex = 17;
             this.MontanttotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MontanttotalTextBox.UseSelectable = true;
@@ -614,9 +654,10 @@ namespace StandManagementProject
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(502, 74);
+            this.label9.Location = new System.Drawing.Point(669, 91);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.Size = new System.Drawing.Size(100, 17);
             this.label9.TabIndex = 16;
             this.label9.Text = "Montant Versé";
             // 
@@ -626,9 +667,10 @@ namespace StandManagementProject
             // 
             // 
             this.countproduitsTextBox.CustomButton.Image = null;
-            this.countproduitsTextBox.CustomButton.Location = new System.Drawing.Point(312, 1);
+            this.countproduitsTextBox.CustomButton.Location = new System.Drawing.Point(419, 2);
+            this.countproduitsTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.countproduitsTextBox.CustomButton.Name = "";
-            this.countproduitsTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.countproduitsTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.countproduitsTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.countproduitsTextBox.CustomButton.TabIndex = 1;
             this.countproduitsTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -636,7 +678,8 @@ namespace StandManagementProject
             this.countproduitsTextBox.CustomButton.Visible = false;
             this.countproduitsTextBox.Enabled = false;
             this.countproduitsTextBox.Lines = new string[0];
-            this.countproduitsTextBox.Location = new System.Drawing.Point(8, 43);
+            this.countproduitsTextBox.Location = new System.Drawing.Point(11, 53);
+            this.countproduitsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.countproduitsTextBox.MaxLength = 32767;
             this.countproduitsTextBox.Name = "countproduitsTextBox";
             this.countproduitsTextBox.PasswordChar = '\0';
@@ -645,7 +688,7 @@ namespace StandManagementProject
             this.countproduitsTextBox.SelectionLength = 0;
             this.countproduitsTextBox.SelectionStart = 0;
             this.countproduitsTextBox.ShortcutsEnabled = true;
-            this.countproduitsTextBox.Size = new System.Drawing.Size(334, 23);
+            this.countproduitsTextBox.Size = new System.Drawing.Size(445, 28);
             this.countproduitsTextBox.TabIndex = 17;
             this.countproduitsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.countproduitsTextBox.UseSelectable = true;
@@ -655,18 +698,20 @@ namespace StandManagementProject
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(473, 23);
+            this.label10.Location = new System.Drawing.Point(631, 28);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 13);
+            this.label10.Size = new System.Drawing.Size(180, 17);
             this.label10.TabIndex = 16;
             this.label10.Text = "Quantité Total des produits";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(129, 23);
+            this.label7.Location = new System.Drawing.Point(172, 28);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 13);
+            this.label7.Size = new System.Drawing.Size(123, 17);
             this.label7.TabIndex = 16;
             this.label7.Text = "Total des Produits";
             // 
@@ -712,7 +757,8 @@ namespace StandManagementProject
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(384, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(512, 118);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -724,6 +770,7 @@ namespace StandManagementProject
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
@@ -732,13 +779,14 @@ namespace StandManagementProject
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(887, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(1183, 490);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // num
             // 
             this.num.HeaderText = "N°";
+            this.num.MinimumWidth = 6;
             this.num.Name = "num";
             this.num.ReadOnly = true;
             this.num.Width = 30;
@@ -746,6 +794,7 @@ namespace StandManagementProject
             // Column2
             // 
             this.Column2.HeaderText = "CODE";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 150;
@@ -753,6 +802,7 @@ namespace StandManagementProject
             // Column3
             // 
             this.Column3.HeaderText = "DESCRIPTION";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Width = 250;
@@ -760,37 +810,46 @@ namespace StandManagementProject
             // Column4
             // 
             this.Column4.HeaderText = "PRIX UNITAIRE";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.Width = 180;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "QTE";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.Width = 80;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "MONTANT TOTAL";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.Width = 200;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "PRIX DE VENTE";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "PRIX DE REMISE";
+            this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.Width = 125;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "EXISTANCE STOCK";
+            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
             // 
             // searchfourn
             // 
@@ -804,10 +863,10 @@ namespace StandManagementProject
             this.searchfourn.LineIdleColor = System.Drawing.Color.Gray;
             this.searchfourn.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.searchfourn.LineThickness = 3;
-            this.searchfourn.Location = new System.Drawing.Point(4, 251);
-            this.searchfourn.Margin = new System.Windows.Forms.Padding(4);
+            this.searchfourn.Location = new System.Drawing.Point(5, 309);
+            this.searchfourn.Margin = new System.Windows.Forms.Padding(5);
             this.searchfourn.Name = "searchfourn";
-            this.searchfourn.Size = new System.Drawing.Size(579, 42);
+            this.searchfourn.Size = new System.Drawing.Size(772, 52);
             this.searchfourn.TabIndex = 20;
             this.searchfourn.Text = "Rechercher fournisseur";
             this.searchfourn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -821,16 +880,18 @@ namespace StandManagementProject
             // 
             // 
             this.TelephoneTextBox.CustomButton.Image = null;
-            this.TelephoneTextBox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.TelephoneTextBox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.TelephoneTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.TelephoneTextBox.CustomButton.Name = "";
-            this.TelephoneTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TelephoneTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.TelephoneTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TelephoneTextBox.CustomButton.TabIndex = 1;
             this.TelephoneTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TelephoneTextBox.CustomButton.UseSelectable = true;
             this.TelephoneTextBox.CustomButton.Visible = false;
             this.TelephoneTextBox.Lines = new string[0];
-            this.TelephoneTextBox.Location = new System.Drawing.Point(169, 129);
+            this.TelephoneTextBox.Location = new System.Drawing.Point(225, 159);
+            this.TelephoneTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.TelephoneTextBox.MaxLength = 32767;
             this.TelephoneTextBox.Name = "TelephoneTextBox";
             this.TelephoneTextBox.PasswordChar = '\0';
@@ -839,7 +900,7 @@ namespace StandManagementProject
             this.TelephoneTextBox.SelectionLength = 0;
             this.TelephoneTextBox.SelectionStart = 0;
             this.TelephoneTextBox.ShortcutsEnabled = true;
-            this.TelephoneTextBox.Size = new System.Drawing.Size(338, 23);
+            this.TelephoneTextBox.Size = new System.Drawing.Size(451, 28);
             this.TelephoneTextBox.TabIndex = 26;
             this.TelephoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TelephoneTextBox.UseSelectable = true;
@@ -849,9 +910,10 @@ namespace StandManagementProject
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(89, 139);
+            this.label14.Location = new System.Drawing.Point(119, 171);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(76, 17);
             this.label14.TabIndex = 25;
             this.label14.Text = "Telephone";
             // 
@@ -861,16 +923,18 @@ namespace StandManagementProject
             // 
             // 
             this.PrenomTextBox.CustomButton.Image = null;
-            this.PrenomTextBox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.PrenomTextBox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.PrenomTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.PrenomTextBox.CustomButton.Name = "";
-            this.PrenomTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.PrenomTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.PrenomTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.PrenomTextBox.CustomButton.TabIndex = 1;
             this.PrenomTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.PrenomTextBox.CustomButton.UseSelectable = true;
             this.PrenomTextBox.CustomButton.Visible = false;
             this.PrenomTextBox.Lines = new string[0];
-            this.PrenomTextBox.Location = new System.Drawing.Point(169, 83);
+            this.PrenomTextBox.Location = new System.Drawing.Point(225, 102);
+            this.PrenomTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PrenomTextBox.MaxLength = 32767;
             this.PrenomTextBox.Name = "PrenomTextBox";
             this.PrenomTextBox.PasswordChar = '\0';
@@ -879,7 +943,7 @@ namespace StandManagementProject
             this.PrenomTextBox.SelectionLength = 0;
             this.PrenomTextBox.SelectionStart = 0;
             this.PrenomTextBox.ShortcutsEnabled = true;
-            this.PrenomTextBox.Size = new System.Drawing.Size(338, 23);
+            this.PrenomTextBox.Size = new System.Drawing.Size(451, 28);
             this.PrenomTextBox.TabIndex = 24;
             this.PrenomTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PrenomTextBox.UseSelectable = true;
@@ -889,9 +953,10 @@ namespace StandManagementProject
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(97, 91);
+            this.label13.Location = new System.Drawing.Point(129, 112);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.Size = new System.Drawing.Size(57, 17);
             this.label13.TabIndex = 23;
             this.label13.Text = "Prenom";
             // 
@@ -901,16 +966,18 @@ namespace StandManagementProject
             // 
             // 
             this.NomTextBox.CustomButton.Image = null;
-            this.NomTextBox.CustomButton.Location = new System.Drawing.Point(316, 1);
+            this.NomTextBox.CustomButton.Location = new System.Drawing.Point(425, 2);
+            this.NomTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.NomTextBox.CustomButton.Name = "";
-            this.NomTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.NomTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.NomTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.NomTextBox.CustomButton.TabIndex = 1;
             this.NomTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.NomTextBox.CustomButton.UseSelectable = true;
             this.NomTextBox.CustomButton.Visible = false;
             this.NomTextBox.Lines = new string[0];
-            this.NomTextBox.Location = new System.Drawing.Point(169, 37);
+            this.NomTextBox.Location = new System.Drawing.Point(225, 46);
+            this.NomTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NomTextBox.MaxLength = 32767;
             this.NomTextBox.Name = "NomTextBox";
             this.NomTextBox.PasswordChar = '\0';
@@ -919,7 +986,7 @@ namespace StandManagementProject
             this.NomTextBox.SelectionLength = 0;
             this.NomTextBox.SelectionStart = 0;
             this.NomTextBox.ShortcutsEnabled = true;
-            this.NomTextBox.Size = new System.Drawing.Size(338, 23);
+            this.NomTextBox.Size = new System.Drawing.Size(451, 28);
             this.NomTextBox.TabIndex = 22;
             this.NomTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NomTextBox.UseSelectable = true;
@@ -929,9 +996,10 @@ namespace StandManagementProject
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(104, 43);
+            this.label12.Location = new System.Drawing.Point(139, 53);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 13);
+            this.label12.Size = new System.Drawing.Size(37, 17);
             this.label12.TabIndex = 21;
             this.label12.Text = "Nom";
             // 
@@ -967,7 +1035,8 @@ namespace StandManagementProject
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.White;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 300);
+            this.dataGridView2.Location = new System.Drawing.Point(5, 369);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -979,6 +1048,7 @@ namespace StandManagementProject
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
@@ -987,7 +1057,7 @@ namespace StandManagementProject
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Green;
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView2.RowTemplate.Height = 40;
-            this.dataGridView2.Size = new System.Drawing.Size(580, 255);
+            this.dataGridView2.Size = new System.Drawing.Size(773, 314);
             this.dataGridView2.TabIndex = 19;
             this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             this.dataGridView2.Click += new System.EventHandler(this.dataGridView2_Click);
@@ -1021,11 +1091,12 @@ namespace StandManagementProject
             this.panel1.Controls.Add(this.PrenomTextBox);
             this.panel1.Controls.Add(this.label13);
             this.panel1.LeftSahddow = false;
-            this.panel1.Location = new System.Drawing.Point(384, 32);
+            this.panel1.Location = new System.Drawing.Point(512, 39);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.RightSahddow = true;
             this.panel1.ShadowDepth = 20;
-            this.panel1.Size = new System.Drawing.Size(605, 563);
+            this.panel1.Size = new System.Drawing.Size(807, 693);
             this.panel1.TabIndex = 32;
             this.panel1.Visible = false;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
@@ -1051,13 +1122,14 @@ namespace StandManagementProject
             this.ajouterfournButton.IconVisible = true;
             this.ajouterfournButton.IconZoom = 90D;
             this.ajouterfournButton.IsTab = false;
-            this.ajouterfournButton.Location = new System.Drawing.Point(75, 177);
+            this.ajouterfournButton.Location = new System.Drawing.Point(100, 218);
+            this.ajouterfournButton.Margin = new System.Windows.Forms.Padding(5);
             this.ajouterfournButton.Name = "ajouterfournButton";
             this.ajouterfournButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(28)))), ((int)(((byte)(191)))));
             this.ajouterfournButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.ajouterfournButton.OnHoverTextColor = System.Drawing.Color.White;
             this.ajouterfournButton.selected = false;
-            this.ajouterfournButton.Size = new System.Drawing.Size(235, 56);
+            this.ajouterfournButton.Size = new System.Drawing.Size(313, 69);
             this.ajouterfournButton.TabIndex = 30;
             this.ajouterfournButton.Text = "Ajouter";
             this.ajouterfournButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1086,13 +1158,14 @@ namespace StandManagementProject
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(316, 177);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(421, 218);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(235, 56);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(313, 69);
             this.bunifuFlatButton1.TabIndex = 30;
             this.bunifuFlatButton1.Text = "Selectionner";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1105,9 +1178,10 @@ namespace StandManagementProject
             this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator4.LineThickness = 1;
-            this.bunifuSeparator4.Location = new System.Drawing.Point(412, 198);
+            this.bunifuSeparator4.Location = new System.Drawing.Point(549, 244);
+            this.bunifuSeparator4.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuSeparator4.Name = "bunifuSeparator4";
-            this.bunifuSeparator4.Size = new System.Drawing.Size(125, 35);
+            this.bunifuSeparator4.Size = new System.Drawing.Size(167, 43);
             this.bunifuSeparator4.TabIndex = 35;
             this.bunifuSeparator4.Transparency = 255;
             this.bunifuSeparator4.Vertical = false;
@@ -1117,9 +1191,10 @@ namespace StandManagementProject
             this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(543, 11);
+            this.bunifuSeparator3.Location = new System.Drawing.Point(724, 14);
+            this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(18, 206);
+            this.bunifuSeparator3.Size = new System.Drawing.Size(24, 254);
             this.bunifuSeparator3.TabIndex = 34;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = true;
@@ -1129,9 +1204,10 @@ namespace StandManagementProject
             this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(64, 11);
+            this.bunifuSeparator2.Location = new System.Drawing.Point(85, 14);
+            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(18, 206);
+            this.bunifuSeparator2.Size = new System.Drawing.Size(24, 254);
             this.bunifuSeparator2.TabIndex = 33;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = true;
@@ -1141,9 +1217,10 @@ namespace StandManagementProject
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(64, 198);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(85, 244);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(147, 35);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(196, 43);
             this.bunifuSeparator1.TabIndex = 32;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -1151,9 +1228,10 @@ namespace StandManagementProject
             // pictureBox1
             // 
             this.pictureBox1.Image = global::StandManagementProject.Properties.Resources.delete_512px;
-            this.pictureBox1.Location = new System.Drawing.Point(565, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(753, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(49, 41);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -1162,9 +1240,10 @@ namespace StandManagementProject
             // pictureBox3
             // 
             this.pictureBox3.Image = global::StandManagementProject.Properties.Resources.google_web_search_208px;
-            this.pictureBox3.Location = new System.Drawing.Point(542, 251);
+            this.pictureBox3.Location = new System.Drawing.Point(723, 309);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(41, 37);
+            this.pictureBox3.Size = new System.Drawing.Size(55, 46);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 31;
             this.pictureBox3.TabStop = false;
@@ -1173,9 +1252,10 @@ namespace StandManagementProject
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::StandManagementProject.Properties.Resources.supplier_480px;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(5, 14);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 64);
+            this.pictureBox2.Size = new System.Drawing.Size(80, 79);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
@@ -1183,9 +1263,10 @@ namespace StandManagementProject
             // resetfields
             // 
             this.resetfields.Image = global::StandManagementProject.Properties.Resources.available_updates_512px;
-            this.resetfields.Location = new System.Drawing.Point(195, 513);
+            this.resetfields.Location = new System.Drawing.Point(260, 631);
+            this.resetfields.Margin = new System.Windows.Forms.Padding(4);
             this.resetfields.Name = "resetfields";
-            this.resetfields.Size = new System.Drawing.Size(77, 64);
+            this.resetfields.Size = new System.Drawing.Size(103, 79);
             this.resetfields.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.resetfields.TabIndex = 13;
             this.resetfields.TabStop = false;
@@ -1194,9 +1275,10 @@ namespace StandManagementProject
             // removefrombasket
             // 
             this.removefrombasket.Image = global::StandManagementProject.Properties.Resources.minus_512px;
-            this.removefrombasket.Location = new System.Drawing.Point(112, 513);
+            this.removefrombasket.Location = new System.Drawing.Point(149, 631);
+            this.removefrombasket.Margin = new System.Windows.Forms.Padding(4);
             this.removefrombasket.Name = "removefrombasket";
-            this.removefrombasket.Size = new System.Drawing.Size(77, 64);
+            this.removefrombasket.Size = new System.Drawing.Size(103, 79);
             this.removefrombasket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.removefrombasket.TabIndex = 13;
             this.removefrombasket.TabStop = false;
@@ -1206,9 +1288,10 @@ namespace StandManagementProject
             // 
             this.supplierinfos.BackColor = System.Drawing.Color.Transparent;
             this.supplierinfos.Image = global::StandManagementProject.Properties.Resources.supplier_480px;
-            this.supplierinfos.Location = new System.Drawing.Point(293, 513);
+            this.supplierinfos.Location = new System.Drawing.Point(391, 631);
+            this.supplierinfos.Margin = new System.Windows.Forms.Padding(4);
             this.supplierinfos.Name = "supplierinfos";
-            this.supplierinfos.Size = new System.Drawing.Size(60, 64);
+            this.supplierinfos.Size = new System.Drawing.Size(80, 79);
             this.supplierinfos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.supplierinfos.TabIndex = 13;
             this.supplierinfos.TabStop = false;
@@ -1217,9 +1300,10 @@ namespace StandManagementProject
             // addtobasket
             // 
             this.addtobasket.Image = global::StandManagementProject.Properties.Resources.plus_512px;
-            this.addtobasket.Location = new System.Drawing.Point(19, 513);
+            this.addtobasket.Location = new System.Drawing.Point(25, 631);
+            this.addtobasket.Margin = new System.Windows.Forms.Padding(4);
             this.addtobasket.Name = "addtobasket";
-            this.addtobasket.Size = new System.Drawing.Size(77, 64);
+            this.addtobasket.Size = new System.Drawing.Size(103, 79);
             this.addtobasket.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.addtobasket.TabIndex = 13;
             this.addtobasket.TabStop = false;
@@ -1246,13 +1330,14 @@ namespace StandManagementProject
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 90D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(850, 59);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(1133, 73);
+            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(421, 31);
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(561, 38);
             this.bunifuFlatButton2.TabIndex = 33;
             this.bunifuFlatButton2.Text = "Rechercher Produit existant";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1262,9 +1347,9 @@ namespace StandManagementProject
             // 
             // Achat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1707, 886);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.metroPanel1);
@@ -1287,9 +1372,12 @@ namespace StandManagementProject
             this.Controls.Add(this.CodeTextBox);
             this.Controls.Add(this.Codelabel);
             this.Controls.Add(this.bunifuFlatButton2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Achat";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.Load += new System.EventHandler(this.Achat_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrixAchatTextBox_KeyPress);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

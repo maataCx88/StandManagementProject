@@ -158,6 +158,7 @@ namespace StandManagementProject
                         this.Close();
 
                     }
+                    vnt.calc();
                 }
                 else
                 {

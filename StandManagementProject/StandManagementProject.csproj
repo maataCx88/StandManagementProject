@@ -132,6 +132,12 @@
     <Compile Include="Message_box.Designer.cs">
       <DependentUpon>Message_box.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modification_Produit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modification_Produit.Designer.cs">
+      <DependentUpon>Modification_Produit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plusieurs_Prix_par_Produits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Message_box.resx">
       <DependentUpon>Message_box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modification_Produit.resx">
+      <DependentUpon>Modification_Produit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plusieurs_Prix_par_Produits.resx">
       <DependentUpon>Plusieurs_Prix_par_Produits.cs</DependentUpon>

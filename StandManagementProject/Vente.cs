@@ -128,7 +128,7 @@ namespace StandManagementProject
             }
             
         }
-        void calc()
+        public void calc()
         {
             montant = 0;
             for(int i=0 ; i<metroGrid1.RowCount-1; i++)
@@ -557,7 +557,7 @@ namespace StandManagementProject
                     
                 }                             
             }
-            
+            calc();
             CodeBarre.Text = string.Empty;
         }
 
