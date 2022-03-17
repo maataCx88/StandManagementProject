@@ -14,20 +14,14 @@ namespace StandManagementProject
     public partial class Main : Form
     {
         int id;
-
-        Dashboard dashboard;
-
         public Main(int id, string first_name, string last_name, string role)
         {
             InitializeComponent();
 
             this.id = id;
 
+            labeldate.Text = DateTime.Today.ToString().Remove(10, 9);
             labelfullname.Text = first_name + " " + last_name;
-
-            dashboard = new Dashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.panelmain.Controls.Add(dashboard);
-            dashboard.Show();
         }
 
         private void closeprgrm_Click(object sender, EventArgs e)
@@ -36,6 +30,11 @@ namespace StandManagementProject
             mb.label1.Text = "Etes-vous sûr de sortir \n l'application?";
             mb.label1.Location = new Point(65, 20);
             mb.Show();
+        }
+
+        private void labeldate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
