@@ -1,0 +1,117 @@
+
+
+ALTER proc [dbo].[show_facture_four_byNameC]
+@nom nvarchar(50)
+as begin
+select ff.id as 'N° facture',ff.montant as 'Montant Total',ff.versé as 'Montant Versé',ff.reste as 'Montant Reste',ff.date_fact as 'Date',
+f.nom+''+f.prenom as 'Fournisseur'
+from facture_four as ff,fournisseur as f 
+where (f.id=ff.id_f) and  f.nom+''+f.prenom like @nom+'%' 
+end
+
+
+ALTER proc [dbo].[show_facture_four]
+as begin
+select ff.id as 'N° facture',ff.montant as 'Montant Total',ff.versé as 'Montant Versé',ff.reste as 'Montant Reste',ff.date_fact as 'Date',
+f.nom+''+f.prenom as 'Fournisseur' from facture_four as ff,fournisseur as f 
+where f.id=ff.id_f 
+end
+
+
+ALTER proc [dbo].[show_facture_four_byNameC]
+@nom nvarchar(50)
+as begin
+select ff.id as 'N° bon',ff.montant as 'Total',ff.versé as 'Versé',ff.reste as 'Reste',
+ff.date_fact as 'Date',f.nom+''+f.prenom as 'Fournisseur'
+from facture_four as ff,fournisseur as f 
+where (f.id=ff.id_f) and  f.nom+''+f.prenom like @nom 
+end
+
+
+ALTER proc [dbo].[show_facture_four_byId]
+@id int 
+as begin
+select ff.id as 'N° bon',ff.montant as 'Total',ff.versé as 'Versé',ff.reste as 'Reste',
+ff.date_fact as 'Date',f.nom+''+f.prenom as 'Fournisseur'
+from facture_four as ff,fournisseur as f 
+where ff.id=@id and f.id=ff.id_f
+end
+
+
+ALTER proc [dbo].[show_achat_by_date] 
+@date_d date,@date_f date
+as begin
+select p.code as 'Code Barre',p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' ,a.date_a as 'date'
+from achat as a , produit as p
+where a.date_a between @date_d and @date_f
+and   p.id=a.id_p
+end
+
+
+
+ALTER proc [dbo].[show_achat_by_facture]
+@id int
+as begin
+select p.code as 'Code Barre',p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' ,a.date_a as 'date'
+from achat as a , produit as p
+where a.id_f=@id
+and   p.id=a.id_p
+end
+
+
+
+ALTER proc [dbo].[search_full_prod2] 
+@code varchar(100)
+as begin
+select p.id as 'Num',p.code as 'Code bare',p.designation as 'Désignation',
+prix_u as 'Prix Achat',p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.designation=@code
+end
+
+create proc [dbo].[search_full_prod3] 
+@code varchar(100)
+as begin
+select p.id as 'Num',p.code as 'Code bare',p.designation as 'Désignation',
+prix_u as 'Prix Achat',p.prix_v as 'Prix Vente',p.prix_r as 'Prix de Remise' , p.qte as 'Qte' 
+from produit as p
+where p.code=@code
+end
+
+
+ALTER proc [dbo].[show_facture_four_byDate]
+@date1 varchar(50),@date2 varchar(50)
+as begin
+select ff.id as 'N° Facture',ff.montant as 'Total',ff.versé as 'Versé',ff.reste as 'Reste', 
+ff.date_fact as 'Date',f.nom+' '+f.prenom as 'Fournisseur'
+from facture_four as ff,fournisseur as f 
+where (f.id=ff.id_f) and ff.date_fact between @date1 and @date2  
+end
+
+ALTER proc [dbo].[show_achat_by_facture]
+@id int
+as begin
+select p.code as 'Code Barre',p.designation as 'Désignation',a.prix_a as 'Prix Achat',a.prix_v as 'Prix Vente',a.prix_r 'Prix Remise',a.qte as 'Qte' 
+from achat as a , produit as p, facture_four as f
+where p.id=a.id_p 
+and   f.id=a.id_f 
+and   a.id_f=@id
+end
+
+create proc decrese_qte
+@id int , @qte int 
+as
+update produit set qte-=@qte where produit.id=@id
+create proc return_qte
+@id int 
+as
+select qte from produit where id=@id
+
+
+create proc show_final_bill
+@id int
+as
+select p.designation as 'Désignation' ,v.prix_u  as 'Prix',v.qte as 'Qte', (v.qte*v.prix_u) as 'montant' from vente as v,facture_clt as fc,produit as p
+where fc.id=@id
+and   p.id=v.id_p
+and   fc.id=v.id_f
