@@ -125,7 +125,18 @@ namespace StandManagementProject
                 vnt.total_qte_in_panier(this.id);
                 if (vnt.total_p + 1 <= vnt.total)
                 {
-                    Get_Achat_lastId(id);
+                    vnt.update_qte_bydes(des);
+                    if (!vnt.existontable)
+                    {
+                        vnt.ajouter_article_sans_code(id, "", des, prix_v, prix_r, qte);
+                    }
+                    //vnt.existontable = false;
+                    this.Close();
+                    vnt.calc();
+
+
+
+                    /*Get_Achat_lastId(id);
                     affichage_achat_by_produit(id);
                     if (plusieur)
                     {
@@ -137,8 +148,8 @@ namespace StandManagementProject
                             {
                                 vnt.ajouter_article_sans_code(id, " ", des, prix_v, prix_r, qte);
                             }
-                            /*vnt. metroGrid1.Rows.Add(id, id_achat, (vnt.metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
-                        ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());*/
+                            //vnt. metroGrid1.Rows.Add(id, id_achat, (vnt.metroGrid1.Rows.Count).ToString(), CodeBarre.Text, designp,
+                        //ventep.ToString(), Convert.ToDecimal(ventep).ToString(), stockp.ToString(), 1, (1 * ventep).ToString(), remisep.ToString());
                         }
                         else
                         {
@@ -158,7 +169,7 @@ namespace StandManagementProject
                         this.Close();
 
                     }
-                    vnt.calc();
+                    vnt.calc();*/
                 }
                 else
                 {
