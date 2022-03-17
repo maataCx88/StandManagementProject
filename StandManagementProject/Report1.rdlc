@@ -286,7 +286,7 @@
       <Width>6.5in</Width>
       <Page>
         <PageHeader>
-          <Height>7.00473cm</Height>
+          <Height>80mm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1306,7 +1306,7 @@
           </Style>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
+        <PageWidth>80mm</PageWidth>
         <LeftMargin>0.1cm</LeftMargin>
         <RightMargin>0.1cm</RightMargin>
         <TopMargin>0.1cm</TopMargin>

@@ -475,6 +475,7 @@ namespace StandManagementProject
                         {
                             MessageBox.Show("ENTERED");
                             ajouterproduit(code, desig, prxvente, prxachat, prxrems, qte);
+                            
                         }
                         prodid = getproductid(desig);
                         ajouterachat(idfacture, prodid, prxvente, prxachat, prxrems, qte);
