@@ -16,7 +16,7 @@ namespace StandManagementProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Modification_Produit ());
+            Application.Run(new Vente());
         }
     }
 }
