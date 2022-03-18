@@ -17,6 +17,8 @@ namespace StandManagementProject
         {
             InitializeComponent();
             Affichage_produit();
+            ProductGrid.Columns[0].Visible = false;
+            ProductGrid.Columns[6].Width = 60;
         }
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         int id = -1;
@@ -91,6 +93,15 @@ namespace StandManagementProject
             else
             {
                 Affichage_produit();
+            }
+        }
+
+        private void newVenteTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)
+              && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
 
