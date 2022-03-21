@@ -71,10 +71,15 @@ namespace StandManagementProject
         {
             if (montant != 0)
             {
-                MessageBox.Show("id client " + id_f);
+                /*MessageBox.Show("id client " + id_f);
                 MessageBox.Show("montant " + montant);
                 MessageBox.Show("user " + id_u);
-                MessageBox.Show("facture N° " + id_facture);
+                MessageBox.Show("facture N° " + id_facture);*/
+                if (VesréTxt.Text == string.Empty)
+                {
+                    VesréTxt.Text = "0";
+                    ResteTxt.Text = montant.ToString();
+                }
                 if (RemiseTxt.Text == string.Empty)
                 {
                     RemiseTxt.Text = "0";
@@ -101,8 +106,8 @@ namespace StandManagementProject
                         }
                      
                         
-                        MessageBox.Show("Rows" + i + " id_p : " + id_p + " Achat : " + id_achat +
-                            "\n prix_u : " + prix_u + " qte : " + qteC + "with total" + totalp);
+                        /*MessageBox.Show("Rows" + i + " id_p : " + id_p + " Achat : " + id_achat +
+                            "\n prix_u : " + prix_u + " qte : " + qteC + "with total" + totalp);*/
                     }
                 }
                 MessageBox.Show("Opération Réussie");
@@ -206,11 +211,11 @@ namespace StandManagementProject
                     sqlcmd.Fill(dt);
                     if(dt.Rows.Count == 1)
                     {
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit");
+                        //MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit");
                         plusieur = false;
                     }
                     else if (dt.Rows.Count > 1) {
-                        MessageBox.Show("Produit Existe avec plusieurs fois njibou mn la table achat");
+                        //MessageBox.Show("Produit Existe avec plusieurs fois njibou mn la table achat");
                         plusieur = true;
                     }
                 }
@@ -299,7 +304,7 @@ namespace StandManagementProject
                         remisep = Convert.ToInt32(dt.Rows[0][5]);
                         stockp = Convert.ToInt32(dt.Rows[0][6]);
                         total = Convert.ToInt32(dt.Rows[0][6]);
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id : "+id_p );
+                        //MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id : "+id_p );
                         
                     }
                     else if (dt.Rows.Count == 0)
@@ -430,7 +435,7 @@ namespace StandManagementProject
                     if (dt.Rows.Count == 1)
                     {
                         id_achat = Convert.ToInt32(dt.Rows[0][0]);                       
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id achat: " + id_achat);
+                        //MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit so id achat: " + id_achat);
 
                     }
                     else if (dt.Rows.Count == 0)
@@ -478,7 +483,7 @@ namespace StandManagementProject
            Client frn = new Client(this);
             if (FormIsOpen(Application.OpenForms, typeof(Client)))
             {
-                MessageBox.Show("Form already open!");
+                MessageBox.Show("Formulaire déja ouvert!");
             }
             else
             {
@@ -505,7 +510,7 @@ namespace StandManagementProject
                 if (exist)
                 {
                     total_qte_in_panier(id_p);
-                    MessageBox.Show("Total_P is " + total_p);
+                    //MessageBox.Show("Total_P is " + total_p);
                     if (total_p+1 <= total)
                     {
 
@@ -604,12 +609,12 @@ namespace StandManagementProject
                     qteC = Convert.ToInt32(metroGrid1.CurrentRow.Cells[8].Value);
                     prix = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[6].Value);
                     prix_r = Convert.ToDecimal(metroGrid1.CurrentRow.Cells[10].Value);
-                    MessageBox.Show(" Price " + prix_u + " qte " + qte + " new Price " + prix+ " Remise " + prix_r);
+                    MessageBox.Show(" Price " + prix_u + "\n qte Max " + qte + "\n new Price " + prix+ "\n Remise " + prix_r);
                     int idprod = Convert.ToInt32(metroGrid1.Rows[index_cell].Cells[0].Value);
                     total_qte_in_panier(idprod);
                     get_qte_produit(idprod);
-                    MessageBox.Show("Total is " + total);
-                    MessageBox.Show("Totalp is " + total_p);
+                    /*MessageBox.Show("Total is " + total);
+                    MessageBox.Show("Totalp is " + total_p);*/
                     if ((total_p + 1) <= total)
                     {
                         metroGrid1.CurrentRow.Cells[8].ReadOnly = false;
@@ -721,7 +726,7 @@ namespace StandManagementProject
             ProduitsSansCodeBarre prb =new ProduitsSansCodeBarre(this);
             if (FormIsOpen(Application.OpenForms, typeof(ProduitsSansCodeBarre)))
             {
-                MessageBox.Show("Form already open!");
+                MessageBox.Show("Formulaire déja ouvert!");
             }
             else
             {

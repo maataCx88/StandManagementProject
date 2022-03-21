@@ -700,6 +700,7 @@ namespace StandManagementProject
             this.Column10.HeaderText = "ID_A";
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
+            this.Column10.Visible = false;
             // 
             // Column6
             // 
@@ -724,6 +725,7 @@ namespace StandManagementProject
             this.Column4.HeaderText = "Prix Unitaire";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
             // 
             // Column9
             // 
@@ -736,6 +738,7 @@ namespace StandManagementProject
             this.Column11.HeaderText = "Qte";
             this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
+            this.Column11.Visible = false;
             // 
             // Column12
             // 
