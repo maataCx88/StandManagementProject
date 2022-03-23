@@ -17,8 +17,7 @@ namespace StandManagementProject
         {
             InitializeComponent();
             Affichage_produit();
-            ProductGrid.Columns[0].Visible = false;
-            ProductGrid.Columns[6].Width = 60;
+            
         }
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         int id = -1;
@@ -37,6 +36,37 @@ namespace StandManagementProject
                     this.ProductGrid.DataSource = dt;
                 }
                 sqlcon.Close();
+                ProductGrid.Columns[0].Visible = false;
+                ProductGrid.Columns[6].Width = 63;
+            }
+        }
+
+        void Inventaire_achat()
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("inventaire_prix_achat", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                using (DataTable dt = new DataTable())
+                {
+                    
+                }
+                sqlcon.Close();
+            }
+        }
+        void Inventaire_vente()
+        {
+            if (sqlcon.State == ConnectionState.Closed)
+            {
+                sqlcon.Open();
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("inventaire_prix_vente", sqlcon);
+                sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
+                using (DataTable dt = new DataTable())
+                {
+
+                }
+                sqlcon.Close();
             }
         }
         void search_produit(string s)
@@ -44,7 +74,7 @@ namespace StandManagementProject
             if (sqlcon.State == ConnectionState.Closed)
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlcmd = new SqlDataAdapter("search_full_prod", sqlcon);
+                SqlDataAdapter sqlcmd = new SqlDataAdapter("search_prod_byname_or_code", sqlcon);
                 sqlcmd.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlcmd.SelectCommand.Parameters.AddWithValue("@code", s);
                 using (DataTable dt = new DataTable())
@@ -54,6 +84,8 @@ namespace StandManagementProject
                     this.ProductGrid.DataSource = dt;
                 }
                 sqlcon.Close();
+                ProductGrid.Columns[0].Visible = false;
+                ProductGrid.Columns[6].Width = 55;
             }
         }
         void update_product(int id, int qte, decimal prix_u, decimal prix_v, decimal prix_r) // mahdi
@@ -81,6 +113,14 @@ namespace StandManagementProject
                 ancienVenteTxt.Text = ProductGrid.CurrentRow.Cells[4].Value.ToString();
                 ancienrmiseTxt.Text = ProductGrid.CurrentRow.Cells[5].Value.ToString();
 
+            }
+            else
+            {
+                id = -1;
+                prix_u = -1;
+                AchatTxt.Text = "";
+                ancienVenteTxt.Text = "";
+                ancienrmiseTxt.Text = "";
             }
         }
 

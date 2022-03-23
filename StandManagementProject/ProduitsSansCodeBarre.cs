@@ -43,7 +43,6 @@ namespace StandManagementProject
                     if (dt.Rows.Count == 1)
                     {
                         id_achat = Convert.ToInt32(dt.Rows[0][0]);
-                        MessageBox.Show("Produit Existe une seule fois njibou mn la table produit so id achat : " + id_achat);
 
                     }
                     else if (dt.Rows.Count == 0)
@@ -68,12 +67,12 @@ namespace StandManagementProject
                     if (dt.Rows.Count == 1)
                     {
                         plusieur = false;
-                        MessageBox.Show("Produit Existe avec une seule fois njibou mn la table produit ");
+                        
                     }
                     else if (dt.Rows.Count > 1)
                     {
                         plusieur = true;
-                        MessageBox.Show("Produit Existe avec plusieurs fois njibou mn la table achat");
+                        
                     }
                 }
                 sqlcon.Close();

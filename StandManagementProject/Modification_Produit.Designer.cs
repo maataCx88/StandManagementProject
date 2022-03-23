@@ -60,21 +60,21 @@ namespace StandManagementProject
             this.ProductGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProductGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ProductGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ProductGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ProductGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ProductGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.ProductGrid.EnableHeadersVisualStyles = false;
@@ -82,12 +82,13 @@ namespace StandManagementProject
             this.ProductGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ProductGrid.Location = new System.Drawing.Point(4, 114);
             this.ProductGrid.Name = "ProductGrid";
+            this.ProductGrid.ReadOnly = true;
             this.ProductGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ProductGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
@@ -102,7 +103,7 @@ namespace StandManagementProject
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.confirmBtn);
@@ -116,19 +117,19 @@ namespace StandManagementProject
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel5);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel4);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel2);
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.DarkSeaGreen;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DarkSeaGreen;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.DarkSeaGreen;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.DarkSeaGreen;
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(842, 114);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(296, 494);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(380, 494);
             this.bunifuGradientPanel1.TabIndex = 1;
             // 
             // confirmBtn
             // 
-            this.confirmBtn.Location = new System.Drawing.Point(85, 434);
+            this.confirmBtn.Location = new System.Drawing.Point(133, 427);
             this.confirmBtn.Name = "confirmBtn";
             this.confirmBtn.Size = new System.Drawing.Size(123, 36);
             this.confirmBtn.TabIndex = 5;
@@ -142,7 +143,7 @@ namespace StandManagementProject
             // 
             // 
             this.newRemiseTxt.CustomButton.Image = null;
-            this.newRemiseTxt.CustomButton.Location = new System.Drawing.Point(147, 1);
+            this.newRemiseTxt.CustomButton.Location = new System.Drawing.Point(258, 1);
             this.newRemiseTxt.CustomButton.Name = "";
             this.newRemiseTxt.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.newRemiseTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -162,7 +163,7 @@ namespace StandManagementProject
             this.newRemiseTxt.SelectionLength = 0;
             this.newRemiseTxt.SelectionStart = 0;
             this.newRemiseTxt.ShortcutsEnabled = true;
-            this.newRemiseTxt.Size = new System.Drawing.Size(173, 27);
+            this.newRemiseTxt.Size = new System.Drawing.Size(284, 27);
             this.newRemiseTxt.TabIndex = 4;
             this.newRemiseTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newRemiseTxt.UseSelectable = true;
@@ -177,7 +178,7 @@ namespace StandManagementProject
             // 
             // 
             this.ancienrmiseTxt.CustomButton.Image = null;
-            this.ancienrmiseTxt.CustomButton.Location = new System.Drawing.Point(147, 1);
+            this.ancienrmiseTxt.CustomButton.Location = new System.Drawing.Point(258, 1);
             this.ancienrmiseTxt.CustomButton.Name = "";
             this.ancienrmiseTxt.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.ancienrmiseTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -198,7 +199,7 @@ namespace StandManagementProject
             this.ancienrmiseTxt.SelectionLength = 0;
             this.ancienrmiseTxt.SelectionStart = 0;
             this.ancienrmiseTxt.ShortcutsEnabled = true;
-            this.ancienrmiseTxt.Size = new System.Drawing.Size(173, 27);
+            this.ancienrmiseTxt.Size = new System.Drawing.Size(284, 27);
             this.ancienrmiseTxt.TabIndex = 8;
             this.ancienrmiseTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ancienrmiseTxt.UseSelectable = true;
@@ -212,7 +213,7 @@ namespace StandManagementProject
             // 
             // 
             this.newVenteTxt.CustomButton.Image = null;
-            this.newVenteTxt.CustomButton.Location = new System.Drawing.Point(147, 1);
+            this.newVenteTxt.CustomButton.Location = new System.Drawing.Point(258, 1);
             this.newVenteTxt.CustomButton.Name = "";
             this.newVenteTxt.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.newVenteTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -232,7 +233,7 @@ namespace StandManagementProject
             this.newVenteTxt.SelectionLength = 0;
             this.newVenteTxt.SelectionStart = 0;
             this.newVenteTxt.ShortcutsEnabled = true;
-            this.newVenteTxt.Size = new System.Drawing.Size(173, 27);
+            this.newVenteTxt.Size = new System.Drawing.Size(284, 27);
             this.newVenteTxt.TabIndex = 3;
             this.newVenteTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newVenteTxt.UseSelectable = true;
@@ -247,7 +248,7 @@ namespace StandManagementProject
             // 
             // 
             this.ancienVenteTxt.CustomButton.Image = null;
-            this.ancienVenteTxt.CustomButton.Location = new System.Drawing.Point(147, 1);
+            this.ancienVenteTxt.CustomButton.Location = new System.Drawing.Point(258, 1);
             this.ancienVenteTxt.CustomButton.Name = "";
             this.ancienVenteTxt.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.ancienVenteTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -268,7 +269,7 @@ namespace StandManagementProject
             this.ancienVenteTxt.SelectionLength = 0;
             this.ancienVenteTxt.SelectionStart = 0;
             this.ancienVenteTxt.ShortcutsEnabled = true;
-            this.ancienVenteTxt.Size = new System.Drawing.Size(173, 27);
+            this.ancienVenteTxt.Size = new System.Drawing.Size(284, 27);
             this.ancienVenteTxt.TabIndex = 7;
             this.ancienVenteTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ancienVenteTxt.UseSelectable = true;
@@ -282,7 +283,7 @@ namespace StandManagementProject
             // 
             // 
             this.AchatTxt.CustomButton.Image = null;
-            this.AchatTxt.CustomButton.Location = new System.Drawing.Point(147, 1);
+            this.AchatTxt.CustomButton.Location = new System.Drawing.Point(258, 1);
             this.AchatTxt.CustomButton.Name = "";
             this.AchatTxt.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.AchatTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -303,7 +304,7 @@ namespace StandManagementProject
             this.AchatTxt.SelectionLength = 0;
             this.AchatTxt.SelectionStart = 0;
             this.AchatTxt.ShortcutsEnabled = true;
-            this.AchatTxt.Size = new System.Drawing.Size(173, 27);
+            this.AchatTxt.Size = new System.Drawing.Size(284, 27);
             this.AchatTxt.TabIndex = 6;
             this.AchatTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.AchatTxt.UseSelectable = true;
@@ -317,7 +318,7 @@ namespace StandManagementProject
             this.bunifuCustomLabel6.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(25, 335);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(80, 335);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(238, 25);
             this.bunifuCustomLabel6.TabIndex = 7;
@@ -329,7 +330,7 @@ namespace StandManagementProject
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(31, 173);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(80, 175);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(226, 25);
             this.bunifuCustomLabel3.TabIndex = 7;
@@ -341,7 +342,7 @@ namespace StandManagementProject
             this.bunifuCustomLabel5.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(35, 254);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(88, 254);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(218, 25);
             this.bunifuCustomLabel5.TabIndex = 7;
@@ -353,7 +354,7 @@ namespace StandManagementProject
             this.bunifuCustomLabel4.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(41, 92);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(92, 95);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(206, 25);
             this.bunifuCustomLabel4.TabIndex = 7;
@@ -365,7 +366,7 @@ namespace StandManagementProject
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(80, 11);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(119, 11);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(128, 25);
             this.bunifuCustomLabel2.TabIndex = 7;
@@ -378,7 +379,7 @@ namespace StandManagementProject
             // 
             // 
             this.CodeBarre.CustomButton.Image = null;
-            this.CodeBarre.CustomButton.Location = new System.Drawing.Point(803, 1);
+            this.CodeBarre.CustomButton.Location = new System.Drawing.Point(796, 1);
             this.CodeBarre.CustomButton.Name = "";
             this.CodeBarre.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.CodeBarre.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -397,7 +398,7 @@ namespace StandManagementProject
             this.CodeBarre.SelectionLength = 0;
             this.CodeBarre.SelectionStart = 0;
             this.CodeBarre.ShortcutsEnabled = true;
-            this.CodeBarre.Size = new System.Drawing.Size(825, 23);
+            this.CodeBarre.Size = new System.Drawing.Size(818, 23);
             this.CodeBarre.TabIndex = 1;
             this.CodeBarre.UseSelectable = true;
             this.CodeBarre.UseStyleColors = true;
@@ -424,12 +425,18 @@ namespace StandManagementProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 611);
+            this.ControlBox = false;
             this.Controls.Add(this.CodeBarre);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.ProductGrid);
             this.Controls.Add(this.bunifuCustomLabel7);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Modification_Produit";
+            this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Text = "Modification Produit";
+            this.TransparencyKey = System.Drawing.Color.RoyalBlue;
             ((System.ComponentModel.ISupportInitialize)(this.ProductGrid)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
