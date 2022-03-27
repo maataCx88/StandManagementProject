@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
-    public partial class Achat : MetroFramework.Forms.MetroForm
+    public partial class Achat : Form
     {
         int idfacture = 0, idprod=0;
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");

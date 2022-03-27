@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
-    public partial class Modification_Produit : MetroFramework.Forms.MetroForm
+    public partial class Modification_Produit : Form
     {
         public Modification_Produit()
         {
@@ -39,8 +39,21 @@ namespace StandManagementProject
                 ProductGrid.Columns[0].Visible = false;
                 ProductGrid.Columns[6].Width = 63;
             }
+            datagridviewchange();
         }
-
+        public void datagridviewchange()
+        {
+            ProductGrid.BorderStyle = BorderStyle.None;
+            ProductGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            ProductGrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            ProductGrid.DefaultCellStyle.SelectionBackColor = Color.Gray;
+            ProductGrid.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            ProductGrid.BackgroundColor = Color.White;
+            ProductGrid.EnableHeadersVisualStyles = false;
+            ProductGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            ProductGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(4, 0, 154);
+            ProductGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
         void Inventaire_achat()
         {
             if (sqlcon.State == ConnectionState.Closed)
@@ -87,6 +100,7 @@ namespace StandManagementProject
                 ProductGrid.Columns[0].Visible = false;
                 ProductGrid.Columns[6].Width = 55;
             }
+            datagridviewchange();
         }
         void update_product(int id, int qte, decimal prix_u, decimal prix_v, decimal prix_r) // mahdi
         {
@@ -170,6 +184,7 @@ namespace StandManagementProject
                     update_product(id, 0, prix_u, prix_v, prix_r);
                     clear();
                     Affichage_produit();
+                    datagridviewchange();
                 }
             }
         }

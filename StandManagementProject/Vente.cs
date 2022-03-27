@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 //200020020222
 namespace StandManagementProject
 {
-    public partial class Vente : MetroFramework.Forms.MetroForm
+    public partial class Vente : Form
     {
         public Vente(/*Plusieurs_Prix_par_Produits prp,Fournisseur frn,ProduitsSansCodeBarre pscb*/)
         {
@@ -31,7 +31,7 @@ namespace StandManagementProject
             metroGrid1.Columns[12].ReadOnly = true;
             id_u = 1;
             NameTxt.Text = "Client Comptoir";
-            TotalLbl.Text = montant.ToString();
+            NumdeBon.Text = montant.ToString();
             last_id_facture_client();
             NumdeBon.Text = id_facture.ToString();
 
@@ -140,7 +140,7 @@ namespace StandManagementProject
             {
                 montant += Convert.ToDecimal(metroGrid1.Rows[i].Cells[9].Value);
             }
-            TotalLbl.Text = montant.ToString();
+            NumdeBon.Text = montant.ToString();
         }
         void ReIndex()
         {
@@ -469,7 +469,7 @@ namespace StandManagementProject
             this.qte = -1;
             this.qteC = -1;
             montant = 0;
-            TotalLbl.Text = "0";
+            NumdeBon.Text = "0";
             CodeBarre.Text = string.Empty;
             PrixNoRéfTxt.Text = string.Empty;
             QteNoRéftxt.Text = string.Empty;
@@ -586,7 +586,7 @@ namespace StandManagementProject
                     {
                         montant -= Convert.ToDecimal(metroGrid1.CurrentRow.Cells[9].Value);
                         metroGrid1.Rows.RemoveAt(metroGrid1.CurrentRow.Index);
-                        TotalLbl.Text = montant.ToString();
+                        NumdeBon.Text = montant.ToString();
                         ReIndex();
                     }
                     else

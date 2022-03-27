@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace StandManagementProject
 {
-    public partial class Facturefournisseur : MetroFramework.Forms.MetroForm
+    public partial class Facturefournisseur : Form
     {
         SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         public Facturefournisseur()

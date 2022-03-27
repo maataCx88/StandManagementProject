@@ -75,18 +75,18 @@ namespace StandManagementProject
         void nominate()
         {
             dataGridView1.Columns[0].HeaderText = "N°";
-            dataGridView1.Columns[0].Width = 113;
+          //  dataGridView1.Columns[0].Width = 113;
             dataGridView1.Columns[1].HeaderText = "DESCRIPTION";
-            dataGridView1.Columns[1].Width = 200;
+         //   dataGridView1.Columns[1].Width = 200;
             dataGridView1.Columns[2].HeaderText = "MONTAT";
-            dataGridView1.Columns[2].Width = 180;
+          //  dataGridView1.Columns[2].Width = 180;
             dataGridView1.Columns[3].HeaderText = "DATE";
-            dataGridView1.Columns[3].Width = 120;
+          //  dataGridView1.Columns[3].Width = 120;
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].HeaderText = "NOM";
-            dataGridView1.Columns[5].Width = 120;
+         //   dataGridView1.Columns[5].Width = 120;
             dataGridView1.Columns[6].HeaderText = "PRENOM";
-            dataGridView1.Columns[6].Width = 120;
+          //  dataGridView1.Columns[6].Width = 120;
         }
 
         private void pictureBoxsearch_Click(object sender, EventArgs e)

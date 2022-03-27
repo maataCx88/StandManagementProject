@@ -61,17 +61,17 @@ namespace StandManagementProject
         void nominate()
         {
             dataGridView1.Columns[0].HeaderText = "N°";
-            dataGridView1.Columns[0].Width = 134;
+          //  dataGridView1.Columns[0].Width = 134;
             dataGridView1.Columns[1].HeaderText = "NOM";
-            dataGridView1.Columns[1].Width = 142;
+        //    dataGridView1.Columns[1].Width = 142;
             dataGridView1.Columns[2].HeaderText = "PRENOM";
-            dataGridView1.Columns[2].Width = 142;
+         //   dataGridView1.Columns[2].Width = 142;
             dataGridView1.Columns[3].HeaderText = "ROLE";
-            dataGridView1.Columns[3].Width = 142;
+         //   dataGridView1.Columns[3].Width = 142;
             dataGridView1.Columns[4].HeaderText = "SALAIRE";
-            dataGridView1.Columns[4].Width = 142;
+        //    dataGridView1.Columns[4].Width = 142;
             dataGridView1.Columns[5].HeaderText = "DATE AJOUT";
-            dataGridView1.Columns[5].Width = 151;
+        //    dataGridView1.Columns[5].Width = 151;
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;

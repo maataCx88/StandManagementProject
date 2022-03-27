@@ -63,17 +63,17 @@ namespace StandManagementProject
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "CODE BARE";
-            dataGridView1.Columns[1].Width = 230;
+    //        dataGridView1.Columns[1].Width = 230;
             dataGridView1.Columns[2].HeaderText = "DESIGNATION";
-            dataGridView1.Columns[2].Width = 220;
+     //       dataGridView1.Columns[2].Width = 220;
             dataGridView1.Columns[3].HeaderText = "PRIX ACHAT";
-            dataGridView1.Columns[3].Width = 220;
+       //     dataGridView1.Columns[3].Width = 220;
             dataGridView1.Columns[4].HeaderText = "PRIX UNITAIRE";
-            dataGridView1.Columns[4].Width = 220;
+        //    dataGridView1.Columns[4].Width = 220;
             dataGridView1.Columns[5].HeaderText = "PRIX REMISE";
-            dataGridView1.Columns[5].Width = 220;
+       //     dataGridView1.Columns[5].Width = 220;
             dataGridView1.Columns[6].HeaderText = "QUANTITE";
-            dataGridView1.Columns[6].Width = 110;
+         //   dataGridView1.Columns[6].Width = 110;
         }
 
         private void metroTextBoxsearch_TextChanged(object sender, EventArgs e)
