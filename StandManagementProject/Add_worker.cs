@@ -14,7 +14,7 @@ namespace StandManagementProject
 {
     public partial class Add_worker : Form
     {
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
         int id;
         string username;
 
@@ -138,7 +138,7 @@ namespace StandManagementProject
                   String.IsNullOrEmpty(comboBoxrole.Text) || String.IsNullOrEmpty(textBoxbasesalary.Text) ||
                   String.IsNullOrEmpty(textBoxusername.Text) || String.IsNullOrEmpty(textBoxpassword.Text))
             {
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Veuillez remplir \n les champs en rouge";
                 mb.label1.Location = new Point(70, 20);
                 mb.Show();
@@ -242,7 +242,7 @@ namespace StandManagementProject
 
                 if (dtbl.Rows.Count == 1)
                 {
-                    Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                    Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                     mb.label1.Text = "Veuillez changer \nthe username";
                     mb.label1.Location = new Point(80, 20);
                     mb.Show();
@@ -290,7 +290,7 @@ namespace StandManagementProject
                 sda.ExecuteNonQuery();
                 sqlcon.Close();
 
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Ajouté avec succès";
                 mb.label1.Location = new Point(80, 30);
                 mb.ShowDialog();
@@ -326,7 +326,7 @@ namespace StandManagementProject
                 sda.ExecuteNonQuery();
                 sqlcon.Close();
 
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Changé avec succès";
                 mb.label1.Location = new Point(80, 30);
                 mb.ShowDialog();

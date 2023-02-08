@@ -39,13 +39,14 @@ namespace StandManagementProject
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.NoCode = new Guna.UI2.WinForms.Guna2Button();
+            this.searchfourn = new MetroFramework.Controls.MetroTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.searchfourn = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -126,7 +127,7 @@ namespace StandManagementProject
             // metroDateTime1
             // 
             this.metroDateTime1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroDateTime1.Location = new System.Drawing.Point(0, 28);
+            this.metroDateTime1.Location = new System.Drawing.Point(0, 16);
             this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(332, 34);
@@ -136,7 +137,7 @@ namespace StandManagementProject
             // metroDateTime2
             // 
             this.metroDateTime2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroDateTime2.Location = new System.Drawing.Point(0, 28);
+            this.metroDateTime2.Location = new System.Drawing.Point(0, 16);
             this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime2.Name = "metroDateTime2";
             this.metroDateTime2.Size = new System.Drawing.Size(377, 34);
@@ -145,6 +146,7 @@ namespace StandManagementProject
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.NoCode);
             this.panel1.Controls.Add(this.searchfourn);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.bunifuCustomLabel1);
@@ -154,6 +156,64 @@ namespace StandManagementProject
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1203, 145);
             this.panel1.TabIndex = 34;
+            // 
+            // NoCode
+            // 
+            this.NoCode.BorderRadius = 7;
+            this.NoCode.CheckedState.Parent = this.NoCode;
+            this.NoCode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NoCode.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_microsoft_excel_2019_480__2_;
+            this.NoCode.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
+            this.NoCode.CustomImages.Parent = this.NoCode;
+            this.NoCode.Dock = System.Windows.Forms.DockStyle.Right;
+            this.NoCode.FillColor = System.Drawing.Color.SeaGreen;
+            this.NoCode.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.NoCode.ForeColor = System.Drawing.Color.White;
+            this.NoCode.HoverState.Parent = this.NoCode;
+            this.NoCode.Location = new System.Drawing.Point(982, 84);
+            this.NoCode.Margin = new System.Windows.Forms.Padding(0);
+            this.NoCode.Name = "NoCode";
+            this.NoCode.ShadowDecoration.Parent = this.NoCode;
+            this.NoCode.Size = new System.Drawing.Size(221, 26);
+            this.NoCode.TabIndex = 39;
+            this.NoCode.Text = "Exporter Excel";
+            this.NoCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NoCode.Click += new System.EventHandler(this.NoCode_Click);
+            // 
+            // searchfourn
+            // 
+            // 
+            // 
+            // 
+            this.searchfourn.CustomButton.Image = null;
+            this.searchfourn.CustomButton.Location = new System.Drawing.Point(877, 1);
+            this.searchfourn.CustomButton.Name = "";
+            this.searchfourn.CustomButton.Size = new System.Drawing.Size(25, 27);
+            this.searchfourn.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.searchfourn.CustomButton.TabIndex = 1;
+            this.searchfourn.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.searchfourn.CustomButton.UseSelectable = true;
+            this.searchfourn.CustomButton.Visible = false;
+            this.searchfourn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.searchfourn.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.searchfourn.Lines = new string[0];
+            this.searchfourn.Location = new System.Drawing.Point(0, 110);
+            this.searchfourn.MaxLength = 50;
+            this.searchfourn.Name = "searchfourn";
+            this.searchfourn.PasswordChar = '\0';
+            this.searchfourn.PromptText = "Rechercher par fournisseur";
+            this.searchfourn.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.searchfourn.SelectedText = "";
+            this.searchfourn.SelectionLength = 0;
+            this.searchfourn.SelectionStart = 0;
+            this.searchfourn.ShortcutsEnabled = true;
+            this.searchfourn.Size = new System.Drawing.Size(1203, 35);
+            this.searchfourn.TabIndex = 21;
+            this.searchfourn.UseSelectable = true;
+            this.searchfourn.WaterMark = "Rechercher par fournisseur";
+            this.searchfourn.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.searchfourn.WaterMarkFont = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.searchfourn.TextChanged += new System.EventHandler(this.searchfourn_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -167,7 +227,7 @@ namespace StandManagementProject
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1203, 68);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1203, 56);
             this.tableLayoutPanel1.TabIndex = 35;
             // 
             // panel3
@@ -176,7 +236,7 @@ namespace StandManagementProject
             this.panel3.Controls.Add(this.metroDateTime2);
             this.panel3.Location = new System.Drawing.Point(604, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(377, 62);
+            this.panel3.Size = new System.Drawing.Size(377, 50);
             this.panel3.TabIndex = 37;
             // 
             // label1
@@ -196,7 +256,7 @@ namespace StandManagementProject
             this.panel2.Controls.Add(this.metroDateTime1);
             this.panel2.Location = new System.Drawing.Point(266, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(332, 62);
+            this.panel2.Size = new System.Drawing.Size(332, 50);
             this.panel2.TabIndex = 36;
             // 
             // bunifuCustomLabel1
@@ -222,41 +282,6 @@ namespace StandManagementProject
             this.panel4.Size = new System.Drawing.Size(1203, 571);
             this.panel4.TabIndex = 35;
             // 
-            // searchfourn
-            // 
-            // 
-            // 
-            // 
-            this.searchfourn.CustomButton.Image = null;
-            this.searchfourn.CustomButton.Location = new System.Drawing.Point(1169, 1);
-            this.searchfourn.CustomButton.Name = "";
-            this.searchfourn.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.searchfourn.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.searchfourn.CustomButton.TabIndex = 1;
-            this.searchfourn.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.searchfourn.CustomButton.UseSelectable = true;
-            this.searchfourn.CustomButton.Visible = false;
-            this.searchfourn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.searchfourn.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.searchfourn.Lines = new string[0];
-            this.searchfourn.Location = new System.Drawing.Point(0, 110);
-            this.searchfourn.MaxLength = 50;
-            this.searchfourn.Name = "searchfourn";
-            this.searchfourn.PasswordChar = '\0';
-            this.searchfourn.PromptText = "Rechercher par fournisseur";
-            this.searchfourn.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.searchfourn.SelectedText = "";
-            this.searchfourn.SelectionLength = 0;
-            this.searchfourn.SelectionStart = 0;
-            this.searchfourn.ShortcutsEnabled = true;
-            this.searchfourn.Size = new System.Drawing.Size(1203, 35);
-            this.searchfourn.TabIndex = 21;
-            this.searchfourn.UseSelectable = true;
-            this.searchfourn.WaterMark = "Rechercher par fournisseur";
-            this.searchfourn.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.searchfourn.WaterMarkFont = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.searchfourn.TextChanged += new System.EventHandler(this.SearchTextBox_OnValueChanged);
-            // 
             // Facturefournisseur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,11 +305,7 @@ namespace StandManagementProject
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroDateTime metroDateTime2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
@@ -292,6 +313,10 @@ namespace StandManagementProject
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Panel panel4;
+        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroDateTime metroDateTime2;
         private MetroFramework.Controls.MetroTextBox searchfourn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2Button NoCode;
     }
 }

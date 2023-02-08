@@ -33,39 +33,44 @@ namespace StandManagementProject
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBoxpassword = new System.Windows.Forms.TextBox();
             this.textBoxusername = new System.Windows.Forms.TextBox();
+            this.textBoxpassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.metroComboBoxstatus = new MetroFramework.Controls.MetroComboBox();
             this.labeltable = new System.Windows.Forms.Label();
             this.metroTextBoxsearch = new MetroFramework.Controls.MetroTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.paneltable = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.guna2ButtonSTAT = new Guna.UI2.WinForms.Guna2Button();
+            this.buttondelete = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonadd = new Guna.UI2.WinForms.Guna2Button();
+            this.buttondateofdep = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonview = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonviewusrpwd = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonmodify = new Guna.UI2.WinForms.Guna2Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonadd = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonview = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonmodify = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonviewusrpwd = new Guna.UI2.WinForms.Guna2Button();
-            this.buttondateofdep = new Guna.UI2.WinForms.Guna2Button();
-            this.buttondelete = new Guna.UI2.WinForms.Guna2Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.paneltable.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -76,16 +81,8 @@ namespace StandManagementProject
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(360, 670);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(920, 50);
+            this.panel3.Size = new System.Drawing.Size(855, 50);
             this.panel3.TabIndex = 5;
-            // 
-            // textBoxpassword
-            // 
-            this.textBoxpassword.Location = new System.Drawing.Point(41, 29);
-            this.textBoxpassword.Name = "textBoxpassword";
-            this.textBoxpassword.Size = new System.Drawing.Size(25, 20);
-            this.textBoxpassword.TabIndex = 0;
-            this.textBoxpassword.Visible = false;
             // 
             // textBoxusername
             // 
@@ -94,6 +91,14 @@ namespace StandManagementProject
             this.textBoxusername.Size = new System.Drawing.Size(25, 20);
             this.textBoxusername.TabIndex = 0;
             this.textBoxusername.Visible = false;
+            // 
+            // textBoxpassword
+            // 
+            this.textBoxpassword.Location = new System.Drawing.Point(41, 29);
+            this.textBoxpassword.Name = "textBoxpassword";
+            this.textBoxpassword.Size = new System.Drawing.Size(25, 20);
+            this.textBoxpassword.TabIndex = 0;
+            this.textBoxpassword.Visible = false;
             // 
             // label1
             // 
@@ -132,10 +137,9 @@ namespace StandManagementProject
             this.labeltable.AutoSize = true;
             this.labeltable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(48)))), ((int)(((byte)(88)))));
             this.labeltable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labeltable.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labeltable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeltable.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labeltable.Location = new System.Drawing.Point(0, 9);
+            this.labeltable.Location = new System.Drawing.Point(4, 9);
             this.labeltable.Name = "labeltable";
             this.labeltable.Size = new System.Drawing.Size(193, 24);
             this.labeltable.TabIndex = 0;
@@ -147,21 +151,21 @@ namespace StandManagementProject
             // 
             // 
             this.metroTextBoxsearch.CustomButton.Image = null;
-            this.metroTextBoxsearch.CustomButton.Location = new System.Drawing.Point(737, 2);
+            this.metroTextBoxsearch.CustomButton.Location = new System.Drawing.Point(451, 1);
             this.metroTextBoxsearch.CustomButton.Name = "";
-            this.metroTextBoxsearch.CustomButton.Size = new System.Drawing.Size(29, 29);
+            this.metroTextBoxsearch.CustomButton.Size = new System.Drawing.Size(31, 31);
             this.metroTextBoxsearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBoxsearch.CustomButton.TabIndex = 1;
             this.metroTextBoxsearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxsearch.CustomButton.UseSelectable = true;
             this.metroTextBoxsearch.CustomButton.Visible = false;
             this.metroTextBoxsearch.DisplayIcon = true;
-            this.metroTextBoxsearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroTextBoxsearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTextBoxsearch.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBoxsearch.Icon = global::StandManagementProject.Properties.Resources.google_web_search_208px;
             this.metroTextBoxsearch.IconRight = true;
             this.metroTextBoxsearch.Lines = new string[0];
-            this.metroTextBoxsearch.Location = new System.Drawing.Point(149, 0);
+            this.metroTextBoxsearch.Location = new System.Drawing.Point(0, 0);
             this.metroTextBoxsearch.MaxLength = 50;
             this.metroTextBoxsearch.Name = "metroTextBoxsearch";
             this.metroTextBoxsearch.PasswordChar = '\0';
@@ -171,12 +175,12 @@ namespace StandManagementProject
             this.metroTextBoxsearch.SelectionLength = 0;
             this.metroTextBoxsearch.SelectionStart = 0;
             this.metroTextBoxsearch.ShortcutsEnabled = true;
-            this.metroTextBoxsearch.Size = new System.Drawing.Size(769, 34);
+            this.metroTextBoxsearch.Size = new System.Drawing.Size(483, 33);
             this.metroTextBoxsearch.TabIndex = 7;
             this.metroTextBoxsearch.UseSelectable = true;
             this.metroTextBoxsearch.WaterMark = "SEARCH";
             this.metroTextBoxsearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBoxsearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBoxsearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBoxsearch.TextChanged += new System.EventHandler(this.metroTextBoxsearch_TextChanged);
             // 
             // panel2
@@ -186,7 +190,7 @@ namespace StandManagementProject
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(360, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(920, 720);
+            this.panel2.Size = new System.Drawing.Size(855, 720);
             this.panel2.TabIndex = 4;
             // 
             // paneltable
@@ -198,8 +202,17 @@ namespace StandManagementProject
             this.paneltable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneltable.Location = new System.Drawing.Point(0, 0);
             this.paneltable.Name = "paneltable";
-            this.paneltable.Size = new System.Drawing.Size(918, 718);
+            this.paneltable.Size = new System.Drawing.Size(853, 718);
             this.paneltable.TabIndex = 16;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 61);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(853, 571);
+            this.panel6.TabIndex = 11;
             // 
             // dataGridView1
             // 
@@ -239,9 +252,28 @@ namespace StandManagementProject
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(918, 599);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 571);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel11);
+            this.panel5.Controls.Add(this.panel10);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 28);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(853, 33);
+            this.panel5.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.metroComboBoxstatus);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(853, 28);
+            this.panel4.TabIndex = 9;
             // 
             // panel1
             // 
@@ -255,24 +287,181 @@ namespace StandManagementProject
             this.panel1.Size = new System.Drawing.Size(360, 720);
             this.panel1.TabIndex = 3;
             // 
-            // panel4
+            // panel8
             // 
-            this.panel4.Controls.Add(this.metroComboBoxstatus);
-            this.panel4.Controls.Add(this.metroTextBoxsearch);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(918, 34);
-            this.panel4.TabIndex = 9;
+            this.panel8.Controls.Add(this.guna2ButtonSTAT);
+            this.panel8.Controls.Add(this.buttondelete);
+            this.panel8.Controls.Add(this.buttonadd);
+            this.panel8.Controls.Add(this.buttondateofdep);
+            this.panel8.Controls.Add(this.buttonview);
+            this.panel8.Controls.Add(this.buttonviewusrpwd);
+            this.panel8.Controls.Add(this.buttonmodify);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 197);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(358, 522);
+            this.panel8.TabIndex = 1;
             // 
-            // panel5
+            // guna2ButtonSTAT
             // 
-            this.panel5.Controls.Add(this.labeltable);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 34);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(918, 33);
-            this.panel5.TabIndex = 10;
+            this.guna2ButtonSTAT.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.guna2ButtonSTAT.BorderRadius = 7;
+            this.guna2ButtonSTAT.CheckedState.Parent = this.guna2ButtonSTAT;
+            this.guna2ButtonSTAT.CustomImages.Image = global::StandManagementProject.Properties.Resources.statistics_480px;
+            this.guna2ButtonSTAT.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2ButtonSTAT.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2ButtonSTAT.CustomImages.Parent = this.guna2ButtonSTAT;
+            this.guna2ButtonSTAT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(48)))), ((int)(((byte)(88)))));
+            this.guna2ButtonSTAT.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2ButtonSTAT.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.guna2ButtonSTAT.HoverState.Parent = this.guna2ButtonSTAT;
+            this.guna2ButtonSTAT.Location = new System.Drawing.Point(26, 449);
+            this.guna2ButtonSTAT.Name = "guna2ButtonSTAT";
+            this.guna2ButtonSTAT.ShadowDecoration.Parent = this.guna2ButtonSTAT;
+            this.guna2ButtonSTAT.Size = new System.Drawing.Size(300, 49);
+            this.guna2ButtonSTAT.TabIndex = 12;
+            this.guna2ButtonSTAT.Text = "Statistique sur l\'employée";
+            this.guna2ButtonSTAT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2ButtonSTAT.TextOffset = new System.Drawing.Point(50, 0);
+            this.guna2ButtonSTAT.Click += new System.EventHandler(this.guna2ButtonSTAT_Click);
+            // 
+            // buttondelete
+            // 
+            this.buttondelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttondelete.BorderRadius = 7;
+            this.buttondelete.CheckedState.Parent = this.buttondelete;
+            this.buttondelete.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_delete_file_32;
+            this.buttondelete.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttondelete.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.buttondelete.CustomImages.Parent = this.buttondelete;
+            this.buttondelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(48)))), ((int)(((byte)(88)))));
+            this.buttondelete.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttondelete.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.buttondelete.HoverState.Parent = this.buttondelete;
+            this.buttondelete.Location = new System.Drawing.Point(26, 386);
+            this.buttondelete.Name = "buttondelete";
+            this.buttondelete.ShadowDecoration.Parent = this.buttondelete;
+            this.buttondelete.Size = new System.Drawing.Size(300, 49);
+            this.buttondelete.TabIndex = 12;
+            this.buttondelete.Text = "Supprimer un employé";
+            this.buttondelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttondelete.TextOffset = new System.Drawing.Point(50, 0);
+            this.buttondelete.Click += new System.EventHandler(this.buttondelete_Click);
+            // 
+            // buttonadd
+            // 
+            this.buttonadd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonadd.BorderRadius = 7;
+            this.buttonadd.CheckedState.Parent = this.buttonadd;
+            this.buttonadd.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_add_user_male_32;
+            this.buttonadd.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonadd.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.buttonadd.CustomImages.Parent = this.buttonadd;
+            this.buttonadd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(48)))), ((int)(((byte)(88)))));
+            this.buttonadd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttonadd.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.buttonadd.HoverState.Parent = this.buttonadd;
+            this.buttonadd.Location = new System.Drawing.Point(26, 25);
+            this.buttonadd.Name = "buttonadd";
+            this.buttonadd.ShadowDecoration.Parent = this.buttonadd;
+            this.buttonadd.Size = new System.Drawing.Size(300, 49);
+            this.buttonadd.TabIndex = 12;
+            this.buttonadd.Text = "Ajouter un employé";
+            this.buttonadd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonadd.TextOffset = new System.Drawing.Point(50, 0);
+            this.buttonadd.Click += new System.EventHandler(this.buttonadd_Click);
+            // 
+            // buttondateofdep
+            // 
+            this.buttondateofdep.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttondateofdep.BorderRadius = 7;
+            this.buttondateofdep.CheckedState.Parent = this.buttondateofdep;
+            this.buttondateofdep.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_leaving_queue_32;
+            this.buttondateofdep.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttondateofdep.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.buttondateofdep.CustomImages.Parent = this.buttondateofdep;
+            this.buttondateofdep.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(47)))));
+            this.buttondateofdep.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttondateofdep.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.buttondateofdep.HoverState.Parent = this.buttondateofdep;
+            this.buttondateofdep.Location = new System.Drawing.Point(26, 314);
+            this.buttondateofdep.Name = "buttondateofdep";
+            this.buttondateofdep.ShadowDecoration.Parent = this.buttondateofdep;
+            this.buttondateofdep.Size = new System.Drawing.Size(300, 49);
+            this.buttondateofdep.TabIndex = 12;
+            this.buttondateofdep.Text = "Date de départ";
+            this.buttondateofdep.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttondateofdep.TextOffset = new System.Drawing.Point(50, 0);
+            this.buttondateofdep.Click += new System.EventHandler(this.buttondateofdep_Click);
+            // 
+            // buttonview
+            // 
+            this.buttonview.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonview.BorderRadius = 7;
+            this.buttonview.CheckedState.Parent = this.buttonview;
+            this.buttonview.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_view_32;
+            this.buttonview.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonview.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.buttonview.CustomImages.Parent = this.buttonview;
+            this.buttonview.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(47)))));
+            this.buttonview.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttonview.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.buttonview.HoverState.Parent = this.buttonview;
+            this.buttonview.Location = new System.Drawing.Point(26, 98);
+            this.buttonview.Name = "buttonview";
+            this.buttonview.ShadowDecoration.Parent = this.buttonview;
+            this.buttonview.Size = new System.Drawing.Size(300, 49);
+            this.buttonview.TabIndex = 12;
+            this.buttonview.Text = " Voir les informations";
+            this.buttonview.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonview.TextOffset = new System.Drawing.Point(50, 0);
+            this.buttonview.Click += new System.EventHandler(this.buttonview_Click);
+            // 
+            // buttonviewusrpwd
+            // 
+            this.buttonviewusrpwd.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonviewusrpwd.BorderRadius = 7;
+            this.buttonviewusrpwd.CheckedState.Parent = this.buttonviewusrpwd;
+            this.buttonviewusrpwd.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_view_more_32;
+            this.buttonviewusrpwd.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonviewusrpwd.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.buttonviewusrpwd.CustomImages.Parent = this.buttonviewusrpwd;
+            this.buttonviewusrpwd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(15)))));
+            this.buttonviewusrpwd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttonviewusrpwd.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.buttonviewusrpwd.HoverState.Parent = this.buttonviewusrpwd;
+            this.buttonviewusrpwd.Location = new System.Drawing.Point(26, 241);
+            this.buttonviewusrpwd.Name = "buttonviewusrpwd";
+            this.buttonviewusrpwd.ShadowDecoration.Parent = this.buttonviewusrpwd;
+            this.buttonviewusrpwd.Size = new System.Drawing.Size(300, 49);
+            this.buttonviewusrpwd.TabIndex = 12;
+            this.buttonviewusrpwd.Text = "Voir Username et Password";
+            this.buttonviewusrpwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonviewusrpwd.TextOffset = new System.Drawing.Point(50, 0);
+            this.buttonviewusrpwd.Click += new System.EventHandler(this.buttonviewusrpwd_Click);
+            // 
+            // buttonmodify
+            // 
+            this.buttonmodify.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonmodify.BorderRadius = 7;
+            this.buttonmodify.CheckedState.Parent = this.buttonmodify;
+            this.buttonmodify.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_edit_file_32;
+            this.buttonmodify.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonmodify.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
+            this.buttonmodify.CustomImages.Parent = this.buttonmodify;
+            this.buttonmodify.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(15)))));
+            this.buttonmodify.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.buttonmodify.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.buttonmodify.HoverState.Parent = this.buttonmodify;
+            this.buttonmodify.Location = new System.Drawing.Point(26, 170);
+            this.buttonmodify.Name = "buttonmodify";
+            this.buttonmodify.ShadowDecoration.Parent = this.buttonmodify;
+            this.buttonmodify.Size = new System.Drawing.Size(300, 49);
+            this.buttonmodify.TabIndex = 12;
+            this.buttonmodify.Text = "Modifier les informations";
+            this.buttonmodify.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.buttonmodify.TextOffset = new System.Drawing.Point(50, 0);
+            this.buttonmodify.Click += new System.EventHandler(this.buttonmodify_Click);
             // 
             // panel7
             // 
@@ -294,173 +483,31 @@ namespace StandManagementProject
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonadd
+            // panel10
             // 
-            this.buttonadd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonadd.BorderRadius = 7;
-            this.buttonadd.CheckedState.Parent = this.buttonadd;
-            this.buttonadd.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_add_user_male_32;
-            this.buttonadd.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonadd.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.buttonadd.CustomImages.Parent = this.buttonadd;
-            this.buttonadd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(48)))), ((int)(((byte)(88)))));
-            this.buttonadd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonadd.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.buttonadd.HoverState.Parent = this.buttonadd;
-            this.buttonadd.Location = new System.Drawing.Point(26, 67);
-            this.buttonadd.Name = "buttonadd";
-            this.buttonadd.ShadowDecoration.Parent = this.buttonadd;
-            this.buttonadd.Size = new System.Drawing.Size(300, 49);
-            this.buttonadd.TabIndex = 12;
-            this.buttonadd.Text = "Ajouter un employé";
-            this.buttonadd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonadd.TextOffset = new System.Drawing.Point(50, 0);
-            this.buttonadd.Click += new System.EventHandler(this.buttonadd_Click);
+            this.panel10.Controls.Add(this.metroTextBoxsearch);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel10.Location = new System.Drawing.Point(370, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(483, 33);
+            this.panel10.TabIndex = 20;
             // 
-            // buttonview
+            // panel11
             // 
-            this.buttonview.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonview.BorderRadius = 7;
-            this.buttonview.CheckedState.Parent = this.buttonview;
-            this.buttonview.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_view_32;
-            this.buttonview.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonview.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.buttonview.CustomImages.Parent = this.buttonview;
-            this.buttonview.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(47)))));
-            this.buttonview.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonview.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.buttonview.HoverState.Parent = this.buttonview;
-            this.buttonview.Location = new System.Drawing.Point(26, 139);
-            this.buttonview.Name = "buttonview";
-            this.buttonview.ShadowDecoration.Parent = this.buttonview;
-            this.buttonview.Size = new System.Drawing.Size(300, 49);
-            this.buttonview.TabIndex = 12;
-            this.buttonview.Text = " Voir les informations";
-            this.buttonview.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonview.TextOffset = new System.Drawing.Point(50, 0);
-            this.buttonview.Click += new System.EventHandler(this.buttonview_Click);
-            // 
-            // buttonmodify
-            // 
-            this.buttonmodify.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonmodify.BorderRadius = 7;
-            this.buttonmodify.CheckedState.Parent = this.buttonmodify;
-            this.buttonmodify.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_edit_file_32;
-            this.buttonmodify.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonmodify.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.buttonmodify.CustomImages.Parent = this.buttonmodify;
-            this.buttonmodify.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(15)))));
-            this.buttonmodify.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonmodify.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.buttonmodify.HoverState.Parent = this.buttonmodify;
-            this.buttonmodify.Location = new System.Drawing.Point(26, 211);
-            this.buttonmodify.Name = "buttonmodify";
-            this.buttonmodify.ShadowDecoration.Parent = this.buttonmodify;
-            this.buttonmodify.Size = new System.Drawing.Size(300, 49);
-            this.buttonmodify.TabIndex = 12;
-            this.buttonmodify.Text = "Modifier les informations";
-            this.buttonmodify.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonmodify.TextOffset = new System.Drawing.Point(50, 0);
-            this.buttonmodify.Click += new System.EventHandler(this.buttonmodify_Click);
-            // 
-            // buttonviewusrpwd
-            // 
-            this.buttonviewusrpwd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonviewusrpwd.BorderRadius = 7;
-            this.buttonviewusrpwd.CheckedState.Parent = this.buttonviewusrpwd;
-            this.buttonviewusrpwd.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_view_more_32;
-            this.buttonviewusrpwd.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonviewusrpwd.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.buttonviewusrpwd.CustomImages.Parent = this.buttonviewusrpwd;
-            this.buttonviewusrpwd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(13)))), ((int)(((byte)(15)))));
-            this.buttonviewusrpwd.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttonviewusrpwd.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.buttonviewusrpwd.HoverState.Parent = this.buttonviewusrpwd;
-            this.buttonviewusrpwd.Location = new System.Drawing.Point(26, 283);
-            this.buttonviewusrpwd.Name = "buttonviewusrpwd";
-            this.buttonviewusrpwd.ShadowDecoration.Parent = this.buttonviewusrpwd;
-            this.buttonviewusrpwd.Size = new System.Drawing.Size(300, 49);
-            this.buttonviewusrpwd.TabIndex = 12;
-            this.buttonviewusrpwd.Text = "Voir Username et Password";
-            this.buttonviewusrpwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttonviewusrpwd.TextOffset = new System.Drawing.Point(50, 0);
-            this.buttonviewusrpwd.Click += new System.EventHandler(this.buttonviewusrpwd_Click);
-            // 
-            // buttondateofdep
-            // 
-            this.buttondateofdep.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttondateofdep.BorderRadius = 7;
-            this.buttondateofdep.CheckedState.Parent = this.buttondateofdep;
-            this.buttondateofdep.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_leaving_queue_32;
-            this.buttondateofdep.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttondateofdep.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.buttondateofdep.CustomImages.Parent = this.buttondateofdep;
-            this.buttondateofdep.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(47)))));
-            this.buttondateofdep.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttondateofdep.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.buttondateofdep.HoverState.Parent = this.buttondateofdep;
-            this.buttondateofdep.Location = new System.Drawing.Point(26, 355);
-            this.buttondateofdep.Name = "buttondateofdep";
-            this.buttondateofdep.ShadowDecoration.Parent = this.buttondateofdep;
-            this.buttondateofdep.Size = new System.Drawing.Size(300, 49);
-            this.buttondateofdep.TabIndex = 12;
-            this.buttondateofdep.Text = "Date de départ";
-            this.buttondateofdep.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttondateofdep.TextOffset = new System.Drawing.Point(50, 0);
-            this.buttondateofdep.Click += new System.EventHandler(this.buttondateofdep_Click);
-            // 
-            // buttondelete
-            // 
-            this.buttondelete.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttondelete.BorderRadius = 7;
-            this.buttondelete.CheckedState.Parent = this.buttondelete;
-            this.buttondelete.CustomImages.Image = global::StandManagementProject.Properties.Resources.icons8_delete_file_32;
-            this.buttondelete.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttondelete.CustomImages.ImageSize = new System.Drawing.Size(40, 40);
-            this.buttondelete.CustomImages.Parent = this.buttondelete;
-            this.buttondelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(48)))), ((int)(((byte)(88)))));
-            this.buttondelete.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.buttondelete.ForeColor = System.Drawing.Color.BlanchedAlmond;
-            this.buttondelete.HoverState.Parent = this.buttondelete;
-            this.buttondelete.Location = new System.Drawing.Point(26, 427);
-            this.buttondelete.Name = "buttondelete";
-            this.buttondelete.ShadowDecoration.Parent = this.buttondelete;
-            this.buttondelete.Size = new System.Drawing.Size(300, 49);
-            this.buttondelete.TabIndex = 12;
-            this.buttondelete.Text = "Supprimer un employé";
-            this.buttondelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.buttondelete.TextOffset = new System.Drawing.Point(50, 0);
-            this.buttondelete.Click += new System.EventHandler(this.buttondelete_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.buttondelete);
-            this.panel8.Controls.Add(this.buttonadd);
-            this.panel8.Controls.Add(this.buttondateofdep);
-            this.panel8.Controls.Add(this.buttonview);
-            this.panel8.Controls.Add(this.buttonviewusrpwd);
-            this.panel8.Controls.Add(this.buttonmodify);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 197);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(358, 522);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.dataGridView1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 67);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(918, 599);
-            this.panel6.TabIndex = 11;
+            this.panel11.Controls.Add(this.labeltable);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel11.Size = new System.Drawing.Size(203, 33);
+            this.panel11.TabIndex = 21;
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1215, 720);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -472,15 +519,17 @@ namespace StandManagementProject
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.paneltable.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -510,5 +559,8 @@ namespace StandManagementProject
         private Guna.UI2.WinForms.Guna2Button buttonviewusrpwd;
         private Guna.UI2.WinForms.Guna2Button buttonmodify;
         private System.Windows.Forms.Panel panel6;
+        private Guna.UI2.WinForms.Guna2Button guna2ButtonSTAT;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel10;
     }
 }

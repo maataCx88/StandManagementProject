@@ -24,7 +24,7 @@ namespace StandManagementProject
             
         }
         
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
         
         int id = 0;
         void Rechercher_Four(string name)

@@ -24,7 +24,7 @@ namespace StandManagementProject
         }
         Vente vnt ;
         ProduitsSansCodeBarre psb2;
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
         int id_achat = 0;
         int id_p = 0;
         void affichage_achat_by_produit(int id)

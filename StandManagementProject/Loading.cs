@@ -12,21 +12,32 @@ namespace StandManagementProject
 {
     public partial class Loading : Form
     {
-        public Loading()
+        public Loading(int id, string role, string name, string phone, string nameshop, string address,string email)
         {
             InitializeComponent();
+            id1 = id;
+            this.role = role;
+            this.name = name;
+            this.phone = phone;
+            this.nameshop = nameshop;
+            this.address = address;
+            this.email = email;
         }
-
+        int id1;
+        string role;
+        string name;
+        string phone;
+        string nameshop;
+        string address;
+        string email;
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (guna2CircleProgressBar1.Value == 100)
             {
                 timer1.Stop();
-
-                MainMenu p = new MainMenu();
-                p.Show();
+                MainMenu p = new MainMenu(id1,role,name,phone,nameshop,address,email);
                 this.Hide();
-
+                p.Show();
             }
             else
             {

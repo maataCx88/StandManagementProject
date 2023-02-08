@@ -22,7 +22,7 @@ namespace StandManagementProject
             last_ID_Four();
             DataFournisseur.Columns[0].Visible = false;
         }
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
 
         int id = 0;
         void Rechercher_Four(string name)
@@ -66,7 +66,6 @@ namespace StandManagementProject
                 DataTable dt = new DataTable();
                 sqlcmd.Fill(dt);
                 id = Convert.ToInt32(dt.Rows[0][0]);
-                /*MessageBox.Show("last id"+ id.ToString());*/
                 sqlcon.Close();
             }
         }
@@ -79,6 +78,7 @@ namespace StandManagementProject
                 sqlcmd.CommandType = CommandType.StoredProcedure;
                 sqlcmd.Parameters.AddWithValue("@nom", nom);
                 sqlcmd.Parameters.AddWithValue("@prenom", prénom);
+                sqlcmd.Parameters.AddWithValue("@tel", phone);
                 sqlcmd.ExecuteNonQuery();
                 sqlcon.Close();
             }
@@ -88,6 +88,7 @@ namespace StandManagementProject
 
             vnt.id_f = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
             vnt.NameTxt.Text = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
+            vnt.PhoneFourTxt.Text= this.DataFournisseur.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void Recherchetxt_TextChanged(object sender, EventArgs e)
@@ -127,32 +128,39 @@ namespace StandManagementProject
                 last_ID_Four();
                 vnt.id_f = this.id;
                 vnt.NameTxt.Text = Nom.Text + ' ' + Prénom.Text;
-                MessageBox.Show("Name" + vnt.NameTxt.Text + " ID " + vnt.id_f);
+                vnt.PhoneFourTxt.Text = PhoneFour.Text;
                 this.Close();
-
             }
 
         }
 
         private void DataFournisseur_DoubleClick(object sender, EventArgs e)
         {
-            if (DataFournisseur.CurrentRow.Index != -1 && DataFournisseur.CurrentRow.Index != DataFournisseur.RowCount - 1)
+            if (DataFournisseur.RowCount > 0)
             {
                 int id = Convert.ToInt32(this.DataFournisseur.CurrentRow.Cells[0].Value);
                 string NameTxt = this.DataFournisseur.CurrentRow.Cells[1].Value.ToString();
                 pass_to_four();
-                /*MessageBox.Show("Name" + vnt.four + " ID " + vnt.id);*/
                 this.Close();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Vous voulez Quitter ce Formulaire ! ", "Alert", MessageBoxButtons.YesNo);
+           /* DialogResult result = MessageBox.Show("Vous voulez Quitter ce Formulaire ! ", "Alert", MessageBoxButtons.YesNo);
             if(result == DialogResult.Yes)
             {
                 this.Close();
             }
+            else
+            {
+                
+            }*/
+        }
+
+        private void bunifuCustomLabel2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

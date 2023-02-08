@@ -13,7 +13,7 @@ namespace StandManagementProject
 {
     public partial class Employee : Form
     {
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
 
         public Employee()
         {
@@ -33,7 +33,7 @@ namespace StandManagementProject
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(4, 0, 154);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
-
+       
         public void view_worker()
         {
             try
@@ -71,12 +71,14 @@ namespace StandManagementProject
             dataGridView1.Columns[4].HeaderText = "SALAIRE";
         //    dataGridView1.Columns[4].Width = 142;
             dataGridView1.Columns[5].HeaderText = "DATE AJOUT";
-        //    dataGridView1.Columns[5].Width = 151;
+            //    dataGridView1.Columns[5].Width = 151;
+            dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
         }
-
+        int id_emp = -1;
+        string name = "";
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count > 0)
@@ -85,7 +87,8 @@ namespace StandManagementProject
                 {
                     textBoxusername.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                     textBoxpassword.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-
+                    id_emp = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                    name = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     buttonview.Enabled = true;
                     buttonmodify.Enabled = true;
                     buttonviewusrpwd.Enabled = true;
@@ -103,13 +106,17 @@ namespace StandManagementProject
                 }
                 else
                 {
-                    Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                    Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                     mb.label1.Text = "Choisissez-en un \ns'il vous plaît.";
                     mb.label1.Location = new Point(80, 20);
                     mb.Show();
 
                     clear();
                 }
+            }
+            else
+            {
+                id_emp = -1;
             }
         }
 
@@ -226,14 +233,14 @@ namespace StandManagementProject
 
         private void buttonviewusrpwd_Click(object sender, EventArgs e)
         {
-            Message_box mb = new Message_box(Login.action_yes_1, true, "Back");
+            Message_box mb = new Message_box(LOGIN_.action_yes_1, true, "Back");
             mb.label1.Text = " Voulez-vous voir \n the username et password ?";
             mb.label1.Location = new Point(35, 15);
             mb.ShowDialog();
 
             if (Message_box.yesorno == "Yes")
             {
-                Message_box mb1 = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb1 = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb1.label1.Text = "The username est " + textBoxusername.Text + "\nThe password est " + textBoxpassword.Text;
                 mb1.label1.Location = new Point(60, 15);
                 mb1.ShowDialog();
@@ -267,7 +274,7 @@ namespace StandManagementProject
 
         private void buttondateofdep_Click(object sender, EventArgs e)
         {
-            Message_box mb1 = new Message_box(Login.action_yes_1, false, "");
+            Message_box mb1 = new Message_box(LOGIN_.action_yes_1, false, "");
             mb1.label1.Text = "La date de départ est \n" + dataGridView1.CurrentRow.Cells[6].Value.ToString().Remove(10, 9);
             mb1.label1.Location = new Point(65, 15);
             mb1.ShowDialog();
@@ -275,8 +282,8 @@ namespace StandManagementProject
 
         private void buttondelete_Click(object sender, EventArgs e)
         {
-            Message_box mb1 = new Message_box(Login.action_yes_1, true, "Back");
-            mb1.label1.Text = "Voulez-vous supprimer \ncet employé ?";
+            Message_box mb1 = new Message_box(LOGIN_.action_yes_1, true, "Back");
+            mb1.label1.Text = "Voulez-vous supprimer \n cet employé ?";
             mb1.label1.Location = new Point(60, 20);
             mb1.ShowDialog();
 
@@ -295,7 +302,7 @@ namespace StandManagementProject
                     sda.ExecuteNonQuery();
                     sqlcon.Close();
 
-                    Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                    Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                     mb.label1.Text = "Supprimer avec succès";
                     mb.label1.Location = new Point(60, 30);
                     mb.ShowDialog();
@@ -308,6 +315,26 @@ namespace StandManagementProject
                 {
                     MessageBox.Show("Erreur de connexion, contacter DZOFTWARES");
                     MessageBox.Show("" + exp);
+                }
+            }
+        }
+        public static bool FormIsOpen(FormCollection application, Type formtype)
+        {
+            return Application.OpenForms.Cast<Form>().Any(openform => openform.GetType() == formtype);
+        }
+        private void guna2ButtonSTAT_Click(object sender, EventArgs e)
+        {
+            if(id_emp != -1)
+            {
+                Vente_Par_Employée dtl = new Vente_Par_Employée(this.id_emp,this.name);
+
+                if (FormIsOpen(Application.OpenForms, typeof(Détails_Commande_Livraison)))
+                {
+                    MessageBox.Show("Formulaire déja ouvert!");
+                }
+                else
+                {
+                    dtl.Show();
                 }
             }
         }

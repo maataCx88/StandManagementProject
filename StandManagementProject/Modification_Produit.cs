@@ -19,7 +19,7 @@ namespace StandManagementProject
             Affichage_produit();
             
         }
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
         int id = -1;
         decimal prix_u=0,  prix_v=0,  prix_r =0;
         void Affichage_produit()

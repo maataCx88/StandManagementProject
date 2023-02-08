@@ -7,11 +7,12 @@
     <ProjectGuid>{7B95B3A0-EFA0-41F0-8A7A-692C3D238019}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>StandManagementProject</RootNamespace>
-    <AssemblyName>StandManagementProject</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AssemblyName>Dzoftware Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,9 +25,11 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,13 +50,85 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logod.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Deco Rais 24-09-22 last\Khali Djamel\ggggg\GGG\Store management app\StandManagementProject2\StandManagementProject\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.96.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.96.0\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FoxLearn.License, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\karim\Desktop\FoxLearn.License.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>C:\Users\karim\Downloads\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>D:\Deco Rais 24-09-22 last\Khali Djamel\ggggg\GGG\Store management app\StandManagementProject2\StandManagementProject\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -67,7 +143,17 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1418.22, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1418.22\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1418.22, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1418.22\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1418.22, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1418.22\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -99,13 +185,38 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="USB-Barcode-Scanner">
+      <HintPath>C:\Users\evolution info\Downloads\USB-Barcode-Scanner.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\..\..\..\..\..\Zen.Barcode.Core_\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Achat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Achat.Designer.cs">
+    <Compile Include="Achat.designer.cs">
       <DependentUpon>Achat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_article_permanently.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_article_permanently.Designer.cs">
+      <DependentUpon>Add_article_permanently.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_A_MultiCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add_A_MultiCode.Designer.cs">
+      <DependentUpon>Add_A_MultiCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_to_list_To_A_MultiCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_to_list_To_A_MultiCode.Designer.cs">
+      <DependentUpon>Add_to_list_To_A_MultiCode.cs</DependentUpon>
     </Compile>
     <Compile Include="Add_worker.cs">
       <SubType>Form</SubType>
@@ -113,11 +224,41 @@
     <Compile Include="Add_worker.Designer.cs">
       <DependentUpon>Add_worker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ajouter_nouvelle_vente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajouter_nouvelle_vente.designer.cs">
+      <DependentUpon>Ajouter_nouvelle_vente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="barcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="barcode.Designer.cs">
+      <DependentUpon>barcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser.designer.cs">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caisse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Caisse.Designer.cs">
       <DependentUpon>Caisse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caissenew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caissenew.designer.cs">
+      <DependentUpon>Caissenew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendar.designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs">
       <SubType>Form</SubType>
@@ -125,11 +266,53 @@
     <Compile Include="Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="ColorBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorBill.Designer.cs">
+      <DependentUpon>ColorBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connection.Designer.cs">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="day.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="day.designer.cs">
+      <DependentUpon>day.cs</DependentUpon>
+    </Compile>
+    <Compile Include="daysusrcontrol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="daysusrcontrol.designer.cs">
+      <DependentUpon>daysusrcontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dettes_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dettes_dashboard.designer.cs">
+      <DependentUpon>Dettes_dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dette_tansport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dette_tansport.designer.cs">
+      <DependentUpon>Dette_tansport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Devis_to_Facture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devis_to_Facture.designer.cs">
+      <DependentUpon>Devis_to_Facture.cs</DependentUpon>
     </Compile>
     <Compile Include="Détail Facture Fournisseur.cs">
       <SubType>Form</SubType>
@@ -140,14 +323,44 @@
     <Compile Include="Détails Facture Client %28Achat%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Détails Facture Client %28Achat%29.Designer.cs">
+    <Compile Include="Détails Facture Client %28Achat%29.designer.cs">
       <DependentUpon>Détails Facture Client %28Achat%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Détails_Commande_Livraison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Détails_Commande_Livraison.designer.cs">
+      <DependentUpon>Détails_Commande_Livraison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Détails_Devis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Détails_Devis.designer.cs">
+      <DependentUpon>Détails_Devis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Détail_caisse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Détail_caisse.designer.cs">
+      <DependentUpon>Détail_caisse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Détail_vente_only.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Détail_vente_only.designer.cs">
+      <DependentUpon>Détail_vente_only.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eventform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventform.designer.cs">
+      <DependentUpon>Eventform.cs</DependentUpon>
     </Compile>
     <Compile Include="Factureclient.cs">
       <SubType>Form</SubType>
@@ -161,11 +374,76 @@
     <Compile Include="Facturefournisseur.Designer.cs">
       <DependentUpon>Facturefournisseur.cs</DependentUpon>
     </Compile>
+    <Compile Include="Facture_Bon__Livraison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facture_Bon__Livraison.designer.cs">
+      <DependentUpon>Facture_Bon__Livraison.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facture_Devis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facture_Devis.designer.cs">
+      <DependentUpon>Facture_Devis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fees.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fees.Designer.cs">
       <DependentUpon>Fees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ACHAT_VENTE_détails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ACHAT_VENTE_détails.Designer.cs">
+      <DependentUpon>ACHAT_VENTE_détails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guide.Designer.cs">
+      <DependentUpon>Guide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="play.designer.cs">
+      <DependentUpon>play.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prod_list_and_price.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prod_list_and_price.designer.cs">
+      <DependentUpon>Prod_list_and_price.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Retour Article.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Retour Article.designer.cs">
+      <DependentUpon>Retour Article.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settingss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settingss.designer.cs">
+      <DependentUpon>Settingss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transfert_devis_client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transfert_devis_client.Designer.cs">
+      <DependentUpon>Transfert_devis_client.cs</DependentUpon>
     </Compile>
     <Compile Include="Fournisseur.cs">
       <SubType>Form</SubType>
@@ -173,11 +451,23 @@
     <Compile Include="Fournisseur.Designer.cs">
       <DependentUpon>Fournisseur.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fournisseur_dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fournisseur_dashboard.Designer.cs">
+      <DependentUpon>Fournisseur_dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN_.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN_.Designer.cs">
+      <DependentUpon>LOGIN_.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -197,6 +487,12 @@
     <Compile Include="Modification_Produit.Designer.cs">
       <DependentUpon>Modification_Produit.cs</DependentUpon>
     </Compile>
+    <Compile Include="MultiCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultiCode.Designer.cs">
+      <DependentUpon>MultiCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plusieurs_Prix_par_Produits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,12 +504,6 @@
     </Compile>
     <Compile Include="ProduitsSansCodeBarre.Designer.cs">
       <DependentUpon>ProduitsSansCodeBarre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -234,12 +524,31 @@
     <Compile Include="SearchProduct.Designer.cs">
       <DependentUpon>SearchProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stock.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stock.Designer.cs">
       <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transfert_bon_client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transfert_bon_client.Designer.cs">
+      <DependentUpon>Transfert_bon_client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="Vente.cs">
       <SubType>Form</SubType>
@@ -247,26 +556,93 @@
     <Compile Include="Vente.Designer.cs">
       <DependentUpon>Vente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vente_Par_Employée.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vente_Par_Employée.designer.cs">
+      <DependentUpon>Vente_Par_Employée.cs</DependentUpon>
+    </Compile>
     <Compile Include="View_prodcut.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View_prodcut.Designer.cs">
       <DependentUpon>View_prodcut.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zakat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zakat.designer.cs">
+      <DependentUpon>Zakat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="zakat_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zakat_detail.designer.cs">
+      <DependentUpon>zakat_detail.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Achat.resx">
       <DependentUpon>Achat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ACHAT_VENTE_détails.resx">
+      <DependentUpon>ACHAT_VENTE_détails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_article_permanently.resx">
+      <DependentUpon>Add_article_permanently.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_A_MultiCode.resx">
+      <DependentUpon>Add_A_MultiCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_to_list_To_A_MultiCode.resx">
+      <DependentUpon>Add_to_list_To_A_MultiCode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add_worker.resx">
       <DependentUpon>Add_worker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajouter_nouvelle_vente.resx">
+      <DependentUpon>Ajouter_nouvelle_vente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="barcode.resx">
+      <DependentUpon>barcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browser.resx">
+      <DependentUpon>Browser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Caisse.resx">
       <DependentUpon>Caisse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Caissenew.resx">
+      <DependentUpon>Caissenew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendar.resx">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ColorBill.resx">
+      <DependentUpon>ColorBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connection.resx">
+      <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="day.resx">
+      <DependentUpon>day.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="daysusrcontrol.resx">
+      <DependentUpon>daysusrcontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dettes_dashboard.resx">
+      <DependentUpon>Dettes_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dette_tansport.resx">
+      <DependentUpon>Dette_tansport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devis_to_Facture.resx">
+      <DependentUpon>Devis_to_Facture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Détail Facture Fournisseur.resx">
       <DependentUpon>Détail Facture Fournisseur.cs</DependentUpon>
@@ -274,8 +650,23 @@
     <EmbeddedResource Include="Détails Facture Client %28Achat%29.resx">
       <DependentUpon>Détails Facture Client %28Achat%29.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Détails_Commande_Livraison.resx">
+      <DependentUpon>Détails_Commande_Livraison.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Détails_Devis.resx">
+      <DependentUpon>Détails_Devis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Détail_caisse.resx">
+      <DependentUpon>Détail_caisse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Détail_vente_only.resx">
+      <DependentUpon>Détail_vente_only.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventform.resx">
+      <DependentUpon>Eventform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factureclient.resx">
       <DependentUpon>Factureclient.cs</DependentUpon>
@@ -283,14 +674,29 @@
     <EmbeddedResource Include="Facturefournisseur.resx">
       <DependentUpon>Facturefournisseur.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Facture_Bon__Livraison.resx">
+      <DependentUpon>Facture_Bon__Livraison.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facture_Devis.resx">
+      <DependentUpon>Facture_Devis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fees.resx">
       <DependentUpon>Fees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fournisseur_dashboard.resx">
+      <DependentUpon>Fournisseur_dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guide.resx">
+      <DependentUpon>Guide.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="LOGIN_.resx">
+      <DependentUpon>LOGIN_.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -304,29 +710,69 @@
     <EmbeddedResource Include="Modification_Produit.resx">
       <DependentUpon>Modification_Produit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MultiCode.resx">
+      <DependentUpon>MultiCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="play.resx">
+      <DependentUpon>play.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plusieurs_Prix_par_Produits.resx">
       <DependentUpon>Plusieurs_Prix_par_Produits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProduitsSansCodeBarre.resx">
       <DependentUpon>ProduitsSansCodeBarre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prod_list_and_price.resx">
+      <DependentUpon>Prod_list_and_price.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retour Article.resx">
+      <DependentUpon>Retour Article.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchProduct.resx">
       <DependentUpon>SearchProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settingss.resx">
+      <DependentUpon>Settingss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transfert_bon_client.resx">
+      <DependentUpon>Transfert_bon_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transfert_devis_client.resx">
+      <DependentUpon>Transfert_devis_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vente.resx">
       <DependentUpon>Vente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vente_Par_Employée.resx">
+      <DependentUpon>Vente_Par_Employée.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View_prodcut.resx">
       <DependentUpon>View_prodcut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zakat.resx">
+      <DependentUpon>Zakat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zakat_detail.resx">
+      <DependentUpon>zakat_detail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -415,12 +861,6 @@
     <None Include="Resources\icons8_expensive_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\textboxdesign\textboxdesign.csproj">
-      <Project>{8C8A149A-688C-4794-9065-2D5141BE67DD}</Project>
-      <Name>textboxdesign</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ildar-garifullin-2Z6fSxr6LGk-unsplash.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -507,6 +947,122 @@
     <None Include="Resources\ezgif.com-gif-maker %281%29.gif" />
     <None Include="Resources\plus_208pxwhite.png" />
     <None Include="Resources\minus_208pxwhite.png" />
+    <None Include="Resources\logo-search-grid-2x.png" />
+    <None Include="Resources\logo-search-grid-2x-removebg-preview.png" />
+    <None Include="Resources\ezgif.com-gif-maker %282%29.gif" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\logoapp.PNG" />
+    <None Include="Resources\logo3%403x.png" />
+    <None Include="Resources\icon.PNG" />
+    <None Include="Resources\sesdfsfblue.png" />
+    <None Include="Resources\sesdfsfblue2.png" />
+    <None Include="Resources\sesdfsfblue3.png" />
+    <None Include="Resources\money_480px.png" />
+    <None Include="Resources\money_480px2.png" />
+    <None Include="Resources\money_480px3.png" />
+    <Content Include="logod.ico" />
+    <None Include="Resources\sesdfsfblue21.png" />
+    <None Include="Resources\barcode_512px.png" />
+    <None Include="Resources\barcode_512px2.png" />
+    <None Include="Resources\barcode_512px3.png" />
+    <None Include="Resources\barcode_512px5.png" />
+    <None Include="Resources\key_480px.png" />
+    <None Include="Resources\lock_512px.png" />
+    <None Include="Resources\calendar_1_208px.png" />
+    <None Include="Resources\calendar_29_208px.png" />
+    <None Include="Resources\minus_1_day_208px.png" />
+    <None Include="Resources\checkmark_208px.png" />
+    <None Include="Resources\Opera Snapshot_2022-09-08_052501_www.iconfinder.com.png" />
+    <None Include="Resources\customer_480px.png" />
+    <None Include="Resources\customer_480px2.png" />
+    <None Include="Resources\customer_480px3.png" />
+    <None Include="Resources\multiple_choice_480px2.png" />
+    <None Include="Resources\multiple_choice_480px3.png" />
+    <None Include="Resources\multiple_choice_480px.png" />
+    <None Include="Resources\logod.jpg" />
+    <None Include="Resources\list_view_512px.png" />
+    <None Include="Resources\delivery_person_480px.png" />
+    <None Include="Resources\truck_96px.png" />
+    <None Include="Resources\bill_512px.png" />
+    <None Include="Resources\square_clock_480px.png" />
+    <None Include="Resources\delivery_unpacking_500px.png" />
+    <None Include="Resources\icons8-quotation-100.png" />
+    <None Include="Resources\298794753_763187701505958_6191415034720038696_n.jpg" />
+    <None Include="Resources\icons8-microsoft-excel-2019-480.png" />
+    <None Include="Resources\icons8-microsoft-excel-2019-480 %282%29.png" />
+    <None Include="Resources\icons8_reset_641.png" />
+    <None Include="Resources\icons8_more_details_481.png" />
+    <None Include="Resources\icons8_report_file2_481.png" />
+    <None Include="Resources\icons8-pdf-501.png" />
+    <None Include="Resources\icons8_microsoft_excel_48.png" />
+    <None Include="Resources\receipt_dollar_512px.png" />
+    <None Include="Resources\print_file_512px.png" />
+    <None Include="Resources\print_file_50px.png" />
+    <None Include="Resources\add_dollar_50px.png" />
+    <None Include="Resources\icons8-produit-d&amp;#39%3bexpédition-64.png" />
+    <None Include="Resources\product_documents_512px.png" />
+    <None Include="Resources\ticket_purchase_512px.png" />
+    <None Include="Resources\approval_480px.png" />
+    <None Include="Resources\statistics_480px.png" />
+    <None Include="Resources\barcode_reader_480px.png" />
+    <None Include="Resources\product_512px.png" />
+    <None Include="Resources\Reboot_512px.png" />
+    <None Include="Resources\server_512px.png" />
+    <None Include="Resources\user_512px.png" />
+    <None Include="Resources\server_512px1.png" />
+    <None Include="Resources\user_512px1.png" />
+    <None Include="Resources\key_480px1.png" />
+    <None Include="Resources\f1_key_480px.png" />
+    <None Include="Resources\f2_key_480px.png" />
+    <None Include="Resources\f3_key_480px.png" />
+    <None Include="Resources\f4_key_480px.png" />
+    <None Include="Resources\ctrl_480px.png" />
+    <None Include="Resources\s_512px.png" />
+    <None Include="Resources\p_512px.png" />
+    <None Include="Resources\ask_question_480px.png" />
+    <None Include="Resources\f5_key_480px.png" />
+    <None Include="Resources\f6_key_480px.png" />
+    <None Include="Resources\f7_key_480px.png" />
+    <None Include="Resources\f8_key_480px.png" />
+    <None Include="Resources\f9_key_480px.png" />
+    <None Include="Resources\f10_key_480px.png" />
+    <None Include="Resources\add_to_clipboard_50px.png" />
+    <None Include="Resources\circled_right_480px.png" />
+    <None Include="Resources\go_back_480px.png" />
+    <None Include="Resources\home_page_480px.png" />
+    <None Include="Resources\restart_480px.png" />
+    <None Include="Resources\search_480px.png" />
+    <None Include="Resources\calculator_480px.png" />
+    <None Include="Resources\calendar_480px.png" />
+    <None Include="Resources\music_library_480px.png" />
+    <None Include="Resources\save_50px.png" />
+    <None Include="Resources\settings_512px4.png" />
+    <None Include="Resources\toolbox_512px.png" />
+    <None Include="Resources\website_480px.png" />
+    <None Include="Resources\stop_squared_480px.png" />
+    <None Include="Resources\pause_squared_480px.png" />
+    <None Include="Resources\next_480px.png" />
+    <None Include="Resources\last_480px.png" />
+    <None Include="Resources\previous_480px.png" />
+    <None Include="Resources\cd_480px.png" />
+    <None Include="Resources\icons8-archive-64.png" />
+    <None Include="Resources\icons8-calculator-100.png" />
+    <None Include="Resources\icons8-more-details-100.png" />
+    <None Include="Resources\zakat5.png" />
+    <None Include="Resources\community_grants_480px.png" />
+    <None Include="Resources\settings_512px.png" />
+    <None Include="Resources\settings_512px2.png" />
+    <None Include="Resources\settings_512px3.png" />
+    <None Include="Resources\icons8-add-image-90.png" />
+    <None Include="Resources\icons8-shop-100.png" />
+    <None Include="Resources\test01.png" />
+    <None Include="Resources\01.png" />
+    <None Include="Resources\02.png" />
+    <None Include="Resources\03.png" />
+    <None Include="Resources\04.png" />
+    <None Include="Resources\011.png" />
+    <None Include="Resources\11.png" />
+    <Content Include="Software Protector.exe" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -573,5 +1129,44 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1418.22\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1418.22\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1418.22\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1418.22\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
 </Project>

@@ -13,7 +13,7 @@ namespace StandManagementProject
 {
     public partial class Fees : Form
     {
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
         int id;
 
         public Fees(int id)
@@ -31,7 +31,11 @@ namespace StandManagementProject
         }
 
         bool start;
-
+        public void clear_all_fees()
+        {
+            richTextBox1.Text = textBoxamount.Text = metroTextBoxsearch.Text = string.Empty;
+            metroDateTimedate.Value = metroDateTimestartdate.Value = metroDateTimestartdate.Value = DateTime.Today;
+        }
         public void just_numbers(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -98,11 +102,12 @@ namespace StandManagementProject
             }
             else
             {
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Changer la date \n S.V.P";
                 mb.label1.Location = new Point(80, 20);
                 mb.Show();
             }
+            calc();
 
         }
 
@@ -114,7 +119,7 @@ namespace StandManagementProject
 
             if (String.IsNullOrEmpty(richTextBox1.Text) || String.IsNullOrEmpty(textBoxamount.Text))
             {
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Please fill \n the fields in red";
                 mb.label1.Location = new Point(90, 20);
                 mb.Show();
@@ -128,6 +133,7 @@ namespace StandManagementProject
                     add_fee();
                 }
             }
+            calc();
         }
 
         private void field_coloring()
@@ -170,7 +176,7 @@ namespace StandManagementProject
                 sda.ExecuteNonQuery();
                 sqlcon.Close();
 
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Ajouté avec succès";
                 mb.label1.Location = new Point(80, 30);
                 mb.ShowDialog();
@@ -218,7 +224,7 @@ namespace StandManagementProject
                 }
                 else
                 {
-                    Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                    Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                     mb.label1.Text = "Choisissez-en un \ns'il vous plaît.";
                     mb.label1.Location = new Point(80, 20);
                     mb.Show();
@@ -236,7 +242,7 @@ namespace StandManagementProject
 
             if (String.IsNullOrEmpty(richTextBox1.Text) || String.IsNullOrEmpty(textBoxamount.Text))
             {
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Veuillez remplir \n les champs en rouge";
                 mb.label1.Location = new Point(70, 20);
                 mb.Show();
@@ -250,6 +256,7 @@ namespace StandManagementProject
                     modify_fee();
                 }
             }
+            calc();
         }
 
         public void modify_fee()
@@ -270,7 +277,7 @@ namespace StandManagementProject
                 sda.ExecuteNonQuery();
                 sqlcon.Close();
 
-                Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                 mb.label1.Text = "Changé avec succès";
                 mb.label1.Location = new Point(80, 30);
                 mb.ShowDialog();
@@ -304,7 +311,7 @@ namespace StandManagementProject
 
         private void buttondelete_Click(object sender, EventArgs e)
         {
-            Message_box mb1 = new Message_box(Login.action_yes_1, true, "Back");
+            Message_box mb1 = new Message_box(LOGIN_.action_yes_1, true, "Back");
             mb1.label1.Text = "Voulez-vous supprimer \ncet frais ?";
             mb1.label1.Location = new Point(60, 20);
             mb1.ShowDialog();
@@ -323,7 +330,7 @@ namespace StandManagementProject
                     sda.ExecuteNonQuery();
                     sqlcon.Close();
 
-                    Message_box mb = new Message_box(Login.action_yes_1, false, "");
+                    Message_box mb = new Message_box(LOGIN_.action_yes_1, false, "");
                     mb.label1.Text = "Supprimer avec succès";
                     mb.label1.Location = new Point(60, 30);
                     mb.ShowDialog();
@@ -339,6 +346,7 @@ namespace StandManagementProject
                     MessageBox.Show("" + exp);
                 }
             }
+            calc();
         }
 
         private void metroTextBoxsearch_TextChanged(object sender, EventArgs e)
@@ -352,9 +360,18 @@ namespace StandManagementProject
             }
             else
             {
-                search_fees(search);
+                if (checkBox1.Checked)
+                {
+                    search_fees(search);
+                }
+                else
+                {
+                    search_fees_with_description(search);
+                }
+                
                 datagridviewchange();
             }
+            calc();
         }
 
         public void search_fees(string value)
@@ -384,6 +401,68 @@ namespace StandManagementProject
                 MessageBox.Show("Erreur de connexion, contacter DZOFTWARES");
                 MessageBox.Show("" + exp);
             }
+        }
+        public void search_fees_with_description(string value)
+        {
+            try
+            {
+                dataGridView1.DataSource = null;
+
+                if (sqlcon.State == ConnectionState.Closed)
+                    sqlcon.Open();
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("search_fees_with_description", sqlcon);
+                sqlDataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@value", value);
+                sqlDataAdapter.SelectCommand.ExecuteNonQuery();
+                DataTable dtbl = new DataTable();
+                sqlDataAdapter.Fill(dtbl);
+                dataGridView1.DataSource = dtbl;
+
+                nominate();
+                sqlcon.Close();
+            }
+            catch (SqlException exp)
+            {
+                MessageBox.Show("Erreur de connexion, contacter DZOFTWARES");
+                MessageBox.Show("" + exp);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            string search = metroTextBoxsearch.Text;
+            if (String.IsNullOrEmpty(search))
+            {
+                dataGridView1.DataSource = null;
+                view_fees();
+                datagridviewchange();
+            }
+            else
+            {
+                if (checkBox1.Checked)
+                {
+                    search_fees(search);
+                    
+                }
+                else
+                {
+                    search_fees_with_description(search);
+
+                }
+
+                datagridviewchange();
+            }
+            calc();
+        }
+        void calc()
+        {
+            decimal total = 0;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                total += Convert.ToDecimal(row.Cells[2].Value);
+            }
+            labelTotal.Text = total.ToString("#.000");
         }
     }
 }

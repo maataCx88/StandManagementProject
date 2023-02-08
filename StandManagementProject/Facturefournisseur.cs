@@ -8,17 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MetroFramework.Controls;
+using ClosedXML.Excel;
 
 namespace StandManagementProject
 {
     public partial class Facturefournisseur : Form
     {
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection(@Properties.Settings.Default.FullString);
         public Facturefournisseur()
         {
             InitializeComponent();
             Affichage_fact();
 
+        }
+        public void initiate_facture()
+        {
+            metroDateTime1.Value = metroDateTime2.Value = DateTime.Today;
+            searchfourn.Text = string.Empty;
+            Affichage_fact();
         }
         public static bool FormIsOpen(FormCollection application, Type formtype)
         {
@@ -69,12 +77,12 @@ namespace StandManagementProject
                     this.dataGridView1.DataSource = dt;
                 }
                 sqlcon.Close();
-            
         }
 
         private void Facturefournisseur_Load(object sender, EventArgs e)
         {
-            show_all();
+            metroDateTime1.Value = metroDateTime2.Value = DateTime.Today;
+            Affichage_fact();
         }
 
         private void metroDateTime1_ValueChanged(object sender, EventArgs e)
@@ -84,14 +92,7 @@ namespace StandManagementProject
 
         private void SearchTextBox_OnValueChanged(object sender, EventArgs e)
         {
-            if (searchfourn.Text == string.Empty || searchfourn.Text == "Recherchez des factures")
-            {
-                show_all();
-            }
-            else
-            {
-                show_four(searchfourn.Text);
-            }
+
         }
 
         private void metroDateTime2_ValueChanged(object sender, EventArgs e)
@@ -109,13 +110,15 @@ namespace StandManagementProject
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount - 1 != 0 && dataGridView1.CurrentRow.Index != dataGridView1.RowCount - 1)
+            if (dataGridView1.CurrentRow.Index != -1 && dataGridView1.CurrentRow.Index != dataGridView1.RowCount )
             {
+                
                 int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 decimal montant = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[1].Value);
                 decimal versé = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[2].Value);
                 decimal reste = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[3].Value);
-                Détail_Facture_Fournisseur dcf = new Détail_Facture_Fournisseur(id, montant,versé, reste);
+                string fournisseur = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
+                Détail_Facture_Fournisseur dcf = new Détail_Facture_Fournisseur(id, montant,versé, reste,this,fournisseur);
                 if (FormIsOpen(Application.OpenForms, typeof(Détail_Facture_Fournisseur)))
                 {
                     MessageBox.Show("Formulaire déja ouvert !");
@@ -124,6 +127,62 @@ namespace StandManagementProject
                 {
                     dcf.Show();
                 }
+            }
+        }
+
+        private void searchfourn_TextChanged(object sender, EventArgs e)
+        {
+            if(searchfourn.Text != string.Empty)
+            {
+                show_four(searchfourn.Text);
+            }
+            else
+            {
+                Affichage_fact();
+            }
+        }
+
+        private void NoCode_Click(object sender, EventArgs e)
+        {
+            if(this.dataGridView1.RowCount > 0)
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+                {
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            using (XLWorkbook workbook = new XLWorkbook())
+                            {
+                                DataTable dt = new DataTable();
+                                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                                {
+                                    dt.Columns.Add(col.Name);
+                                }
+
+                                foreach (DataGridViewRow row in dataGridView1.Rows)
+                                {
+                                    DataRow dRow = dt.NewRow();
+                                    foreach (DataGridViewCell cell in row.Cells)
+                                    {
+                                        dRow[cell.ColumnIndex] = cell.Value;
+                                    }
+                                    dt.Rows.Add(dRow);
+                                }
+                                workbook.Worksheets.Add(dt, "Rapport");
+                                workbook.SaveAs(sfd.FileName);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("" + ex);
+                        }
+                    }
+                }
+            }
+            else
+            {
+
             }
         }
     }
