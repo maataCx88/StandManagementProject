@@ -187,7 +187,7 @@ namespace StandManagementProject
                 int useBetween = (int)diff1.TotalDays;
                 string lastuse = EncryptString("b14ca5898a4e4133bbce2ea2315a1916", today);
                 key.SetValue("Last", lastuse);
-
+            /*
                if (useBetween >= 0)
                 {
                     if (totaldays >= 0 && totaldays <= 30)
@@ -204,7 +204,7 @@ namespace StandManagementProject
                 {
                     MessageBox.Show("Version expirée, changement de date detectée contacter DZOFTWARE \n dzoftwares@gmail.com \n 0555756280 / 0659785799 " + totaldays.ToString(), "Product key", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Exit();
-                }
+                }*/
             
         }
 
